@@ -1,13 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>íšŒì›ê°€ìž…</title>
+    <title>È¸¿ø°¡ÀÔ</title>
     <style>
         body{
             text-align: center;
@@ -37,21 +36,30 @@
 </head>
 <body>
     <div class="main-div">
-        <form action="/app/auth/signin" method="post">
+        <form action="/app/auth/mypage" method="post">
         <table border="1">
             <tr>
-                <th colspan="2">ë¡œê·¸ì¸</th>
+                <th colspan="2">¸¶ÀÌÆäÀÌÁö</th>
             </tr>
             <tr>
-                <td>ì•„ì´ë””</td>
-                <td><input type="text" class="input-data" name="username"></td>
+                <td>¾ÆÀÌµð</td>
+                <td><input type="text" class="input-data" name="username" value=""></td>
+            </tr>
+            
+            <tr>
+                <td>´Ð³×ÀÓ</td>
+                <td><input type="text" class="input-data" name="nickname" value=""></td>
+                <td><button>º¯°æ</button></td>
             </tr>
             <tr>
-                <td>ë¹„ë°€ë²ˆí˜¸</td>
-                <td><input type="password" class="input-data" name="password"></td>
+                <td>ÁÖ¼Ò</td>
+                <td><input type="text" class="input-data" name="address" value=""></td>
+                <td><button>º¯°æ</button></td>
             </tr>
             <tr>
-                <td colspan="2"><button>ë¡œê·¸ì¸</button></td>
+                <td>¼ºº°</td>
+                <td><input type="text" class="input-data" name="gender" value=""></td>
+                <td><button>º¯°æ</button></td>
             </tr>
         </table>
         </form>

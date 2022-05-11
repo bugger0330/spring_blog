@@ -5,5 +5,18 @@
 
 <mapper namespace="com.test.app.domain.user.UserRepository">
 
+	<insert id="signup" parameterType="com.test.app.domain.user.User">
+		insert into user_mst values(
+			0, 
+			#{username}, 
+			#{password}, 
+			#{name}, 
+			#{phone}
+		) where username = #{username};
+	</insert>
+	
+	<select id="signin" parameterType="String" resultType="com.test.app.domain.user.User">
+		select * from user_mst where username = #{username};
+	</select>
 	
 </mapper>

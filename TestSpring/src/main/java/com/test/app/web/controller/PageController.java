@@ -17,4 +17,11 @@ public class PageController {
 		
 		return "auth/signin";
 	}
+	
+	@RequestMapping(value = "/auth/mypage", method = RequestMethod.GET)
+	public String getMypage() {
+		
+		return "auth/mypage";
+	}
+	
 }

@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
     <title>회원가입</title>
     <style>
         body{
@@ -38,14 +39,16 @@
 </head>
 <body>
     <div class="main-div">
-        <form action="">
+        <form action="/app/auth/signup" method="post">
         <table border="1">
             <tr>
                 <th colspan="2">회원가입</th>
             </tr>
             <tr>
                 <td>아이디</td>
-                <td><input type="text" class="input-data" name="username"></td>
+                <td><input type="text" id="username" class="input-data" name="username">
+                	<button type="button" id="checkBtn">아이디 체크</button>
+                </td>
             </tr>
             <tr>
                 <td>비밀번호</td>
@@ -65,5 +68,6 @@
         </table>
         </form>
     </div>
+    <script src="/app/static/js/signup.js"></script>
 </body>
 </html>
