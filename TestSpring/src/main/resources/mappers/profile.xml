@@ -10,6 +10,16 @@
 			#{username}, #{nickname}, #{address}, #{gender}
 		);
 	</insert>
+	<insert id="changeProfile" parameterType="com.test.app.domain.user.Profile">
+		insert into user_dtl values(
+			#{username}, #{nickname}, #{address}, #{gender}
+		);
+	</insert>
+	<insert id="changeProfile" parameterType="com.test.app.domain.user.Profile">
+		insert into user_dtl values(
+			#{username}, #{nickname}, #{address}, #{gender}
+		);
+	</insert>
 
 	<select id="checkNickname" parameterType="com.test.app.domain.user.Profile" resultType="Integer">
 		select count(nickname) from user_dtl where nickname = #{nickname};

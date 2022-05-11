@@ -18,6 +18,10 @@ public class ProfileServiceImpl implements ProfileService {
 	public boolean changeProfile(ProfileChangeDto profileChangeDto) {
 		if(profileChangeDto.getNickname() != null) {
 			int result = profileRepository.checkNickname(profileChangeDto.change());
+			if(result) {
+				profileRepository.changeProfile(null)
+			}
+			
 			return result != 0;
 		} else if(profileChangeDto.getAddress() != null) {
 			int result = profileRepository.checkNickname(profileChangeDto.change());
