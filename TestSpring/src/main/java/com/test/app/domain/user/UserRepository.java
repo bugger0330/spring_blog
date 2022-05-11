@@ -4,4 +4,5 @@ public interface UserRepository {
 
 	public int signup(User user);
 	public User signin(String username);
+	public int usernameCheck(String username);
 }

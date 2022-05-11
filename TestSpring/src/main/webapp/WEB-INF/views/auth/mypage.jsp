@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -33,6 +34,7 @@
         }
 
     </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div class="main-div">
@@ -49,20 +51,21 @@
             <tr>
                 <td>닉네임</td>
                 <td><input type="text" class="input-data" name="nickname" value=""></td>
-                <td><button>변경</button></td>
+                <td><button type="button" class="change-btn">변경</button></td>
             </tr>
             <tr>
                 <td>주소</td>
                 <td><input type="text" class="input-data" name="address" value=""></td>
-                <td><button>변경</button></td>
+                <td><button type="button" class="change-btn">변경</button></td>
             </tr>
             <tr>
                 <td>성별</td>
                 <td><input type="text" class="input-data" name="gender" value=""></td>
-                <td><button>변경</button></td>
+                <td><button type="button" class="change-btn">변경</button></td>
             </tr>
         </table>
         </form>
     </div>
+    <script src="/app/static/javascript/mypage.js"></script>
 </body>
 </html>

@@ -29,6 +29,7 @@
         .input-data{
             font-size: 40px;
             border: none;
+            width: 100%;
         }
         button{
             font-size: 40px;
@@ -68,6 +69,6 @@
         </table>
         </form>
     </div>
-    <script src="/app/static/js/signup.js"></script>
+    <script src="/app/static/javascript/signup.js"></script>
 </body>
 </html>

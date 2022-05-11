@@ -12,11 +12,15 @@
 			#{password}, 
 			#{name}, 
 			#{phone}
-		) where username = #{username};
+		);
 	</insert>
 	
 	<select id="signin" parameterType="String" resultType="com.test.app.domain.user.User">
 		select * from user_mst where username = #{username};
 	</select>
 	
+	<select id="usernameCheck" parameterType="String" resultType="Integer">
+		select count(username) from user_mst where username = #{username};
+	</select>
+		
 </mapper>

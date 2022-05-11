@@ -19,9 +19,12 @@ public class AuthServiceImpl implements AuthService {
 	
 	@Override
 	public boolean signup(SignupRequestDto signupRequestDto) {
-		int result = userRepository.signup(signupRequestDto.entity());
-		
-		return result != 0 ? true : false;
+		if(userRepository.usernameCheck(signupRequestDto.getUsername()) != 0) {
+			return false;
+		}else {
+			int result = userRepository.signup(signupRequestDto.entity());
+			return result == 1;
+		}
 	}
 
 	@Override
@@ -35,6 +38,12 @@ public class AuthServiceImpl implements AuthService {
 		}
 		
 		return false;
+	}
+
+	@Override
+	public boolean usernameCheck(String username) {
+		return userRepository.usernameCheck(username) != 0;
+		
 	}
 
 }

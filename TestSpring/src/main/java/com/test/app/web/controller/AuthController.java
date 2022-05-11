@@ -31,9 +31,8 @@ public class AuthController {
 	@RequestMapping(value = "/auth/signup", method = RequestMethod.POST, produces = "text/html; charset=utf-8")
 	public String signup(SignupRequestDto signupRequestDto) {
 		SignupScript script = new SignupScript();
-		
 		boolean result = authService.signup(signupRequestDto);
-		
+		System.out.println(signupRequestDto);
 		
 		return script.script(result);
 	}
@@ -55,14 +54,14 @@ public class AuthController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/app/auth/username/check", method = RequestMethod.GET)
-	public String checkUsername() {
+	@RequestMapping(value = "/auth/username/check", method = RequestMethod.GET)
+	public String checkUsername(String username) {
+		boolean result = authService.usernameCheck(username);
 		
-		
-		return null;
+		return Boolean.toString(result);
 	}
 	
-	
+
 	
 	
 	

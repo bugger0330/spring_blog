@@ -29,6 +29,8 @@ public class AuthFilter implements Filter {
 		
 		HttpSession session = servletRequest.getSession();
 		session.getAttribute("login");
+		
+	
 			
 		chain.doFilter(request, response);
 		

@@ -14,7 +14,7 @@ public class UserRepositoryImpl implements UserRepository{
 	
 	@Override
 	public int signup(User user) {
-		
+		System.out.println(user);
 		return session.insert(path + "signup", user);
 	}
 
@@ -22,6 +22,12 @@ public class UserRepositoryImpl implements UserRepository{
 	public User signin(String username) {
 		
 		return session.selectOne(path + "signin", username);
+	}
+
+	@Override
+	public int usernameCheck(String username) {
+		// TODO Auto-generated method stub
+		return session.selectOne(path + "usernameCheck", username);
 	}
 
 }
