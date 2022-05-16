@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
     <style>
         body{
             text-align: center;
@@ -51,10 +52,15 @@
                 <td><input type="password" class="input-data" name="password"></td>
             </tr>
             <tr>
-                <td colspan="2"><button>로그인</button></td>
+                <td colspan="2">
+                	<button  type="button" class="signin-button">로그인</button>
+                	<button  type="button" class="signin-button1">회원가입</button>
+                </td>
             </tr>
         </table>
         </form>
     </div>
+    
+    <script src="/app/static/javascript/signin.js"></script>
 </body>
 </html>

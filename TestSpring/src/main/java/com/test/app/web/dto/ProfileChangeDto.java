@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProfileChangeDto {
 	
-	
-	private String username;
+	private int usercode;
 	private String nickname;
 	private String address;
 	private String gender;
@@ -24,7 +23,7 @@ public class ProfileChangeDto {
 	public Profile change() {
 		
 		return Profile.builder()
-				.username(username)
+				.usercode(usercode)
 				.nickname(nickname)
 				.address(address)
 				.gender(gender)

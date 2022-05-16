@@ -22,5 +22,14 @@
 	<select id="usernameCheck" parameterType="String" resultType="Integer">
 		select count(username) from user_mst where username = #{username};
 	</select>
+	
+	<select id="selectPassword" parameterType="String" resultType="String">
+		select
+			password
+		from
+			user_mst
+		where
+			username = #{username};
+	</select>
 		
 </mapper>

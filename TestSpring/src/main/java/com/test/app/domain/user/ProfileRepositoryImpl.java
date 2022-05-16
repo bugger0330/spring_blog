@@ -10,36 +10,39 @@ public class ProfileRepositoryImpl implements ProfileRepository {
 	@Autowired
 	private SqlSession session;
 	
-	private final String path = "com.test.app.domain.user.ProfileRepository";
+	private final String path = "com.test.app.domain.user.ProfileRepository.";
+	
 	
 	@Override
-	public int changeProfile(Profile profile) {
+	public Profile checkNickname(String username) {
 		
-		return session.insert(path + "changeProfile", profile);
+		return session.selectOne(path + "checkNickname", username);
 	}
 
-	@Override
-	public int checkNickname(Profile profile) {
-		
-		return session.selectOne(path + "checkNickname", profile);
-	}
-
+	/* ======================================================================= */
+	
 	@Override
 	public int nickname(Profile profile) {
 		
-		return session.selectOne(path + "nickname", profile);
+		return session.update(path + "nickname", profile);
 	}
 
 	@Override
 	public int address(Profile profile) {
 
-		return session.selectOne(path + "address", profile);
+		return session.update(path + "address", profile);
 	}
 
 	@Override
 	public int gender(Profile profile) {
 		
-		return session.selectOne(path + "gender", profile);
+		return session.update(path + "gender", profile);
+	}
+
+	@Override
+	public int deleteProfile(String username) {
+		
+		return session.delete(username);
 	}
 
 }

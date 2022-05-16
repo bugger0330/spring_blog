@@ -17,6 +17,8 @@ public class AuthServiceImpl implements AuthService {
 	@Autowired
 	private Principal principal;
 	
+	
+	
 	@Override
 	public boolean signup(SignupRequestDto signupRequestDto) {
 		if(userRepository.usernameCheck(signupRequestDto.getUsername()) != 0) {
@@ -28,16 +30,22 @@ public class AuthServiceImpl implements AuthService {
 	}
 
 	@Override
-	public boolean signin(String username, String password) {
-		User user = principal.check(username, password);
-		boolean result = BCrypt.checkpw(password, user.getPassword());
-		
-		if(result) {
-			
-			return true;
+	public User signin(String username, String password) {
+		String dbPassword = userRepository.selectPassword(username);
+		if(BCrypt.checkpw(password, dbPassword)) {
+			return userRepository.signin(username);
+		} else {
+			return null;
 		}
-		
-		return false;
+//		User user = principal.check(username, password);
+//		boolean result = BCrypt.checkpw(password, user.getPassword());
+//		
+//		if(result) {
+//			
+//			return true;
+//		}
+//		
+//		return false;
 	}
 
 	@Override

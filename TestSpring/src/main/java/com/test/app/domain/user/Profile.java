@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class Profile {
 
+	private int usercode;
 	private String username;
 	private String nickname;
 	private String address;

@@ -5,24 +5,23 @@
 
 <mapper namespace="com.test.app.domain.user.ProfileRepository">
 
-	<insert id="changeProfile" parameterType="com.test.app.domain.user.Profile">
-		insert into user_dtl values(
-			#{username}, #{nickname}, #{address}, #{gender}
-		);
-	</insert>
-	<insert id="changeProfile" parameterType="com.test.app.domain.user.Profile">
-		insert into user_dtl values(
-			#{username}, #{nickname}, #{address}, #{gender}
-		);
-	</insert>
-	<insert id="changeProfile" parameterType="com.test.app.domain.user.Profile">
-		insert into user_dtl values(
-			#{username}, #{nickname}, #{address}, #{gender}
-		);
-	</insert>
-
-	<select id="checkNickname" parameterType="com.test.app.domain.user.Profile" resultType="Integer">
-		select count(nickname) from user_dtl where nickname = #{nickname};
+	
+	<select id="checkNickname" parameterType="String" resultType="com.test.app.domain.user.Profile">
+		select * from user_dtl where username = #{username};
 	</select>
+	
+	<update id="nickname" parameterType="com.test.app.domain.user.Profile">
+		update user_dtl set nickname = #{nickname} where usercode = #{usercode};
+	</update>
+	<update id="address" parameterType="com.test.app.domain.user.Profile">
+		update user_dtl set address = #{address} where usercode = #{usercode};
+	</update>
+	<update id="gender" parameterType="com.test.app.domain.user.Profile">
+		update user_dtl set gender =  #{gender} where usercode = #{usercode};
+	</update>
 
+	<delete id="deleteProfile" parameterType="String">
+		delete from user_mst where username = #{username};
+	</delete>
+		
 </mapper>

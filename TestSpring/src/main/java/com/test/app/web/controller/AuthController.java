@@ -40,17 +40,22 @@ public class AuthController {
 	@ResponseBody
 	@RequestMapping(value = "/auth/signin", method = RequestMethod.POST, produces = "text/html; charset=utf-8")
 	public String signin(String username, String password, HttpServletRequest request) {
-		User user = principal.check(username, password);
-		boolean result = authService.signin(username, password);
-		SigninScript script = new SigninScript();
+		// selectPassword -> BCrypt -> true -> loadUser
+		//								false -> return null
+		User user = authService.signin(username, password);
 		
-		if(result) {
+		if(user != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("login", user);
+			StringBuilder sb = new StringBuilder();
+			sb.append("{ \"usercode\": \"" + user.getUsercode() +"\", " +
+					"\"username\": \"" + user.getUsername() + "\", " + 
+					"\"name\": \"" + user.getName() + "\", " + 
+					"\"phone\": \"" + user.getPhone() + "\"}");
+			return sb.toString();
 		}else {
-			return script.script(false);
+			return "null";
 		}
-		return script.script(result);
 	}
 	
 	@ResponseBody
