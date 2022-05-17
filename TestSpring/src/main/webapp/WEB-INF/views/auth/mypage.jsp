@@ -18,20 +18,26 @@
         	margin-top: 100px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            
         }
 
         table{
             font-size: 40px;
             padding: 10px;
+            align-items: center;
         }
         .input-data{
             font-size: 40px;
             border: none;
+            text-align: left;
+        }
+        .td1{
+        	text-align: left;
         }
         button{
             font-size: 40px;
         }
+
 
     </style>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -45,7 +51,7 @@
             </tr>
             <tr>
                 <td>¾ÆÀÌµð</td>
-                <td><input type="text" class="input-data" name="username" value="${sessionScope.profile.username}"></td>
+                <td class="td1">${sessionScope.profile.username}</td>
             </tr>
             
             <tr>
