@@ -1,14 +1,28 @@
+window.addEventListener('load', () => {
+      const forms = document.getElementsByClassName('validation-form');
+
+      Array.prototype.filter.call(forms, (form) => {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
 
 
 
+const submit_button = document.querySelectorAll("#submit");
 
-const submit_button = document.querySelector(".signin-button");
-const submit_button1 = document.querySelector(".signin-button1");
 const username_input = document.querySelector("input[name='username']"); 
 const password_input = document.querySelector("input[name='password']"); 
 
+
 	
-submit_button.onclick = () => {	
+submit_button[0].onclick = () => {	
 	if(username_input.value == ""){
 		alert("아이디를 입력해주세요!");
 		username_input.focus();
@@ -41,8 +55,11 @@ submit_button.onclick = () => {
 	});
 }
 
-submit_button1.onclick = () => {
-	alert("회원가입 페이지로 이동");
-	location.href = "/app/auth/signup";
-	
+submit_button[1].onclick = () => {	
+	location.href="/app/auth/signup";
 }
+
+
+
+
+

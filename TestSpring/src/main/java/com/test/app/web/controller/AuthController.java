@@ -67,7 +67,19 @@ public class AuthController {
 	}
 	
 
-	
+	@ResponseBody
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		User user = (User)session.getAttribute("login");
+		session.invalidate();
+		user = null;
+		
+		System.out.println("세션 삭제완료");
+		
+		
+		return "true";
+	}
 	
 	
 }

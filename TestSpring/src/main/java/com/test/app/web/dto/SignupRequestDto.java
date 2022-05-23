@@ -18,14 +18,22 @@ public class SignupRequestDto {
 	private String username;
 	private String password;
 	private String name;
+	private String nickname;
+	private String email;
 	private String phone;
+	private String address;
+	private String address2;
 	
 	public User entity() {
 		return User.builder()
 				.username(username)
 				.password(BCrypt.hashpw(password, BCrypt.gensalt()))
 				.name(name)
+				.nickname(nickname)
+				.email(email)
 				.phone(phone)
+				.address(address)
+				.address2(address2)
 				.build();
 	}
 }

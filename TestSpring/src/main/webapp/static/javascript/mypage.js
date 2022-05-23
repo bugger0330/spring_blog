@@ -4,6 +4,10 @@ const logoutBtn = document.querySelector(".logout-btn");
 const deleteBtn = document.querySelector(".delete-btn");
 
 const doumiBtn = document.querySelector(".doumi-btn");
+
+const User = loginSession();
+alert(User.username);
+
 doumiBtn.onclick = () => {
 	location.href = "/app/board/list";
 }
@@ -40,7 +44,20 @@ for(let i = 0; i < changeBtn.length; i++){
 }
 
 logoutBtn.onclick = () => {
-	location.href="/app/logout";
+	$.ajax({
+		type : "get",
+		url : "/app/logout",
+		success : function(data){
+			if(data == "true"){
+				alert("로그아웃 되었습니다");
+				location.href="/app/auth/signin";
+			}
+			
+		},
+		error : function(data){
+			alert("비동기 처리 오류");
+		}
+	})
 }
 
 deleteBtn.onclick = () => {

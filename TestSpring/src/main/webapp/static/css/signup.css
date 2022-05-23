@@ -1,24 +1,33 @@
-body{
-    text-align: center;
-    position: relative;
-
-}
-.main-div{
-	margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.body{
+	width: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
 }
 
-table{
-    font-size: 40px;
-    padding: 10px;
+
+.input-form {
+	  max-width: 380px;
+	
+	  margin-top: 80px;
+	  padding: 32px;
+	
+	  background: #fff;
+	  -webkit-border-radius: 10px;
+	  -moz-border-radius: 10px;
+	  border-radius: 10px;
+	  -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+	  -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+	  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+
+     
 }
-.input-data{
-    font-size: 40px;
-    border: none;
-    width: 100%;
-}
-button{
-    font-size: 40px;
+#checkBtn {
+	border: none;
+	border-radius: 10px;
+	margin-left: 10px;
+	background: #007bff;
+	color: white;
+	font-size: 13px;
 }

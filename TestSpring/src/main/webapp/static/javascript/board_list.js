@@ -1,12 +1,6 @@
-/**
- * 
- */
- 
+
 const boardListTable = document.querySelector('.board-list-table');
 const boardListPage = document.querySelector('.board-list-page');
-
-
-
 
 let nowPage = 1;
 
@@ -89,7 +83,7 @@ function getBoardList(data)	{
 	for(let i = 0; i < data.length; i++){
 		tableStr += `
 		<tr class="board-items">
-			<td>${data[i].boardCode}</td>
+			<td>${data[i].board_code}</td>
 			<td>${data[i].title}</td>
 			<td>${data[i].username}</td>
 			<td>${data[i].count}</td>

@@ -36,24 +36,16 @@ public class AuthFilter implements Filter {
 		String path = servletRequest.getRequestURI();
 		System.out.println(path);
 		
-		if(path.contains("static")) {
-			
-		} else if(path.contains("mypage")) {
-			if(user == null) {
-				servletResponse.sendRedirect("/app/auth/signin");
-				return;
-			}
-		} else if(path.contains("/app/auth")) {
-			if(user != null) {
-				servletResponse.sendRedirect("/app/auth/mypage");
-				System.out.println("로그인 되어 필터에 걸림");
-				return;
-			}
-		} else if(user == null){
-			servletResponse.sendRedirect("/app/auth/signin");
-			return;
-		}
-	
+		/*
+		 * if(path.contains("static")) {
+		 * 
+		 * } else if(path.contains("mypage")) { if(user == null) {
+		 * servletResponse.sendRedirect("/app/auth/signin"); return; } } else
+		 * if(path.contains("/app/auth")) { if(user != null) {
+		 * servletResponse.sendRedirect("/app/auth/mypage");
+		 * System.out.println("로그인 되어 필터에 걸림"); return; } } else if(user == null){
+		 * servletResponse.sendRedirect("/app/auth/signin"); return; }
+		 */
 			
 		chain.doFilter(request, response);
 		

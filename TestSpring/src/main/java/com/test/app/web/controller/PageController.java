@@ -75,4 +75,8 @@ public class PageController {
 		return "board/board_update";
 	}
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home() {
+		return "/home";
+	}
 }

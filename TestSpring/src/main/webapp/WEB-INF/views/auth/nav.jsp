@@ -7,12 +7,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쇼핑</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/app/static/javascript/nav.js"></script>
     <link rel="stylesheet" href="/app/static/css/nav.css">
 </head>
 <body>
-<nav>네비게이션 바</nav>
+<nav>
+	<div>
+		네비게이션 바
+	</div>
+</nav>
 
 
