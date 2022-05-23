@@ -1,0 +1,25 @@
+.main{
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    border: 1px solid black;
+    width: 500px;
+}
+td, th{
+    border: 1px solid black;
+}
+textarea{
+    width: 100%;
+    border: none;
+}
+input{
+    border: none;
+    width: 100%;
+}
+.submit-btn{
+    margin-top: 10px;
+}

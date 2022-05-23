@@ -1,48 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ page import="com.test.app.domain.user.Profile" %>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>È¸¿ø°¡ÀÔ</title>
-    <style>
-        body{
-            text-align: center;
-            position: relative;
-
-        }
-        .main-div{
-        	margin-top: 100px;
-            display: flex;
-            justify-content: center;
-            
-        }
-
-        table{
-            font-size: 40px;
-            padding: 10px;
-            align-items: center;
-        }
-        .input-data{
-            font-size: 40px;
-            border: none;
-            text-align: left;
-        }
-        .td1{
-        	text-align: left;
-        }
-        button{
-            font-size: 40px;
-        }
+<jsp:include page="nav.jsp"></jsp:include>
+<link rel="stylesheet" href="/app/static/css/mypage.css">
 
 
-    </style>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-</head>
-<body>
     <div class="main-div">
         
         <table border="1">
@@ -51,7 +12,7 @@
             </tr>
             <tr>
                 <td>¾ÆÀÌµð</td>
-                <td class="td1">${sessionScope.profile.username}</td>
+                <td class="td1"><input type="text" class="input-data" name="nickname" value="${sessionScope.profile.username}" readonly="readonly"></td>
             </tr>
             
             <tr>
@@ -73,6 +34,7 @@
             	<td colspan="2">
             		<button class="logout-btn">·Î±×¾Æ¿ô</button>
             		<button class="delete-btn">È¸¿øÅ»Åð</button>
+            		<button class="doumi-btn">°í°´¼¾ÅÍ</button>
             	</td>
             </tr>
         </table>

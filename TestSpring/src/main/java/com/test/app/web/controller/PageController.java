@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.test.app.domain.user.ProfileRepository;
 import com.test.app.domain.user.User;
+import com.test.app.service.BoardService;
 import com.test.app.service.ProfileService;
 
 @Controller
@@ -23,6 +24,8 @@ public class PageController {
 	
 	@Autowired
 	private ProfileRepository profileRepository;
+	
+	
 
 	@RequestMapping(value = "/auth/signup", method = RequestMethod.GET)
 	public String getSignup() {
@@ -55,6 +58,21 @@ public class PageController {
 		session.invalidate();
 		
 		return "redirect: /app/auth/signin";
+	}
+	
+	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
+	public String boardList() {
+		return "board/board_list";
+	}
+	
+	
+	@RequestMapping(value = "/board/insert", method = RequestMethod.GET)
+	public String boardInsert() {
+		return "board/board_insert";
+	}
+	@RequestMapping(value = "/board/update", method = RequestMethod.GET)
+	public String boardUpdate() {
+		return "board/board_update";
 	}
 	
 }

@@ -3,6 +3,12 @@ const changeBtn = document.querySelectorAll(".change-btn");
 const logoutBtn = document.querySelector(".logout-btn");
 const deleteBtn = document.querySelector(".delete-btn");
 
+const doumiBtn = document.querySelector(".doumi-btn");
+doumiBtn.onclick = () => {
+	location.href = "/app/board/list";
+}
+
+
 for(let i = 0; i < changeBtn.length; i++){
 	changeBtn[i].onclick = () => {
 		const data = {};

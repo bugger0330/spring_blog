@@ -1,70 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>íšŒì›ê°€ì…</title>
-    <style>
-        body{
-            text-align: center;
-            position: relative;
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<jsp:include page="nav.jsp"></jsp:include>
+<link rel="stylesheet" href="/app/static/css/signup.css">
 
-        }
-        .main-div{
-        	margin-top: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
-        table{
-            font-size: 40px;
-            padding: 10px;
-        }
-        .input-data{
-            font-size: 40px;
-            border: none;
-            width: 100%;
-        }
-        button{
-            font-size: 40px;
-        }
-        
-
-    </style>
-</head>
-<body>
     <div class="main-div">
         <form action="/app/auth/signup" method="post">
         <table border="1">
             <tr>
-                <th colspan="2">íšŒì›ê°€ì…</th>
+                <th colspan="2">È¸¿ø°¡ÀÔ</th>
             </tr>
             <tr>
-                <td>ì•„ì´ë””</td>
+                <td>¾ÆÀÌµğ</td>
                 <td><input type="text" id="username" class="input-data" name="username">
-                	<button type="button" id="checkBtn">ì•„ì´ë”” ì²´í¬</button>
+                	<button type="button" id="checkBtn">¾ÆÀÌµğ Ã¼Å©</button>
                 </td>
             </tr>
             <tr>
-                <td>ë¹„ë°€ë²ˆí˜¸</td>
+                <td>ºñ¹Ğ¹øÈ£</td>
                 <td><input type="password" class="input-data" name="password"></td>
             </tr>
             <tr>
-                <td>ì´ë¦„</td>
+                <td>ÀÌ¸§</td>
                 <td><input type="text" class="input-data" name="name"></td>
             </tr>
             <tr>
-                <td>ì „í™”ë²ˆí˜¸</td>
+                <td>ÀüÈ­¹øÈ£</td>
                 <td><input type="text" class="input-data" name="phone"></td>
             </tr>
             <tr>
-                <td colspan="2"><button>ê°€ì…</button></td>
+                <td colspan="2"><button>°¡ÀÔ</button></td>
             </tr>
         </table>
         </form>

@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    position: relative;
+
+}
+.main-div{
+	margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    font-size: 40px;
+    padding: 10px;
+}
+.input-data{
+    font-size: 40px;
+    border: none;
+}
+button{
+    font-size: 40px;
+}
