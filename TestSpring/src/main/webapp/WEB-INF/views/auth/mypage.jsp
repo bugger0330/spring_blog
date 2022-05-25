@@ -41,5 +41,4 @@
         
     </div>
     <script src="/app/static/javascript/mypage.js"></script>
-</body>
-</html>
+<jsp:include page="footer.jsp"></jsp:include>

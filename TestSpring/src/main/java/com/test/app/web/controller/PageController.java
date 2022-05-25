@@ -79,4 +79,39 @@ public class PageController {
 	public String home() {
 		return "/home";
 	}
+	
+	@RequestMapping(value = "/product/insert", method = RequestMethod.GET)
+	public String productInsert() {
+		return "product/insert";
+	}
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
