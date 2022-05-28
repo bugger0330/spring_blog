@@ -1,5 +1,7 @@
 package com.test.app.web.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.test.app.domain.user.Product;
 
 import lombok.AllArgsConstructor;
@@ -14,16 +16,15 @@ public class ProductRequestDto {
 	
 	private String username;
 	private String title;
-	private String img;
 	private String content;
 	private String select;
-	
+	private MultipartFile file;
 	public Product entity() {
 		return Product.builder()
 				.product_username(username)
 				.product_title(title)
-				.product_img(img)
 				.product_content(content)
+				.product_img(file.getOriginalFilename())
 				.select(select)
 				.build();
 	}

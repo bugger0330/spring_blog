@@ -20,9 +20,16 @@ public class ProductController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/product/insert", method = RequestMethod.POST)
-	public String productInsert(@RequestBody ProductRequestDto productRequestDto) {
+	public String productInsert(ProductRequestDto productRequestDto) {
 		System.out.println("컨트롤러 실행");
-		boolean result = productService.productInsert(productRequestDto);
-		return Boolean.toString(result);
+		System.out.println("dto : " + productRequestDto.toString());
+		System.out.println("이미지file : " + productRequestDto.getFile().getOriginalFilename());
+//		boolean result = productService.productInsert(productRequestDto);
+		return null;
 	}
+
+
+
+
+
 }

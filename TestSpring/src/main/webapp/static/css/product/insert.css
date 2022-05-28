@@ -19,3 +19,7 @@ input{
     height: 100%;
     border: none;
 }
+.img-items{
+	width: 100px;
+	height: 80px
+}

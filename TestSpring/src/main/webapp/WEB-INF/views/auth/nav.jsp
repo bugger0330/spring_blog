@@ -13,20 +13,14 @@
     <script src="/app/static/javascript/nav.js"></script>
     <link rel="stylesheet" href="/app/static/css/nav.css">
     <link href="/app/static/css/home/home.css" rel="stylesheet">
-	<link href="/app/static/css/home/bootstrap.min.css" rel="stylesheet">
+<!-- 	<link href="/app/static/css/home/bootstrap.min.css" rel="stylesheet"> -->
     
-    
-    <title>쇼핑몰</title>
-
-
-
-
-<!-- Google Font -->
+	<!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
     <!-- 장바구니 버튼 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 	
-<body>
+</head>
 
     <!-- Humberger End -->
 
@@ -65,7 +59,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><!-- <img src="/static/images/logo.png" alt=""> --></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -91,6 +85,5 @@
             
         </div>
     </header>
-
 
 
