@@ -56,8 +56,11 @@
 	</div>
 </section>
 <!-- 이미지 리스트 -->
-
-
+<div class="conn">
+	<div class="main-div">
+	        
+	</div>
+</div>
 
 
 	<jsp:include page="auth/footer.jsp"></jsp:include>

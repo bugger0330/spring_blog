@@ -6,7 +6,7 @@
 <mapper namespace="com.test.app.domain.user.ProductRepository">
 
 	<insert id="productInsert" parameterType="com.test.app.domain.user.Product">
-		insert into product pt values(
+		insert into product values(
 			0,
 			#{product_username},
 			#{product_title},
@@ -16,6 +16,8 @@
 		);
 	</insert>
 
-
+	<select id="productSelect" resultType="com.test.app.domain.user.Product">
+		select * from product;
+	</select>
 
 </mapper>

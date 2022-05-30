@@ -19,12 +19,13 @@ public class ProductRequestDto {
 	private String content;
 	private String select;
 	private MultipartFile file;
-	public Product entity() {
+	
+	public Product entity(String uuid) {
 		return Product.builder()
 				.product_username(username)
 				.product_title(title)
 				.product_content(content)
-				.product_img(file.getOriginalFilename())
+				.product_img(uuid)
 				.select(select)
 				.build();
 	}
