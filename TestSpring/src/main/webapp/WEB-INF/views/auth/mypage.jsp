@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<jsp:include page="nav.jsp"></jsp:include>
+<jsp:include page="../top/header.jsp"></jsp:include>
 <link rel="stylesheet" href="/app/static/css/mypage.css">
 
 
@@ -41,4 +41,4 @@
         
     </div>
     <script src="/app/static/javascript/mypage.js"></script>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../top/header.jsp"></jsp:include>

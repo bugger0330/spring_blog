@@ -84,6 +84,19 @@ public class PageController {
 	public String productInsert() {
 		return "product/insert";
 	}
+	
+	@RequestMapping(value = "/top/header", method = RequestMethod.GET)
+	public String header() {
+		return "top/header";
+	}
+	@RequestMapping(value = "/top/footer", method = RequestMethod.GET)
+	public String footer() {
+		return "/top/footer";
+	}
+	@RequestMapping(value = "/board/community", method = RequestMethod.GET)
+	public String community() {
+		return "board/community";
+	}
 
 	
 	

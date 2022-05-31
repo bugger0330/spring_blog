@@ -1,5 +1,7 @@
 package com.test.app.web.dto;
 
+import java.time.LocalDateTime;
+
 import com.test.app.domain.user.Board;
 
 import lombok.AllArgsConstructor;
@@ -19,6 +21,8 @@ public class BoardRequestDto {
 	private String content;
 	private int count;
 	private int page;
+	private LocalDateTime createDate;
+	private LocalDateTime updateDate;
 	
 	public Board toEntity() {
 		return Board.builder()
@@ -28,6 +32,8 @@ public class BoardRequestDto {
 				.content(content)
 				.count(count)
 				.page(page)
+				.create_date(createDate)
+				.update_date(updateDate)
 				.build();
 	}
 }

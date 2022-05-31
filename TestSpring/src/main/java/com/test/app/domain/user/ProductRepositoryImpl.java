@@ -1,7 +1,5 @@
 package com.test.app.domain.user;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,11 +16,6 @@ public class ProductRepositoryImpl implements ProductRepository {
 	public int productInsert(Product product) {
 		
 		return session.insert(path + "productInsert", product);
-	}
-
-	@Override
-	public List<Product> productSelect() {
-		return session.selectList(path + "productSelect");
 	}
 
 	

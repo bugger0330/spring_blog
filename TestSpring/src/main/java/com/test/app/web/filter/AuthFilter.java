@@ -12,15 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.test.app.config.FileConfig;
 import com.test.app.domain.user.User;
 
 public class AuthFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		FileConfig.setProfileImgPath(filterConfig.getServletContext().getRealPath("/static/image"));
-		System.out.println(FileConfig.getProfileImgPath());
+		// TODO Auto-generated method stub
 		
 	}
 

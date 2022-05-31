@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<jsp:include page="nav.jsp"></jsp:include>
+<jsp:include page="../top/header.jsp"></jsp:include>
 <link rel="stylesheet" href="/app/static/css/signin.css">
 <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -39,6 +39,6 @@
   </div>
 </div>
   <script src="/app/static/javascript/signin.js"></script>
-
+<jsp:include page="../top/footer.jsp"></jsp:include>
 </body>
 </html>

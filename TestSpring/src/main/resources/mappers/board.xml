@@ -18,9 +18,11 @@
 		 	title,
 		 	content,
 		 	count,
-		 	(select count(*) from board_mst) as boardCount
+		 	(select count(*) from board_mst) as boardCount,
+		 	create_date,
+		 	update_date
 		 from board_mst
-		 limit #{page}, 5;
+		 limit #{page}, 10;
 	</select>
 	
 	<insert id="getBoardInsert" parameterType="com.test.app.domain.user.Board">
@@ -30,6 +32,8 @@
 			#{title},
 			#{content},
 			#{count}
+			#{createDate},
+			#{updateDate}
 		);
 	</insert>
 	

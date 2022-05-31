@@ -8,7 +8,7 @@
 <link href="/app/static/css/product/insert.css" rel="stylesheet">
 <body>
 
-	<jsp:include page="../auth/nav.jsp"></jsp:include>
+	<jsp:include page="../top/header.jsp"></jsp:include>
 
     <div class="main">
     <form>
@@ -42,7 +42,7 @@
         </table>
     </form>
     </div>
-	<jsp:include page="../auth/footer.jsp"></jsp:include>
+	<jsp:include page="../top/footer.jsp"></jsp:include>
 
 	<script src="/app/static/javascript/product.js"></script>
 </body>
