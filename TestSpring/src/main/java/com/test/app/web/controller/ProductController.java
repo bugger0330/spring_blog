@@ -23,7 +23,7 @@ public class ProductController {
 	public String productInsert(ProductRequestDto productRequestDto) {
 		System.out.println("컨트롤러 실행");
 		System.out.println("dto : " + productRequestDto.toString());
-		System.out.println("이미지file : " + productRequestDto.getFile().getOriginalFilename());
+		System.out.println("이미지file : " + productRequestDto.getFile().get(0).getOriginalFilename());
 //		boolean result = productService.productInsert(productRequestDto);
 		return null;
 	}
