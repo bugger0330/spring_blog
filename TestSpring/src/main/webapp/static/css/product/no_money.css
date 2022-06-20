@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+}
+
+.no_table{
+    border: 0px; 
+    border-collapse: collapse; 
+    margin: 0px auto; 
+    padding: 0px; 
+    width: 677px; font-family: 굴림;
+}
+
+.tbl002{
+    padding-left: 20px; 
+    background-color: rgb(247, 247, 247); 
+    color: rgb(18, 18, 18); 
+    letter-spacing: -1px;
+}
+
+.tbl001{
+    color: rgb(89, 89, 89); 
+    font-size: 12px; 
+    background-color: rgb(101, 101, 101); 
+    padding: 0px;
+}
+
+.lpad15{
+    color: rgb(89, 89, 89); 
+    font-size: 12px; 
+    padding-left: 15px; 
+    overflow: hidden;
+}
+
+.tbl003{
+    color: rgb(89, 89, 89); 
+    font-size: 12px; 
+    background-color: rgb(222, 222, 222); 
+    padding: 0px;
+}
+
+.tb22{
+    color: rgb(89, 89, 89); 
+    font-size: 12px;
+}
+
+table{
+    border: 0px; 
+    border-collapse: collapse; 
+    margin: 0px auto; 
+    padding: 0px; 
+    table-layout: fixed; 
+    width: 677px; 
+    white-space: nowrap; 
+    font-family: 굴림;
+}
+
+#account1{
+    margin-top: 0px; 
+    margin-right: 0px; 
+    margin-left: 0px; 
+    padding: 0px; 
+    color: rgb(102, 102, 102); 
+    font-size: 12px;
+}
+
+.olive{
+    color: rgb(61, 110, 116);
+}
+
+.box{
+    margin: 0px; 
+    padding-top: 2px; 
+    padding-bottom: 2px; 
+    color: rgb(102, 102, 102); 
+    font-size: 12px; 
+    font-family: 굴림; 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: rgb(221, 221, 221); 
+    background-color: rgb(255, 255, 255); 
+    vertical-align: middle;
+}
+
+.small{
+    font-size: 11px; 
+    letter-spacing: -1px;
+}
+
+select{
+    color: rgb(102, 102, 102); 
+    font-size: 12px; 
+    font-family: 굴림; 
+    border-color: rgb(221, 221, 221); 
+    background-color: rgb(255, 255, 255); 
+    padding: 2px; 
+    vertical-align: middle;
+}
+
+#taxsave{
+    margin-top: 0px; 
+    margin-right: 0px; 
+    margin-left: 0px; 
+    padding: 0px; 
+    color: rgb(102, 102, 102); 
+    font-size: 12px;
+}
+
+.hidd{
+    height: 5px; 
+    overflow: hidden;
+}
+
+.small{
+    font-size: 11px; 
+    letter-spacing: -1px;
+}
+
+.small_a{
+    color: rgb(89, 89, 89); 
+    text-decoration-line: none; 
+    font-size: 12px;
+}
+
+.sky{
+    color: rgb(66, 137, 162); 
+    font-size: 11px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

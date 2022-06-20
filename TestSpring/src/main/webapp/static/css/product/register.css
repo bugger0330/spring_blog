@@ -1,0 +1,383 @@
+br{
+    box-sizing: border-box;
+}
+
+.main_d{
+    border: 1px solid rgb(230, 229, 239); 
+    width: 1100px;
+    display: flex;
+    padding: 10px auto;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sc-iiUIRa{
+    box-sizing: border-box; 
+    margin: 0px; 
+   
+    border: 0px; 
+    font: inherit; 
+    vertical-align: baseline; 
+    list-style: none;
+}
+
+.sc-hgRTRy1{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 2rem 0px; 
+    border-width: 0px 0px 1px; 
+    border-top-style: initial; 
+    border-right-style: initial; 
+    border-bottom-style: solid; 
+    border-left-style: initial; 
+    border-top-color: initial; 
+    border-right-color: initial; 
+    border-bottom-color: rgb(220, 219, 228); 
+    border-left-color: initial; 
+    border-image: initial; 
+    font-variant-numeric: inherit; 
+    font-variant-east-asian: inherit; 
+    font-stretch: inherit; 
+    font-size: 16px; 
+    line-height: inherit; 
+    font-family: Noto Sans KR, sans-serif; 
+    vertical-align: baseline;
+    width: 1023.98px; 
+    display: flex; 
+    color: rgb(33, 33, 33); 
+    letter-spacing: -0.5px; 
+    background-color: rgb(255, 255, 255);
+}
+
+.sc-iIHSe1{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font-style: inherit; 
+    font-variant: inherit; 
+    font-weight: inherit; 
+    font-stretch: inherit; 
+    font-size: 18px; 
+    line-height: inherit; 
+    font-family: inherit; 
+    vertical-align: baseline; 
+    width: 10.5rem;
+}
+
+.sc-gldTML1{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font: inherit; 
+    vertical-align: baseline; 
+    flex: 1 1 0%;
+}
+
+.sc-eInJlc{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font: inherit; 
+    vertical-align: baseline; 
+    list-style: none; 
+    display: flex; 
+    width: 856px;
+    flex-wrap: wrap; 
+    overflow-x: hidden;
+}
+
+.sc-gtfDJT{
+    box-sizing: border-box; 
+    margin: 0px 1rem 0px 0px; 
+    padding: 0px; 
+    border: 1px solid rgb(230, 229, 239); 
+    font-style: inherit; 
+    font-variant: inherit; 
+    font-weight: inherit; 
+    font-stretch: inherit; 
+    font-size: 1rem; 
+    line-height: inherit; 
+    font-family: inherit; 
+    vertical-align: baseline; 
+    width: 202px; 
+    height: 202px; 
+    position: relative; 
+    background: rgb(250, 250, 253); 
+    display: flex; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    -webkit-box-pack: center; 
+    justify-content: center; 
+    flex-direction: column; 
+    color: rgb(155, 153, 169);
+}
+
+.input_file{
+    box-sizing: border-box; 
+    font-family: inherit; 
+    font-size: 0px; 
+    line-height: 1.15; 
+    margin: 0px; 
+    overflow: visible; 
+    font-synthesis: none; 
+    -webkit-font-smoothing: antialiased; 
+    direction: ltr; 
+    color: rgb(33, 33, 33); 
+    letter-spacing: -0.5px; 
+    outline: 0px; 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: rgb(195, 194, 204); 
+    padding: 0px; 
+    width: 199.492px; 
+    height: 199.492px; 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    opacity: 0; 
+    cursor: pointer;
+}
+
+.sc-hzDEsm{
+    box-sizing: border-box; 
+    margin: 1.5rem 0px 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font-style: inherit; 
+    font-variant: inherit; 
+    font-weight: inherit; 
+    font-stretch: inherit; 
+    font-size: 14px; 
+    line-height: 1.5; 
+    font-family: inherit; 
+    vertical-align: baseline; 
+    color: rgb(74, 164, 255);
+}
+
+.sc_span2{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font-style: inherit; 
+    font-variant: inherit; 
+    font-weight: bolder; 
+    font-stretch: inherit; 
+    font-size: inherit; 
+    line-height: inherit; 
+    font-family: inherit; 
+    vertical-align: baseline;
+}
+
+.sc-hgRTRy2{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 2rem 0px; 
+    border-width: 0px 0px 1px; 
+    border-top-style: initial; 
+    border-right-style: initial; 
+    border-bottom-style: solid; 
+    border-left-style: initial; 
+    border-top-color: initial; 
+    border-right-color: initial; 
+    border-bottom-color: rgb(220, 219, 228); 
+    border-left-color: initial; 
+    border-image: initial; 
+    font-variant-numeric: inherit; 
+    font-variant-east-asian: inherit; 
+    font-stretch: inherit; 
+    font-size: 16px; 
+    line-height: inherit; 
+    font-family: Noto Sans KR, sans-serif; 
+    vertical-align: baseline; 
+    width: 1023.98px; 
+    display: flex; 
+    color: rgb(33, 33, 33); 
+    letter-spacing: -0.5px; 
+    background-color: rgb(255, 255, 255);
+}
+
+.sc-iIHSe2{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 14px 0px 0px; 
+    border: 0px; 
+    font-style: inherit; 
+    font-variant: inherit; 
+    font-weight: inherit; 
+    font-stretch: inherit; 
+    font-size: 18px; 
+    line-height: inherit; 
+    font-family: inherit; 
+    vertical-align: baseline; 
+    width: 10.5rem;
+}
+
+.sc-gldTML2{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font: inherit; 
+    vertical-align: baseline; 
+    flex: 1 1 0%;
+}
+
+.sc-ccSCjj{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font: inherit; 
+    vertical-align: baseline; 
+    display: flex; 
+    width: 855.996px; 
+    -webkit-box-align: center; 
+    align-items: center;
+}
+
+.sc-feryYK{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font: inherit; 
+    vertical-align: baseline; 
+    position: relative; 
+    display: flex; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    flex: 1 1 0%;
+}
+
+.sc-jKmXuR2{
+    box-sizing: border-box; 
+    font-family: inherit; 
+    font-size: 16px; 
+    line-height: 1.15; 
+    margin: 0px; 
+    overflow: visible; 
+    font-synthesis: none; 
+    -webkit-font-smoothing: antialiased; 
+    direction: ltr; 
+    color: rgb(33, 33, 33); 
+    letter-spacing: -0.5px; 
+    outline: 0px; 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: rgb(195, 194, 204); 
+    padding: 0px 1rem; 
+    width: 801.055px; 
+    appearance: none; 
+    height: 3rem;
+}
+
+.black_x{
+    box-sizing: border-box; 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    font-style: inherit; 
+    font-variant: inherit; 
+    font-weight: inherit; 
+    font-stretch: inherit; 
+    font-size: 1rem; 
+    line-height: inherit;
+    font-family: inherit; 
+    vertical-align: baseline; 
+    background-color: transparent; 
+    color: rgb(155, 153, 169); 
+    cursor: pointer; 
+    position: absolute; 
+    right: 90px;
+}
+
+.sc-elNKlv3{
+    box-sizing: border-box; 
+    margin: 0px 0px 0px 1.5rem; 
+    padding: 0px; 
+    border: 0px; 
+    font-style: inherit; 
+    font-variant: inherit; 
+    font-weight: inherit; 
+    font-stretch: inherit; 
+    font-size: 1rem; 
+    line-height: inherit; 
+    font-family: inherit; 
+    vertical-align: baseline; 
+    text-align: right;
+}
+
+textarea{
+    box-sizing: border-box; 
+    font-family: inherit; 
+    font-size: 16px; 
+    line-height: 1.15; 
+    margin: 0px; 
+    overflow: visible; 
+    font-synthesis: none; 
+    -webkit-font-smoothing: antialiased; 
+    direction: ltr; 
+    color: rgb(33, 33, 33); 
+    letter-spacing: -0.5px; 
+    outline: 0px; 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: rgb(195, 194, 204); 
+
+    width: 801.055px; 
+    appearance: none; 
+    height: 200px;
+    resize: none;
+}
+
+button{
+    border: 1px solid skyblue;
+    background-color: rgba(0,0,0,0);
+    color: skyblue;
+    padding: 5px;
+    font-size: 30px;
+
+    margin: 30px;
+    width: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

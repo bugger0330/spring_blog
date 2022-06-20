@@ -97,6 +97,31 @@ public class PageController {
 	public String community() {
 		return "board/community";
 	}
+	
+	
+	
+	
+	
+	@RequestMapping(value = "/product/card", method = RequestMethod.GET)
+	public String card() {
+		return "product/card";
+	}
+	@RequestMapping(value = "/product/no", method = RequestMethod.GET)
+	public String noMoney() {
+		return "product/no_money";
+	}
+	@RequestMapping(value = "/product/order", method = RequestMethod.GET)
+	public String order() {
+		return "product/order";
+	}
+	@RequestMapping(value = "/product/order2", method = RequestMethod.GET)
+	public String order2() {
+		return "product/order2";
+	}
+	@RequestMapping(value = "/product/register", method = RequestMethod.GET)
+	public String register() {
+		return "product/register";
+	}
 
 	
 	
