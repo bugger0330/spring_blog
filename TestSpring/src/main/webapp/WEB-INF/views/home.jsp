@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <jsp:include page="top/header.jsp"></jsp:include>
-<!-- <link href="/app/static/css/home/home.css" rel="stylesheet"> -->
+<link href="/app/static/css/home/home.css" rel="stylesheet">
 
 
     <!-- °Ë»öÃ¢ -->

@@ -1,3 +1,6 @@
+let sessionActive = loginSession();
+alert("유저정보 : " + sessionActive.username);
+
 const imgUploadBtn = document.querySelector(".input_file");
 const images = document.querySelectorAll(".img_inputs");
 const image_wrapper = document.querySelector(".sc-eInJlc");
