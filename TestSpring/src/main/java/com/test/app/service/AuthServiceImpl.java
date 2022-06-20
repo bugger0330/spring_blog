@@ -25,14 +25,14 @@ public class AuthServiceImpl implements AuthService {
 			return false;
 		}else {
 			int result = userRepository.signup(signupRequestDto.entity());
-			return result == 1;
+			return result != 0;
 		}
 	}
 
 	@Override
 	public User signin(String username, String password) {
 		String dbPassword = userRepository.selectPassword(username);
-		if(BCrypt.checkpw(password, dbPassword)) {
+		if(BCrypt.checkpw(password, dbPassword) == true) {
 			return userRepository.signin(username);
 		} else {
 			return null;

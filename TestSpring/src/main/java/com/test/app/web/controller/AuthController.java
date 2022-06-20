@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,12 +30,13 @@ public class AuthController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/auth/signup", method = RequestMethod.POST, produces = "text/html; charset=utf-8")
-	public String signup(SignupRequestDto signupRequestDto) {
-		SignupScript script = new SignupScript();
-		boolean result = authService.signup(signupRequestDto);
-		System.out.println(signupRequestDto);
+	public String signup(@RequestBody SignupRequestDto signupRequestDto) {
+		System.out.println("컨트롤러 dto : "+signupRequestDto.toString());
 		
-		return script.script(result);
+		boolean result = authService.signup(signupRequestDto);
+		
+		
+		return Boolean.toString(result);
 	}
 
 	@ResponseBody
@@ -61,6 +63,7 @@ public class AuthController {
 	@ResponseBody
 	@RequestMapping(value = "/auth/username/check", method = RequestMethod.GET)
 	public String checkUsername(String username) {
+		System.out.println("아이디 체크(아이디) : " + username);
 		boolean result = authService.usernameCheck(username);
 		
 		return Boolean.toString(result);

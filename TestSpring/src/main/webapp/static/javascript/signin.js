@@ -1,61 +1,32 @@
-window.addEventListener('load', () => {
-      const forms = document.getElementsByClassName('validation-form');
+const submit_button = document.querySelector("#submit");
+const submit_button2 = document.querySelector("#submit2");
 
-      Array.prototype.filter.call(forms, (form) => {
-        form.addEventListener('submit', function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
+const inputs = document.querySelectorAll(".form-control");
 
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-
-
-
-const submit_button = document.querySelectorAll("#submit");
-
-const username_input = document.querySelector("input[name='username']"); 
-const password_input = document.querySelector("input[name='password']"); 
 
 
 	
-submit_button[0].onclick = () => {	
-	if(username_input.value == ""){
-		alert("아이디를 입력해주세요!");
-		username_input.focus();
-		return;
-	};
-	if(password_input.value == ""){
-		alert("비밀번호를 입력해주세요!");
-		password_input.focus();
-		return;
-	};
-
+submit_button.onclick = () => {	
 	$.ajax({
-		type: "post",
-		url: "/app/auth/signin",
-		data: { "username": username_input.value,
-				"password": password_input.value },
-		dataType: "text",
-		success: function (data) {
-			if(data != "null") {
-				alert("로그인 되었습니다.");
-				console.log(JSON.parse(data));
-				location.href = "/app/auth/mypage";
-			}else{
-				alert("아이디를 확인해 주세요!");
-			}
+		type : "post",
+		url : "/app/auth/signin",
+		data : JSON.stringify({
+			username : inputs[0].value,
+			password : inputs[1].value
+		}),
+		dataType : "text",
+		contentType : "application/json",
+		success : function(data){
+			alert("성공");
+			alert("user객체 : " + data);
 		},
-		error: function(data) {
-			
+		error : function(data){
+			alert("비동기 처리 오류");
 		}
 	});
 }
 
-submit_button[1].onclick = () => {	
+submit_button2.onclick = () => {	
 	location.href="/app/auth/signup";
 }
 

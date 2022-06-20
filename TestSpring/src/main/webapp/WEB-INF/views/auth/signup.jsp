@@ -6,6 +6,8 @@
 <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 
 <div class="body">
 <div class="container">
@@ -13,13 +15,14 @@
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">회원가입</h4>
         
-        <form class="validation-form" action="/app/auth/signup" method="post" novalidate>
+        <form class="validation-form" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="username">아이디<button type="button" id="checkBtn">중복확인</button></label>
               <input type="text" class="form-control" id="username" name="username" placeholder="" value="" required>
               <div class="invalid-feedback">
                 아이디를 입력해주세요.
+                <input type="hidden" class="hidden-username">
               </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -91,7 +94,7 @@
             <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
           </div>
           <div class="mb-4"></div>
-          <button class="btn btn-primary btn-lg btn-block" id="submit" type="submit">가입 완료</button>
+          <button class="btn btn-primary btn-lg btn-block" id="submit-btn" type="submit">가입 완료</button>
         
         </form>
       </div>

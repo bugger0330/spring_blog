@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
 <div class="body">
   <div class="container">
     <div class="input-form-backgroud row">
@@ -31,7 +34,7 @@
           <div class="mb-4"></div>
           
           <button class="btn btn-primary btn-lg btn-block" id="submit" type="button">로그인</button>
-          <button class="btn btn-primary btn-lg btn-block" id="submit" type="button">회원가입</button>
+          <button class="btn btn-primary btn-lg btn-block" id="submit2" type="button">회원가입</button>
         </form>
         
       </div>
