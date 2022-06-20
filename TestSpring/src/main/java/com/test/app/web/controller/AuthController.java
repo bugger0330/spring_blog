@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.app.domain.user.User;
 import com.test.app.service.AuthService;
-import com.test.app.service.Principal;
 import com.test.app.web.dto.SigninRequestDto;
 import com.test.app.web.dto.SignupRequestDto;
-import com.test.app.web.script.SigninScript;
 import com.test.app.web.script.SignupScript;
 
 
@@ -25,26 +23,26 @@ public class AuthController {
 
 	@Autowired
 	private AuthService authService;
-	@Autowired
-	private Principal principal;
 	
 	@ResponseBody
 	@RequestMapping(value = "/auth/signup", method = RequestMethod.POST, produces = "text/html; charset=utf-8")
-	public String signup(@RequestBody SignupRequestDto signupRequestDto) {
+	public String signup(SignupRequestDto signupRequestDto) {
 		System.out.println("컨트롤러 dto : "+signupRequestDto.toString());
 		
 		boolean result = authService.signup(signupRequestDto);
+		SignupScript script = new SignupScript();
 		
 		
-		return Boolean.toString(result);
+		return script.script(result);
 	}
 
 	@ResponseBody
 	@RequestMapping(value = "/auth/signin", method = RequestMethod.POST, produces = "text/html; charset=utf-8")
-	public String signin(String username, String password, HttpServletRequest request) {
+	public String signin(@RequestBody SigninRequestDto signinRequestDto, HttpServletRequest request) {
 		// selectPassword -> BCrypt -> true -> loadUser
 		//								false -> return null
-		User user = authService.signin(username, password);
+		System.out.println(signinRequestDto.getUsername() + "," + signinRequestDto.getPassword());
+		User user = authService.signin(signinRequestDto.getUsername(), signinRequestDto.getPassword());
 		
 		if(user != null) {
 			HttpSession session = request.getSession();

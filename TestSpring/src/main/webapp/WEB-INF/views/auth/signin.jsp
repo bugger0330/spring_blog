@@ -15,7 +15,7 @@
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">로그인</h4>
         
-        <form class="validation-form" novalidate>
+        <!-- <form class="validation-form" novalidate> -->
           <div class="mb-3">
             <label for="username">아이디</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="아이디를 입력해 주세요." required>
@@ -35,7 +35,7 @@
           
           <button class="btn btn-primary btn-lg btn-block" id="submit" type="button">로그인</button>
           <button class="btn btn-primary btn-lg btn-block" id="submit2" type="button">회원가입</button>
-        </form>
+        <!-- </form> -->
         
       </div>
     </div>

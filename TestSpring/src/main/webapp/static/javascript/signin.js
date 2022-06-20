@@ -17,8 +17,8 @@ submit_button.onclick = () => {
 		dataType : "text",
 		contentType : "application/json",
 		success : function(data){
-			alert("성공");
-			alert("user객체 : " + data);
+			alert("성공, user객체 : " + data);
+			location.href = "/app"
 		},
 		error : function(data){
 			alert("비동기 처리 오류");

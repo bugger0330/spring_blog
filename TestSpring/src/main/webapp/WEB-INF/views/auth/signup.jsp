@@ -15,7 +15,7 @@
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">회원가입</h4>
         
-        <form class="validation-form" novalidate>
+        <form class="validation-form" action="/app/auth/signup" method="post" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="username">아이디<button type="button" id="checkBtn">중복확인</button></label>

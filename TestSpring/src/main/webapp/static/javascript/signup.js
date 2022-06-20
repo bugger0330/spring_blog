@@ -66,7 +66,7 @@ checkBtn.onclick = () => {
 submitBtn.onclick = () => {
 	if(hiddenUsername.value != "true"){
 		alert("아이디 중복확인을 먼저 해주세요!");
-	}else{
+	}/*else{
 		$.ajax({
 			type : "post",
 			url : "/app/auth/signup",
@@ -97,7 +97,7 @@ submitBtn.onclick = () => {
 				console.log("비동기 처리 오류");
 			}
 		});
-	}
+	}*/
 			
 }
 
