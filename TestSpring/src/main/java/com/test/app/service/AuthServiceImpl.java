@@ -28,12 +28,17 @@ public class AuthServiceImpl implements AuthService {
 
 	@Override
 	public User signin(String username, String password) {
-		String dbPassword = userRepository.selectPassword(username);
-		if(BCrypt.checkpw(password, dbPassword) == true) {
-			return userRepository.signin(username);
-		} else {
+		if(username == null && password == null) {
 			return null;
+		}else {
+			String dbPassword = userRepository.selectPassword(username);
+			if(BCrypt.checkpw(password, dbPassword) == true) {
+				return userRepository.signin(username);
+			} else {
+				return null;
+			}
 		}
+		
 	}
 
 	@Override

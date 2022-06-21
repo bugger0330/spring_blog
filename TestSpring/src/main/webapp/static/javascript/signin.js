@@ -5,8 +5,34 @@ const inputs = document.querySelectorAll(".form-control");
 
 
 
+
+inputs[0].onblur = () => {
+	$.ajax({
+		type : "get",
+		url : "/app/auth/username/check",
+		data : {
+			username : inputs[0].value
+		},
+		contentType : "application/json",
+		dataType : "text",
+		success : function(data){
+			if(data == "true"){
+				
+			}else{
+				alert("아이디를 확인해주세요!");
+			}
+			
+			
+		},
+		error : function(data){
+			alert("비동기 처리 오류");
+		}
+	});
+}
+
 	
 submit_button.onclick = () => {	
+
 	$.ajax({
 		type : "post",
 		url : "/app/auth/signin",
@@ -17,13 +43,21 @@ submit_button.onclick = () => {
 		dataType : "text",
 		contentType : "application/json",
 		success : function(data){
-			alert("성공, user객체 : " + data);
+			if(data == "null"){
+				alert("실패입니다");
+			}else{
+				alert("성공, user객체 : " + data);
 			location.href = "/app"
+			}
+			
 		},
 		error : function(data){
 			alert("비동기 처리 오류");
 		}
 	});
+	
+	
+	
 }
 
 submit_button2.onclick = () => {	

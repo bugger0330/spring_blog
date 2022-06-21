@@ -39,19 +39,21 @@ public class AuthController {
 	@ResponseBody
 	@RequestMapping(value = "/auth/signin", method = RequestMethod.POST, produces = "text/html; charset=utf-8")
 	public String signin(@RequestBody SigninRequestDto signinRequestDto, HttpServletRequest request) {
-		// selectPassword -> BCrypt -> true -> loadUser
-		//								false -> return null
-		System.out.println(signinRequestDto.getUsername() + "," + signinRequestDto.getPassword());
+
+		System.out.println("컨트롤러 들어옴 : "+signinRequestDto.getUsername() + "," + signinRequestDto.getPassword());
 		User user = authService.signin(signinRequestDto.getUsername(), signinRequestDto.getPassword());
 		
 		if(user != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("login", user);
 			StringBuilder sb = new StringBuilder();
+			
+			//json 형식으로 변환하는것
 			sb.append("{ \"usercode\": \"" + user.getUsercode() +"\", " +
 					"\"username\": \"" + user.getUsername() + "\", " + 
 					"\"name\": \"" + user.getName() + "\", " + 
 					"\"phone\": \"" + user.getPhone() + "\"}");
+			
 			return sb.toString();
 		}else {
 			return "null";
@@ -61,6 +63,7 @@ public class AuthController {
 	@ResponseBody
 	@RequestMapping(value = "/auth/username/check", method = RequestMethod.GET)
 	public String checkUsername(String username) {
+		
 		System.out.println("아이디 체크(아이디) : " + username);
 		boolean result = authService.usernameCheck(username);
 		

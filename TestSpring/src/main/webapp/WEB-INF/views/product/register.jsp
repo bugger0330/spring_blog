@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<jsp:include page="../top/header.jsp"></jsp:include>
 <link href="/app/static/css/product/register.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -66,5 +61,4 @@
 	</div>
 	<script type="text/javascript"
 		src="/app/static/javascript/product/register.js"></script>
-</body>
-</html>
+<jsp:include page="../top/footer.jsp"></jsp:include>
