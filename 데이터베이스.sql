@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_username` varchar(50) NOT NULL,
   `product_title` varchar(50) NOT NULL,
   `product_content` varchar(500) NOT NULL,
+  `product_price` varchar(500) NOT NULL,
   `product_img1` varchar(500) DEFAULT NULL,
   `product_img2` varchar(500) DEFAULT NULL,
   `product_img3` varchar(500) DEFAULT NULL,
@@ -87,11 +88,13 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_img6` varchar(500) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL,
   PRIMARY KEY (`product_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 
 -- 테이블 데이터 test.product:~0 rows (대략적) 내보내기
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` (`product_code`, `product_username`, `product_title`, `product_content`, `product_price`, `product_img1`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_img6`, `create_date`) VALUES
+	(6, 'ddd', 'ddd', 'ddd', '10000', '9b94d5a4_fca3_429a_b7fc_6a7c6cecaffdarrow_1.png', 'b6913d1c_756f_4f6b_b0e3_8f12a6d54777under_arrow.png', NULL, NULL, NULL, NULL, '2022-06-21 12:48:26');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- 테이블 test.user_dtl 구조 내보내기
@@ -107,13 +110,13 @@ CREATE TABLE IF NOT EXISTS `user_dtl` (
   UNIQUE KEY `username` (`username`),
   KEY `usercode_for_user_detail` (`usercode`),
   CONSTRAINT `usercode_for_user_detail` FOREIGN KEY (`usercode`) REFERENCES `user_mst` (`usercode`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb3;
 
 -- 테이블 데이터 test.user_dtl:~1 rows (대략적) 내보내기
 DELETE FROM `user_dtl`;
 /*!40000 ALTER TABLE `user_dtl` DISABLE KEYS */;
 INSERT INTO `user_dtl` (`id`, `usercode`, `username`, `nickname`, `address`, `gender`) VALUES
-	(36, 1017, 'ddd', 'ddd', 'ddd', NULL);
+	(37, 1018, 'ddd', 'ddd', 'ddd', NULL);
 /*!40000 ALTER TABLE `user_dtl` ENABLE KEYS */;
 
 -- 테이블 test.user_mst 구조 내보내기
@@ -130,13 +133,13 @@ CREATE TABLE IF NOT EXISTS `user_mst` (
   `address2` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`usercode`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1018 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1019 DEFAULT CHARSET=utf8mb3;
 
 -- 테이블 데이터 test.user_mst:~1 rows (대략적) 내보내기
 DELETE FROM `user_mst`;
 /*!40000 ALTER TABLE `user_mst` DISABLE KEYS */;
 INSERT INTO `user_mst` (`usercode`, `username`, `password`, `name`, `nickname`, `email`, `phone`, `address`, `address2`) VALUES
-	(1017, 'ddd', '$2a$10$8jT5kDGtJSOp6BHa9rhLpuTQQ/nudxZW2/vCBx3jlj01XY0jAOoUG', 'ddd', 'ddd', 'ddd', 'ddd', 'ddd', '');
+	(1018, 'ddd', '$2a$10$YpOGJkOZ/a4cl5YNR3OvdO0pdJyGrsLzh7wgNEb830x4COe1Y834y', 'ddd', 'ddd', 'ddd', 'ddd', 'ddd', '');
 /*!40000 ALTER TABLE `user_mst` ENABLE KEYS */;
 
 -- 트리거 test.user_mst_after_insert 구조 내보내기

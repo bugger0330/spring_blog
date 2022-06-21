@@ -1,5 +1,6 @@
 package com.test.app.web.dto;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -15,17 +16,13 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductRequestDto {
 
-	
-	private String username;
-	private String title;
-	private String content;
+	private String product_username;
+	private String product_title;
+	private String product_content;
+	private String product_price;
 	private List<MultipartFile> file;
-	public Product entity() {
-		return Product.builder()
-				.product_username(username)
-				.product_title(title)
-				.product_content(content)
-				/* .product_img(file.getOriginalFilename()) */
-				.build();
-	}
+	private LocalDateTime create_date;
+	
+	
+	
 }

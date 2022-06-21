@@ -8,14 +8,15 @@
 <body>
 	<div class="main_d">
 		<form enctype="multipart/form-data">
+		<input type="hidden" class="hidden-input" name="product_username">
 			<ul class="sc-iiUIRa">
 				<li class="sc-hgRTRy1">
 					<div class="sc-iIHSe1">상품이미지</div>
 					<div class="sc-gldTML1">
 						<ul class="sc-eInJlc">
-							<li class="sc-gtfDJT">이미지 등록 <input class="input_file"
-								type="file" name="file" accept="image/jpg, image/jpeg, image/png"
-								multiple="multiple">
+							<li class="sc-gtfDJT">↓↓↓클릭하세요↓↓↓
+							<input class="input_file" type="file" name="file" accept="image/jpg, image/jpeg, image/png"
+								multiple="multiple">↑↑↑이미지 등록↑↑↑
 							</li>
 						</ul>
 						<div class="sc-hzDEsm">
@@ -36,7 +37,7 @@
 						<div class="sc-ccSCjj">
 							<div class="sc-feryYK">
 								<input type="text" placeholder="상품 제목을 입력해주세요."
-									class="sc-jKmXuR2" name="title" value=""> <a
+									class="sc-jKmXuR2" name="product_title" value=""> <a
 									href="https://help.bunjang.co.kr/faq/2/220" class="black_x"
 									target="_blank">거래금지 품목</a>
 							</div>
@@ -49,12 +50,23 @@
 					<div class="sc-gldTML2">
 						<div class="sc-ccSCjj">
 							<div class="sc-feryYK">
-								<textarea class="textarea" name="content"></textarea>
+								<textarea class="textarea" name="product_content"></textarea>
 							</div>
 						</div>
 					</div>
 				</li>
 				<!-- ================================================================================= -->
+				<li class="sc-hgRTRy2">
+					<div class="sc-iIHSe2">판매가격</div>
+					<div class="sc-gldTML2">
+						<div class="sc-ccSCjj">
+							<div class="sc-feryYK">
+								<input type="text" placeholder="가격을 입력하세요. (숫자만 입력하세요!)"
+									class="sc-jKmXuR2" name="product_price" value="">
+							</div>
+						</div>
+					</div>
+				</li>
 			</ul>
 			<button class="submit-btn">등록하기</button>
 		</form>

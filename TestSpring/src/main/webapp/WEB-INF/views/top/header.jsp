@@ -26,6 +26,8 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
 
+					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/product/register"><i class="fas fa-paw"></i>&nbsp;상품등록</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa" href="#"><i class="fas fa-paw"></i>&nbsp;ddd</a></li>
 					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/signin"><i class="fas fa-paw"></i>&nbsp;로그인</a></li>
 					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/signup"><i class="fas fa-paw"></i>&nbsp;회원가입</a></li>
 					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/mypage"><i class="fas fa-paw"></i>&nbsp;마이페이지</a></li>

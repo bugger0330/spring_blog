@@ -17,6 +17,7 @@ public class Product {
 	private String product_username;
 	private String product_title;
 	private String product_content;
+	private String product_price;
 	private String product_img1;
 	private String product_img2;
 	private String product_img3;

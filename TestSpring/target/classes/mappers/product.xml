@@ -6,13 +6,19 @@
 <mapper namespace="com.test.app.domain.user.ProductRepository">
 
 	<insert id="productInsert" parameterType="com.test.app.domain.user.Product">
-		insert into product pt values(
+		insert into product values(
 			0,
 			#{product_username},
 			#{product_title},
-			#{product_img},
 			#{product_content},
-			#{select}
+			#{product_price},
+			#{product_img1},
+			#{product_img2},
+			#{product_img3},
+			#{product_img4},
+			#{product_img5},
+			#{product_img6},
+			now()
 		);
 	</insert>
 
