@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,12 +20,17 @@ import com.test.app.config.FileConfig;
 import com.test.app.domain.user.Product;
 import com.test.app.domain.user.ProductRepository;
 import com.test.app.web.dto.ProductRequestDto;
+import com.test.app.web.dto.ProductResponseDto;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	private ProductRepository productRepository;
+	@Autowired
+	private ServletContext sc;
+	@Autowired
+	private HttpServletRequest request;
 
 	@Override
 	public boolean productInsert(ProductRequestDto productRequestDto) {
@@ -66,6 +74,25 @@ public class ProductServiceImpl implements ProductService {
 				.build();
 		
 		return productRepository.productInsert(product) != 0;
+	}
+
+	@Override
+	public ProductResponseDto homeList(int number) {
+		String address = sc.getRealPath("/upload_img");
+		System.out.println(address);
+		
+		List<Product> products = productRepository.homeList(number);
+		
+		if(products == null) {
+			return null;
+		}else {
+			
+			return ProductResponseDto.builder()
+					.products(products)
+					.product_address(address)
+					.build();
+		}
+		
 	}
 
 }

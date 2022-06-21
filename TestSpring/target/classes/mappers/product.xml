@@ -5,6 +5,11 @@
 
 <mapper namespace="com.test.app.domain.user.ProductRepository">
 
+	<select id="homeList" parameterType="Integer" resultType="com.test.app.domain.user.Product">
+		select * from product limit #{number},4;
+	</select>
+
+
 	<insert id="productInsert" parameterType="com.test.app.domain.user.Product">
 		insert into product values(
 			0,
