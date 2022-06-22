@@ -24,6 +24,7 @@ public class ProductRequestDto {
 	private String product_delivery;
 	private String product_status;
 	private String product_exchange;
+	private String product_select;
 	private List<MultipartFile> file;
 	private LocalDateTime create_date;
 	

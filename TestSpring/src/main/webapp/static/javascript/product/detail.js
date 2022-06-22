@@ -1,6 +1,9 @@
 const sp01 = document.querySelectorAll(".sp01");
 const sp02 = document.querySelectorAll(".sp02");
 
+const sessionId = loginSession();
+console.log("세션아이디:"+sessionId.username);
+
 const link =  location.pathname;
 console.log("현재 주소는 " + link);
 //app/product/detail/14
@@ -19,7 +22,7 @@ const content = document.querySelector(".content");
 
 const imgs = document.querySelectorAll(".imgs");
 
-
+const orderBtn = document.querySelector(".order");
 
 load1();
 
@@ -34,7 +37,7 @@ function load1(){
 				alert("성공");
 				let data2 = JSON.parse(data);
 				getProductList(data2);
-				/*getImgList(data2);*/
+				getImgList(data2);
 			}else{
 				alert("실패");
 			}
@@ -45,12 +48,22 @@ function load1(){
 	});
 }
 
+orderBtn.onclick = () => {
+	$.ajax({
+		
+	});
+	
+	
+	
+}
+
+
+
+
 function getProductList(ss){
 	img1.src = `/app/static/upload_img/` + `${ss.product_img1}`;
-	console.log(`/app/static/upload_img/` + `${ss.product_img1}`);
-	
 	title.textContent = `${ss.product_title}`;
-	price.textContent = `${ss.product_price}`;
+	price.textContent = `${ss.product_price} 원`;
 	delivery.textContent = `${ss.product_delivery}`;
 	username.textContent = `${ss.product_username}`;
 	phone.textContent = `${ss.product_phone}`;
@@ -60,32 +73,20 @@ function getProductList(ss){
 }
 
 function getImgList(ss){
-	if(ss.product_img1 != null){
-		imgs[0].className = "imgs_on";
-		imgs[0].src = "static/upload_img/${ss.product_img1}";
-	}else if(ss.product_img2 != null){
-		imgs[1].className = "imgs_on";
-		imgs[1].src = "static/upload_img/${ss.product_img1}";
-	}else if(ss.product_img3 != null){
-		imgs[2].className = "imgs_on";
-		imgs[2].src = "static/upload_img/${ss.product_img1}";
-	}else if(ss.product_img4 != null){
-		imgs[3].className = "imgs_on";
-		imgs[3].src = "static/upload_img/${ss.product_img1}";
-	}else if(ss.product_img5 != null){
-		imgs[4].className = "imgs_on";
-		imgs[4].src = "static/upload_img/${ss.product_img1}";
-	}else if(ss.product_img6 != null){
-		imgs[5].className = "imgs_on";
-		imgs[5].src = "static/upload_img/${ss.product_img1}";
+	let imgList = new Array();
+	imgList.push(ss.product_img1);
+	imgList.push(ss.product_img2);
+	imgList.push(ss.product_img3);
+	imgList.push(ss.product_img4);
+	imgList.push(ss.product_img5);
+	imgList.push(ss.product_img6);
+	
+	for(let i = 0; i < imgList.length; i++){
+		if(imgList[i] != null){
+			imgs[i].className = "imgs_on";
+			imgs[i].src = `/app/static/upload_img/` + `${imgList[i]}`;
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
 

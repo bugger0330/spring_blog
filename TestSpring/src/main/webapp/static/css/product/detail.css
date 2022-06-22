@@ -38,7 +38,7 @@ th{
 	font-size: 30px;
 	font-weight: 300;
 	padding: 5px;
-	
+	text-align: center;
 }
 td{
 	border: 1px solid gray;
@@ -61,7 +61,7 @@ td{
 }
 
 .content{
-	padding: 40px;
+	padding: 20px 200px;;
 	font-size: 20px;
 }
 
@@ -71,6 +71,39 @@ td{
 	font-size: 20px;
 	color : rgba(0,0,0,0.5);
 }
+
+.title{
+	font-size: 40px;
+	text-align: center;
+}
+
+.price{
+	font-size: 30px;
+	text-align: center;
+	color:red;
+}
+
+.order-div{
+	width: 300px;
+	display: flex;
+	justify-content: center;
+}
+
+
+.order{
+	border: none;
+	background: #4d90fe;
+	font-size: 40px;
+	text-align: center;
+	color: white;
+}
+
+
+
+
+
+
+
 
 
 
@@ -321,7 +354,7 @@ td{
 /* ====================== 왼쪽 메인 사진 ======================== */
 
 .view_top_box{
-    margin: 0px auto 225px; 
+    margin: 0px auto 100px; 
     padding: 65px 0px 0px; 
     box-sizing: border-box; 
     width: 1200px;
@@ -477,6 +510,8 @@ td{
     padding: 0px 0px 15px; 
     box-sizing: border-box; 
     border-bottom: 1px solid rgb(234, 234, 234);
+    display: flex;
+    flex-direction: column;
 }
 
 .t_right01 > h2{
@@ -488,7 +523,7 @@ td{
     letter-spacing: -0.04em;
     text-align: center;
 }
-.t_right01 > span{
+/* .t_right01 > span{
     margin: 0px; 
     padding: 0px 0px 35px; 
     box-sizing: border-box; 
@@ -497,7 +532,7 @@ td{
     font-size: 18px; 
     letter-spacing: -0.04em; 
     display: inline-block;
-}
+} */
 
 .normal_price{
     margin: 0px 0px 15px; 

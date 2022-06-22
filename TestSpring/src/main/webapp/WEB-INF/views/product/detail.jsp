@@ -21,8 +21,8 @@
             </div>
             <div class="top_right_box">
                 <div class="t_right01">
-                    <h2 class="title"></h2>
-                    <h2 class="price"></h2>           
+                    <span class="title"></span>
+                    <span class="price"></span>           
                 </div>
                 <div class="t_right02">
                     <p>
@@ -51,6 +51,10 @@
                         <span class="sp01">교환/환불</span>
                         <span class="sp02" id="exchange"></span>
                     </p>
+                    <div class="order-div">
+                    	<button class="order">장바구니 담기</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -69,6 +73,7 @@
         					<img class="imgs" src="">
         					<img class="imgs" src="">
         				</div>
+        				<hr>
         				<pre class="content"></pre>
         			</td>
         		</tr>

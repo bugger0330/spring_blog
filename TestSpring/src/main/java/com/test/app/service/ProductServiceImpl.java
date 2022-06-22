@@ -68,6 +68,11 @@ public class ProductServiceImpl implements ProductService {
 				.product_img6(fileList.size() > 5 ? tempImageFileNames.get(5) : null)
 				.product_price(productRequestDto.getProduct_price())
 				.create_date(productRequestDto.getCreate_date())
+				.product_phone(productRequestDto.getProduct_phone())
+				.product_delivery(productRequestDto.getProduct_delivery())
+				.product_status(productRequestDto.getProduct_status())
+				.product_exchange(productRequestDto.getProduct_exchange())
+				.product_select(productRequestDto.getProduct_select())
 				.build();
 		
 		return productRepository.productInsert(product) != 0;

@@ -6,7 +6,7 @@
 <mapper namespace="com.test.app.domain.user.ProductRepository">
 
 	<select id="homeList" parameterType="Integer" resultType="com.test.app.domain.user.Product">
-		select * from product limit #{number},4;
+		select * from product limit #{number},8;
 	</select>
 	
 	<select id="getProductList" parameterType="Integer" resultType="com.test.app.domain.user.Product">
@@ -25,6 +25,7 @@
 			#{product_delivery},
 			#{product_status},
 			#{product_exchange},
+			#{product_select},
 			#{product_img1},
 			#{product_img2},
 			#{product_img3},

@@ -5,8 +5,9 @@ br{
 .main_d{
     border: 1px solid rgb(230, 229, 239); 
     width: 1100px;
-    display: flex;
+	margin: 0px auto;
     padding: 10px auto;
+    display: flex;
     justify-content: center;
     flex-direction: column;
 }
@@ -221,6 +222,8 @@ br{
     font: inherit; 
     vertical-align: baseline; 
     flex: 1 1 0%;
+    display: flex;
+    align-items: flex-end;
 }
 
 .sc-ccSCjj{
@@ -352,7 +355,13 @@ textarea{
     width: 150px;
 }
 
-
+select{
+	width: 200px;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	padding-left: 5px;
+}
 
 
 

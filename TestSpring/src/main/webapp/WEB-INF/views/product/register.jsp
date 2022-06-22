@@ -9,7 +9,25 @@
 	<div class="main_d">
 		<form enctype="multipart/form-data">
 		<input type="hidden" class="hidden-input" name="product_username">
+		<input type="hidden" class="hidden-input2" name="product_phone">
 			<ul class="sc-iiUIRa">
+			
+				<li class="sc-hgRTRy2">
+					<div class="sc-iIHSe2">카테고리</div>
+					<div class="sc-gldTML2">
+						<div class="sc-ccSCjj">
+							<div class="sc-feryYK">
+								<select>
+									<option value="스마트폰">스마트폰</option>
+									<option value="태블릿">태블릿</option>
+									<option value="PC">PC</option>
+									<option value="기타">기타</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</li>
+			
 				<li class="sc-hgRTRy1">
 					<div class="sc-iIHSe1">상품이미지</div>
 					<div class="sc-gldTML1">
@@ -61,8 +79,47 @@
 					<div class="sc-gldTML2">
 						<div class="sc-ccSCjj">
 							<div class="sc-feryYK">
-								<input type="text" placeholder="가격을 입력하세요. (숫자만 입력하세요!)"
+								<input type="text" placeholder="숫자만 입력하세요!"
 									class="sc-jKmXuR2" name="product_price" value="">
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="sc-hgRTRy2">
+					<div class="sc-iIHSe2">결제 방법</div>
+					<div class="sc-gldTML2">
+						<div class="sc-ccSCjj">
+							<div class="sc-feryYK">
+								<select>
+									<option value="택배거리">택배거래</option>
+									<option value="직거래">직거래</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="sc-hgRTRy2">
+					<div class="sc-iIHSe2">제품 상태</div>
+					<div class="sc-gldTML2">
+						<div class="sc-ccSCjj">
+							<div class="sc-feryYK">
+								<select>
+									<option value="새 상품">새 상품</option>
+									<option value="중고 상품">중고 상품</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="sc-hgRTRy2">
+					<div class="sc-iIHSe2">교환/환불</div>
+					<div class="sc-gldTML2">
+						<div class="sc-ccSCjj">
+							<div class="sc-feryYK">
+								<select>
+									<option value="불가">불가</option>
+									<option value="가능">가능</option>
+								</select>
 							</div>
 						</div>
 					</div>
