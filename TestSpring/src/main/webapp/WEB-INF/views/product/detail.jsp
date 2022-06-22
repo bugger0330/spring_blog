@@ -53,6 +53,7 @@
                     </p>
                     <div class="order-div">
                     	<button class="order">장바구니 담기</button>
+                    	<input type="hidden" class="hidden1">
                     </div>
                     
                 </div>

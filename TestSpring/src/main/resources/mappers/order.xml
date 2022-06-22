@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.app.domain.user.OrderRepository">
+
+	<select id="getOrderList" parameterType="String" resultType="com.test.app.domain.user.Product">
+		select * from order where username = #{username};
+	</select>
+
+	<insert id="setOrder" parameterType="com.test.app.domain.user.Product">
+		insert into order values(
+			#{product_code},
+			#{product_img1},
+			#{product_title},
+			#{product_price},
+			#{username}
+		);
+	</insert>
+
+
+
+
+
+</mapper>
