@@ -79,7 +79,6 @@ function orderClick(ss){
 				product_price : jqueryDATA.product_price,
 				username : userinfo
 			},
-			contentType : "application/json",
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){
