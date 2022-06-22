@@ -1,3 +1,868 @@
+*{
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+#nott{
+	display: none;
+}
+
+#container{
+	min-width:1800px;
+	width:1800px;
+    margin: 0px auto; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    
+}
+
+/* ====================== 오른쪽 사이즈 선택, 결제 ======================== */
+
+.option_box{
+    margin: 10px; 
+    padding: 50px 20px 0px; 
+    box-sizing: border-box; 
+    position:fixed;
+    right: 0px; 
+    top: 130px; 
+    width: 260px; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 20px 0px; 
+    height: 900px; 
+    background: white;
+    z-index: 100;
+}
+
+.on{
+    margin: 0px; 
+    padding: 50px 20px 0px; 
+    box-sizing: border-box; 
+    position: fixed; 
+    right: -260px; 
+    top: 130px; 
+    width: 260px; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 20px 0px; 
+    height: 900px; 
+    background: white;
+}
+
+.option_btn{
+    margin: 0px; 
+    padding: 15px 0px; 
+    box-sizing: border-box; 
+    position: absolute; 
+    right: 260px; 
+    top: 70px; 
+    border-top-left-radius: 25px; 
+    border-bottom-left-radius: 25px; 
+    background: rgb(102, 102, 102); 
+    width: 70px; 
+    text-align: center; 
+    cursor: pointer; 
+    font-size: 0px;
+}
+
+.option_btn > img{
+    margin: 0px 4px 0px 0px; 
+    padding: 0px;
+    box-sizing: border-box; 
+    border: 0px none; 
+    line-height: 0; 
+    display: inline-block; 
+    max-width: 100%; 
+    height: auto; 
+    vertical-align: middle; 
+}
+
+.option_btn > p{
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 14px; 
+    color: rgb(255, 255, 255); 
+    letter-spacing: -0.04em; 
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+.option_inner1{
+    margin: 0px; 
+    padding: 0px 0px 50px; 
+    box-sizing: border-box; 
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.option_inner1 > h5{
+    margin: 0px 0px 15px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 16px; 
+    color: rgb(65, 65, 65); 
+    letter-spacing: -0.04em;
+}
+.option_inner1 > ul{
+    list-style-type: none; 
+    font-size: 0px;
+}
+
+.have1{
+    margin: 0px 5px 5px 0px; 
+    padding: 10px 0px; 
+    box-sizing: border-box; 
+    list-style-type: none; 
+    display: inline-block; 
+    width: 40px; 
+    background: rgb(55, 82, 145); 
+    text-align: center; 
+    font-size: 14px; 
+    font-weight: 700; 
+    letter-spacing: -0.04em; 
+    cursor: pointer; 
+    border: 1px solid rgb(237, 237, 237); 
+    color: rgb(255, 255, 255);
+}
+
+.have2{
+    margin: 0px 5px 5px 0px; 
+    padding: 10px 0px; 
+    box-sizing: border-box; 
+    list-style-type: none; 
+    display: inline-block; 
+    width: 40px; 
+    background: rgb(237, 237, 237); 
+    text-align: center; 
+    font-size: 14px; 
+    font-weight: 700; 
+    letter-spacing: -0.04em; 
+    cursor: pointer; 
+    border: 1px solid rgb(237, 237, 237); 
+    color: rgb(55, 82, 145);
+}
+
+.option_inner2{
+    margin: 0px; 
+    padding: 40px 0px; 
+    box-sizing: border-box; 
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.option_inner2 > h5{
+    word-break: keep-all; 
+    font-size: 16px; 
+    color: rgb(65, 65, 65); 
+    letter-spacing: -0.04em; 
+    display: inline-block;
+}
+
+.option_inner2 > span{
+    margin: 0px 0px 0px 81px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 0px; 
+    text-align: right; 
+    display: inline-block;
+}
+
+.minus{
+    color: rgb(255, 255, 255); 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px; 
+    background: rgb(59, 59, 59); 
+    font-size: 18px; 
+    letter-spacing: -0.04em; text-align: center; line-height: 30px;
+    cursor: pointer;
+}
+
+.count{
+    margin: 0px 18px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    font-size: 16px; 
+    color: rgb(85, 85, 85);
+}
+
+.plus{
+    color: rgb(255, 255, 255); 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px; 
+    background: rgb(59, 59, 59); 
+    font-size: 18px; 
+    letter-spacing: -0.04em; 
+    text-align: center; 
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.option_inner3{
+    margin: 0px; 
+    padding: 125px 0px 0px; 
+    box-sizing: border-box; 
+    border-bottom: 0px;
+}
+
+.option_inner3 > p{
+    box-sizing: border-box; 
+    word-break: keep-all;
+}
+
+.total01{
+    word-break: keep-all; 
+    color: rgb(179, 140, 82); 
+    font-size: 16px; 
+    letter-spacing: -0.04em; 
+    font-weight: 700;
+}
+
+.total02{
+    word-break: keep-all; 
+    color: rgb(179, 140, 82); 
+    float: right; 
+    font-size: 28px; 
+    font-weight: 700;
+}
+
+.cart_box{
+    margin: 30px 0px 5px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+.go_buy{
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    display: inline-block; 
+    width: 110px; 
+    font-size: 16px; 
+    color: rgb(255, 255, 255); 
+    letter-spacing: -0.04em; 
+    text-align: center; 
+    background: rgb(179, 140, 82);
+}
+
+.go_cart{
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    display: inline-block; 
+    width: 110px; 
+    font-size: 16px; 
+    color: rgb(255, 255, 255); 
+    letter-spacing: -0.04em; 
+    text-align: center; 
+    background: rgb(59, 59, 59);
+}
+
+
+
+/* ====================== 왼쪽 메인 사진 ======================== */
+
+.view_top_box{
+    margin: 0px auto 225px; 
+    padding: 65px 0px 0px; 
+    box-sizing: border-box; 
+    width: 1200px;
+    position: relative;
+}
+
+.top_left_box{
+    width: 676px;
+    float: left;
+    border: 1px solid black;
+    
+}
+
+.img_box{
+    width: 100%; 
+    height: 100%; 
+    position: relative;
+    
+}
+
+.img_box > img{
+    border: 0px none; 
+    font-size: 0px; 
+    line-height: 0; 
+    display: inline-block; 
+    width: 100%; 
+    height: 100%; 
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.s_w_wrap{
+    
+}
+
+.swiper-container{
+    margin: 0px auto; 
+    padding: 0px;
+    box-sizing: border-box; 
+    position: static; 
+    overflow: hidden; 
+    list-style: none; 
+    border: 1px solid rgb(225, 225, 225);
+
+}
+
+.swiper-slide{
+    flex-shrink: 0; 
+    width: 674px; 
+    height: 650px; 
+
+    transition-property: transform, -webkit-transform;
+}
+
+
+
+.left{
+    position: absolute;
+    bottom: 0px;
+    right: 76px;
+    cursor: pointer;
+}
+.right{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+#left_click {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: white;
+    background: black;
+    font-size: 70px;
+	
+}
+#right_click {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: white;
+    background: black;
+    font-size: 70px;
+    
+}
+/* .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: white;
+    background: black;
+} */
+
+
+
+
+.img_2{
+	position: absolute;
+	bottom: -650px;
+	right:650px;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+.img_3{
+	position: absolute;
+	bottom: -650px;
+	right: 530px;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================== 중간 상품명 가격 등 ======================== */
+
+.top_right_box{
+    margin: 0px; 
+    padding: 0px 0px 0px 67px; 
+    box-sizing: border-box; 
+    float: left; 
+    width: 524px;
+}
+
+.t_right01{
+    margin: 0px; 
+    padding: 0px 0px 15px; 
+    box-sizing: border-box; 
+    border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+.t_right01 > h2{
+    margin: 25px 0px 15px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 24px; 
+    letter-spacing: -0.04em;
+}
+.t_right01 > span{
+    margin: 0px; 
+    padding: 0px 0px 35px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    color: rgb(102, 102, 102); 
+    font-size: 18px; 
+    letter-spacing: -0.04em; 
+    display: inline-block;
+}
+
+.normal_price{
+    margin: 0px 0px 15px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 18px; 
+    letter-spacing: -0.04em; 
+    color: rgb(132, 132, 132);
+}
+
+.selling_price{
+    margin: 0px 0px 15px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 18px; 
+    letter-spacing: -0.04em;
+}
+
+.selling_price_p{
+    margin: 0px 0px 0px 10px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    color: rgb(179, 140, 82);
+}
+
+.t_right02{
+    margin: 0px; 
+    padding: 25px 0px 0px; 
+    box-sizing: border-box; 
+    border-bottom: 0px;
+}
+
+.t_right02 > p{
+    margin-bottom: 25px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 16px; 
+    letter-spacing: -0.04em;
+}
+
+.sp01{
+    word-break: keep-all; 
+    color: rgb(153, 153, 153); 
+    display: inline-block; 
+    width: 135px;
+}
+
+.sp02{
+    word-break: keep-all; 
+    color: rgb(102, 102, 102); 
+    display: inline-block; 
+    width: calc(100% - 140px); 
+    vertical-align: middle;
+}
+
+.p{
+    margin: 0px 10px 0px 0px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    color: rgb(255, 255, 255); 
+    background: rgb(179, 140, 82); 
+    border-radius: 50%; 
+    width: 27px; 
+    height: 27px; 
+    display: inline-block; 
+    text-align: center; 
+    font-family: SpoqaHanSansNeo, sans-serif; 
+    vertical-align: middle;
+}
+
+
+
+/* ====================== 상세설명 ======================== */
+
+.detail_tab_box{
+    margin: 700px auto 0px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    width: 1200px; 
+    border-top: 1px solid rgb(153, 153, 153); 
+    border-bottom: 1px solid rgb(153, 153, 153);
+}
+
+.tab_menu{
+    list-style-type: none; 
+    text-align: center; 
+    font-size: 0px;
+    position: relative;
+}
+.tab_menu{
+    list-style-type: none;
+    text-align: center;
+    font-size: 0;
+    
+}
+
+.tab-li{
+    list-style-type: none; 
+    width: 263px; 
+    display: inline-block; 
+    position: relative;
+}
+
+.tab-li-click{
+    list-style-type: none; 
+    width: 263px; 
+    display: inline-block; 
+    position: relative;
+    background: black;
+    height: 3px;
+}
+
+.tab-a{
+    margin: 0px; 
+    padding: 25px 0px; 
+    box-sizing: border-box; 
+    text-decoration-line: none; 
+    color: rgb(170, 170, 170); 
+    display: inline-block; 
+    width: 263px; 
+    height: 70px; 
+    font-size: 18px; 
+    letter-spacing: -0.04em;
+}
+
+.tab-a:hover{
+	color:black;
+}
+
+.tab_content_wrap{
+    margin: 20px 0px 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+.tabs_1{
+    margin: 0px; 
+    padding: 0px 0px 70px; 
+    box-sizing: border-box;
+}
+
+.tabs_1 > div{
+    margin: 0px 0px 45px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    text-align: center;
+}
+
+.tabs_1 > div > img{
+    border: 0px none; 
+    font-size: 0px; 
+    line-height: 0; 
+    display: inline-block; 
+    max-width: 100%; 
+    height: auto; 
+    vertical-align: middle;
+}
+
+.detail-imgs{
+    margin: auto; 
+    display: block; 
+    max-width: 100%; 
+    height: auto; 
+    vertical-align: middle;
+}
+
+
+
+/* ====================== 배송/반품/교환안내 ======================== */
+
+.return_info_box{
+    margin: 0px auto; 
+    padding: 70px 0px 150px; 
+    box-sizing: border-box; 
+    width: 1200px;
+}
+
+.return_info_box > h5{
+    margin: 0px 0px 20px; 
+    padding: 0px; 
+    box-sizing: border-box; 
+    word-break: keep-all; 
+    font-size: 20px; 
+    letter-spacing: -0.04em;
+}
+
+.table-mm{
+    margin: 0px; 
+    padding: 0px; 
+    border-collapse: collapse; 
+    border-spacing: 0px; 
+    width: 1200px; 
+    border-top: 1px solid rgb(223, 223, 223);
+}
+
+.tbody-td1{
+    margin: 0px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    color: rgb(102, 102, 102);
+    font-size: 16px;
+    letter-spacing: -0.04em;
+    background: rgb(245, 245, 245);
+    border-right: 1px solid rgb(223, 223, 223);
+}
+.tbody-td2{
+    margin: 0px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    color: rgb(102, 102, 102);
+    font-size: 16px;
+    letter-spacing: -0.04em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -37,7 +37,7 @@ function homeImgLists(ss){
 			<div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="C:/upload_img/${data[i].product_img1}">
+                    <img class="card-img-top" src="static/upload_img/${data[i].product_img1}">
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->

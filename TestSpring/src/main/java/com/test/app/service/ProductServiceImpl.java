@@ -29,13 +29,10 @@ public class ProductServiceImpl implements ProductService {
 	private ProductRepository productRepository;
 	@Autowired
 	private ServletContext sc;
-	@Autowired
-	private HttpServletRequest request;
 
 	@Override
 	public boolean productInsert(ProductRequestDto productRequestDto) {
 		List<MultipartFile> fileList = productRequestDto.getFile();
-		
 	
 		List<String> tempImageFileNames = new ArrayList<String>(6);
 		
@@ -43,7 +40,7 @@ public class ProductServiceImpl implements ProductService {
 			for(int i = 0; i < fileList.size(); i++){
 				String imageFileName = fileList.get(i).getOriginalFilename();
 				tempImageFileNames.add(UUID.randomUUID().toString().replaceAll("-", "_") + imageFileName);
-				String path = FileConfig.profileImgPath;
+				String path = sc.getRealPath("/static/upload_img");
 				Path imageFilePath = Paths.get(path + "/" + tempImageFileNames.get(i));
 
 				File file = new File(path);
@@ -78,7 +75,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductResponseDto homeList(int number) {
-		String address = sc.getRealPath("/upload_img");
+		String address = sc.getRealPath("/static/upload_img");
 		System.out.println(address);
 		
 		List<Product> products = productRepository.homeList(number);
