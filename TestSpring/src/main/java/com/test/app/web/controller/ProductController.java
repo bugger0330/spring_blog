@@ -2,10 +2,13 @@ package com.test.app.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.test.app.domain.user.Product;
 import com.test.app.service.ProductService;
 import com.test.app.web.dto.ProductRequestDto;
 import com.test.app.web.dto.ProductResponseDto;
@@ -49,7 +52,42 @@ public class ProductController {
 		
 		return dto;
 	}
+	@ResponseBody
+	@RequestMapping(value = "/product/get/{product_code}", method = RequestMethod.GET)
+	public Product getProductList(@PathVariable int product_code) {
+		System.out.println("컨트롤러 들어옴 : " + product_code);
+		Product product = productService.getProductList(product_code);
+		
+		System.out.println("이미지1 : "+product.getProduct_img1());
+		return product;
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 }

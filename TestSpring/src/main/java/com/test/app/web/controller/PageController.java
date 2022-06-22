@@ -25,7 +25,7 @@ public class PageController {
 	@Autowired
 	private ProfileRepository profileRepository;
 	
-	
+	/* ================= 가입 관련 ====================== */
 
 	@RequestMapping(value = "/auth/signup", method = RequestMethod.GET)
 	public String getSignup() {
@@ -60,6 +60,9 @@ public class PageController {
 		return "redirect: /app/auth/signin";
 	}
 	
+	
+	/* ================= 게시판 관련 ====================== */
+	
 	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
 	public String boardList() {
 		return "board/board_list";
@@ -75,15 +78,18 @@ public class PageController {
 		return "board/board_update";
 	}
 	
+	@RequestMapping(value = "/board/community", method = RequestMethod.GET)
+	public String community() {
+		return "board/community";
+	}
+	
+	/* ================= 홈 헤더 푸터 ====================== */
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		return "/home";
 	}
 	
-	@RequestMapping(value = "/product/insert", method = RequestMethod.GET)
-	public String productInsert() {
-		return "product/insert";
-	}
 	
 	@RequestMapping(value = "/top/header", method = RequestMethod.GET)
 	public String header() {
@@ -93,14 +99,14 @@ public class PageController {
 	public String footer() {
 		return "/top/footer";
 	}
-	@RequestMapping(value = "/board/community", method = RequestMethod.GET)
-	public String community() {
-		return "board/community";
-	}
+	
+	/* =================  ====================== */
 	
 	
 	
 	
+	
+	/* ================= 상품 관련 ====================== */
 	
 	@RequestMapping(value = "/product/card", method = RequestMethod.GET)
 	public String card() {
@@ -122,8 +128,15 @@ public class PageController {
 	public String register() {
 		return "product/register";
 	}
-
 	
+	@RequestMapping(value = "/product/detail/{product_code}", method = RequestMethod.GET)
+	public String detail() {
+		return "product/detail";
+	}
+	
+	
+
+	/* =================  ====================== */
 	
 	
 	

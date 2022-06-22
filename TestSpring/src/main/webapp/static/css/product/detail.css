@@ -14,8 +14,65 @@
     margin: 0px auto; 
     padding: 0px; 
     box-sizing: border-box; 
-    
+    display: flex;
+    flex-direction: column;
 }
+
+.content-main{
+	width: 100%;
+}
+
+table{
+	border: 1px solid gray;
+	margin: 0px auto;
+	padding: 0px;
+	box-sizing: border-box;
+	align-content: center;
+	width: 1200px;
+	border-collapse: collapse;
+}
+
+th{
+	border: 1px solid gray;
+	background: gray;
+	font-size: 30px;
+	font-weight: 300;
+	padding: 5px;
+	
+}
+td{
+	border: 1px solid gray;
+	height: 500px;
+	
+}
+
+.img-list{
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.imgs{
+	display: none;
+}
+.imgs_on{
+	width: 700px;
+	margin: 10px auto;
+}
+
+.content{
+	padding: 40px;
+	font-size: 20px;
+}
+
+.qna-btn{
+	border: none;
+	background: skyblue;
+	font-size: 20px;
+	color : rgba(0,0,0,0.5);
+}
+
+
 
 /* ====================== 오른쪽 사이즈 선택, 결제 ======================== */
 
@@ -387,7 +444,9 @@
 }
 
 
-
+.qna-btn{
+	margin: 0px 20px;
+}
 
 
 
@@ -421,12 +480,13 @@
 }
 
 .t_right01 > h2{
-    margin: 25px 0px 15px; 
+    margin: 25px auto; 
     padding: 0px; 
     box-sizing: border-box; 
     word-break: keep-all; 
     font-size: 24px; 
     letter-spacing: -0.04em;
+    text-align: center;
 }
 .t_right01 > span{
     margin: 0px; 
@@ -473,10 +533,9 @@
 }
 
 .t_right02 > p{
-    margin-bottom: 25px; 
-    box-sizing: border-box; 
-    word-break: keep-all; 
-    font-size: 16px; 
+    margin: 35px 10px;
+    display: flex;
+    font-size: 20px; 
     letter-spacing: -0.04em;
 }
 
@@ -484,7 +543,7 @@
     word-break: keep-all; 
     color: rgb(153, 153, 153); 
     display: inline-block; 
-    width: 135px;
+    width: 300px;
 }
 
 .sp02{

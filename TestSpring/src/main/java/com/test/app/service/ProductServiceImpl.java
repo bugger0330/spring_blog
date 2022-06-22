@@ -92,4 +92,36 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
+	@Override
+	public Product getProductList(int product_code) {
+		Product product = productRepository.getProductList(product_code);
+		if(product == null) {
+			return null;
+		}else {
+			return product;
+		}
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

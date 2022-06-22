@@ -8,15 +8,23 @@
 	<select id="homeList" parameterType="Integer" resultType="com.test.app.domain.user.Product">
 		select * from product limit #{number},4;
 	</select>
+	
+	<select id="getProductList" parameterType="Integer" resultType="com.test.app.domain.user.Product">
+		select * from product where  product_code = #{product_code};
+	</select>
 
 
 	<insert id="productInsert" parameterType="com.test.app.domain.user.Product">
 		insert into product values(
 			0,
 			#{product_username},
+			#{product_phone},
 			#{product_title},
 			#{product_content},
 			#{product_price},
+			#{product_delivery},
+			#{product_status},
+			#{product_exchange},
 			#{product_img1},
 			#{product_img2},
 			#{product_img3},
