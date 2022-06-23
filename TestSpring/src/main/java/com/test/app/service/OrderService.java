@@ -9,4 +9,5 @@ public interface OrderService {
 
 	public List<Order> getOrderList(String username);
 	public boolean setOrder(OrderRequestDto orderRequestDto );
+	public boolean selectDel(int product_code);
 }

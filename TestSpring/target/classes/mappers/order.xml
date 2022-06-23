@@ -27,7 +27,9 @@
 			username = #{username};
 	</select>
 	
-
+	<delete id="selectDel" parameterType="Integer">
+		delete form order1 where product_code = #{product_code};
+	</delete>
 
 
 </mapper>

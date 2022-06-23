@@ -31,4 +31,10 @@ public class OrderRepositoryImpl implements OrderRepository {
 		
 		return session.selectOne(path + "productCheck", order);
 	}
+
+	@Override
+	public int selectDel(int product_code) {
+
+		return session.delete(path + "selectDel", product_code);
+	}
 }

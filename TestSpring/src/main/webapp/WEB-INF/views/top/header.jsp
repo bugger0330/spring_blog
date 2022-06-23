@@ -27,6 +27,8 @@
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
 
 					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/product/register"><i class="fas fa-paw"></i>&nbsp;상품등록</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/product/order"><i class="fas fa-paw"></i>&nbsp;장바구니</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/product/order2"><i class="fas fa-paw"></i>&nbsp;결제페이지</a></li>
 					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/logout"><i class="fas fa-paw"></i>&nbsp;로그아웃</a></li>
 					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/signin"><i class="fas fa-paw"></i>&nbsp;로그인</a></li>
 					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/signup"><i class="fas fa-paw"></i>&nbsp;회원가입</a></li>

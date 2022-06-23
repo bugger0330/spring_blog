@@ -72,14 +72,37 @@ INSERT INTO `board_mst` (`board_code`, `username`, `title`, `content`, `count`) 
 	(193, 'ddd', '안녕', 'ㅎㅎㅎ', 1);
 /*!40000 ALTER TABLE `board_mst` ENABLE KEYS */;
 
+-- 테이블 test.order1 구조 내보내기
+DROP TABLE IF EXISTS `order1`;
+CREATE TABLE IF NOT EXISTS `order1` (
+  `product_code` int(11) NOT NULL,
+  `product_img1` varchar(500) DEFAULT NULL,
+  `product_title` varchar(500) NOT NULL,
+  `product_price` varchar(500) NOT NULL,
+  `username` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- 테이블 데이터 test.order1:~0 rows (대략적) 내보내기
+DELETE FROM `order1`;
+/*!40000 ALTER TABLE `order1` DISABLE KEYS */;
+INSERT INTO `order1` (`product_code`, `product_img1`, `product_title`, `product_price`, `username`) VALUES
+	(31, '840de915_df8b_469f_aa5e_60069ff3fcddbeach-g9a04b8df1_1280.jpg', 'ddd', '223', 'eee'),
+	(32, '0c44c1c4_0a3d_43f0_9d7a_0afab3ffaff0상품.jpg', '46745674675', '456456465465', 'eee');
+/*!40000 ALTER TABLE `order1` ENABLE KEYS */;
+
 -- 테이블 test.product 구조 내보내기
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `product_code` int(11) NOT NULL AUTO_INCREMENT,
   `product_username` varchar(50) NOT NULL,
+  `product_phone` varchar(50) DEFAULT NULL,
   `product_title` varchar(50) NOT NULL,
   `product_content` varchar(500) NOT NULL,
   `product_price` varchar(500) NOT NULL,
+  `product_delivery` varchar(500) DEFAULT NULL COMMENT '결제방법 - 택배',
+  `product_status` varchar(500) DEFAULT NULL COMMENT '제품상태',
+  `product_exchange` varchar(500) DEFAULT NULL COMMENT '교환/환불',
+  `product_select` varchar(500) DEFAULT NULL COMMENT '카테고리',
   `product_img1` varchar(500) DEFAULT NULL,
   `product_img2` varchar(500) DEFAULT NULL,
   `product_img3` varchar(500) DEFAULT NULL,
@@ -88,13 +111,15 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_img6` varchar(500) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL,
   PRIMARY KEY (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb3;
 
--- 테이블 데이터 test.product:~0 rows (대략적) 내보내기
+-- 테이블 데이터 test.product:~3 rows (대략적) 내보내기
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`product_code`, `product_username`, `product_title`, `product_content`, `product_price`, `product_img1`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_img6`, `create_date`) VALUES
-	(6, 'ddd', 'ddd', 'ddd', '10000', '9b94d5a4_fca3_429a_b7fc_6a7c6cecaffdarrow_1.png', 'b6913d1c_756f_4f6b_b0e3_8f12a6d54777under_arrow.png', NULL, NULL, NULL, NULL, '2022-06-21 12:48:26');
+INSERT INTO `product` (`product_code`, `product_username`, `product_phone`, `product_title`, `product_content`, `product_price`, `product_delivery`, `product_status`, `product_exchange`, `product_select`, `product_img1`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_img6`, `create_date`) VALUES
+	(30, 'ddd', NULL, 'ddd', 'ddd', '123213', '택배거리', '새 상품', '불가', '스마트폰', '65b6703e_c201_4ba0_b6f5_51ee4ff3a5a6kittens-gdf1b4683f_640.jpg', 'ac2e2be9_6a58_4c9d_b748_8414299277eb베스트 아이콘.PNG', 'a6620487_7138_499a_acb7_24d92b473664상품.jpg', NULL, NULL, NULL, '2022-06-22 15:51:15'),
+	(31, 'ddd', 'ddd', 'ddd', 'ddd', '223', '택배거리', '새 상품', '불가', '스마트폰', '840de915_df8b_469f_aa5e_60069ff3fcddbeach-g9a04b8df1_1280.jpg', '348b7d8a_d044_49de_a7c3_542af553d872kittens-gdf1b4683f_640.jpg', NULL, NULL, NULL, NULL, '2022-06-22 16:13:31'),
+	(32, 'ddd', '010-1111-1222', '46745674675', '645465465654', '456456465465', '택배거리', '새 상품', '불가', '스마트폰', '0c44c1c4_0a3d_43f0_9d7a_0afab3ffaff0상품.jpg', '85087ff5_4592_40db_afc5_fb34e101c57d오른쪽 화살표.PNG', NULL, NULL, NULL, NULL, '2022-06-22 16:15:05');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- 테이블 test.user_dtl 구조 내보내기
@@ -110,13 +135,14 @@ CREATE TABLE IF NOT EXISTS `user_dtl` (
   UNIQUE KEY `username` (`username`),
   KEY `usercode_for_user_detail` (`usercode`),
   CONSTRAINT `usercode_for_user_detail` FOREIGN KEY (`usercode`) REFERENCES `user_mst` (`usercode`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb3;
 
 -- 테이블 데이터 test.user_dtl:~1 rows (대략적) 내보내기
 DELETE FROM `user_dtl`;
 /*!40000 ALTER TABLE `user_dtl` DISABLE KEYS */;
 INSERT INTO `user_dtl` (`id`, `usercode`, `username`, `nickname`, `address`, `gender`) VALUES
-	(37, 1018, 'ddd', 'ddd', 'ddd', NULL);
+	(37, 1018, 'ddd', 'ddd', 'ddd', NULL),
+	(38, 1019, 'eee', 'eee', 'eee', NULL);
 /*!40000 ALTER TABLE `user_dtl` ENABLE KEYS */;
 
 -- 테이블 test.user_mst 구조 내보내기
@@ -133,13 +159,14 @@ CREATE TABLE IF NOT EXISTS `user_mst` (
   `address2` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`usercode`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1019 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1020 DEFAULT CHARSET=utf8mb3;
 
--- 테이블 데이터 test.user_mst:~1 rows (대략적) 내보내기
+-- 테이블 데이터 test.user_mst:~2 rows (대략적) 내보내기
 DELETE FROM `user_mst`;
 /*!40000 ALTER TABLE `user_mst` DISABLE KEYS */;
 INSERT INTO `user_mst` (`usercode`, `username`, `password`, `name`, `nickname`, `email`, `phone`, `address`, `address2`) VALUES
-	(1018, 'ddd', '$2a$10$YpOGJkOZ/a4cl5YNR3OvdO0pdJyGrsLzh7wgNEb830x4COe1Y834y', 'ddd', 'ddd', 'ddd', 'ddd', 'ddd', '');
+	(1018, 'ddd', '$2a$10$YpOGJkOZ/a4cl5YNR3OvdO0pdJyGrsLzh7wgNEb830x4COe1Y834y', 'ddd', 'ddd', 'ddd', '010-1111-1222', 'ddd', ''),
+	(1019, 'eee', '$2a$10$2YwBlaPDQFunZJQQeLuYQ.gK4AgfboL3pmvLvtrbQ69ayycHF06Z6', 'eee', 'eee', 'eee', '010-1111-2222', 'eee', 'eee');
 /*!40000 ALTER TABLE `user_mst` ENABLE KEYS */;
 
 -- 트리거 test.user_mst_after_insert 구조 내보내기

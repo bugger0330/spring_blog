@@ -1,17 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<jsp:include page="../top/header.jsp"></jsp:include>
 	<link href="/app/static/css/product/order.css" rel="stylesheet">
-</head>
-
-<body>
 
 
 
@@ -23,7 +13,7 @@
             <h4 class="form_h4">주문상품 내역</h4>
             <div class="clearfix">
                 <table width="900px" height="100px">
-                    <tbody>
+                    <thead>
                         <tr>
                             <th scope="col">
                                 <div class="tb-center">선택</div>
@@ -37,35 +27,26 @@
                             <th scope="col">
                                 <div class="tb-center">가격</div>
                             </th>
+                            <th scope="col">
+                                <div class="tb-center">삭제</div>
+                            </th>
                         </tr>
-
+					</thead>
                         <!-- ========================================================================================================= -->
-
-                        <tr class="tbody_tr">
-                            <td>
-                            	<input type="checkbox" class="check">
-                            	<input type="hidden" class="hidden-code">
-                            </td>
-                            <td><img src="#" width="100px" height="80px" /></td>
-                            <td class="td1"></td>
-                            <td>원</td>
-                        </tr>
-                        
-                    <!-- ========================================================================================================= -->
-                        <tr>
-                            <td colspan="5">
-                                <h4>장바구니가 비어있습니다.</h4>
-                            </td>
-                        </tr>
-                    </tbody>
+					<tbody></tbody>
                 </table>
+                                <h4 class="flag">장바구니가 비어있습니다.</h4>
+            </div>
+            <div class="btns">
+            	<button class="back-btn">뒤로가기</button>
+            	<button class="delete-btn2">선택삭제</button>
+            	<button class="order2">결제하기</button>
             </div>
 
         </div>
 
 
     </div>
-
-</body>
-
-</html>
+<script src="/app/static/javascript/product/order.js"></script>
+<jsp:include page="../top/footer.jsp"></jsp:include>
+    

@@ -42,5 +42,12 @@ public class OrderServiceImpl implements OrderService {
 		
 	}
 
+	@Override
+	public boolean selectDel(int product_code) {
+		
+		int result = orderRepository.selectDel(product_code);
+		return result != 0;
+	}
+
 	
 }
