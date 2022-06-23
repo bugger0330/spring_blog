@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.test.app.domain.user.Order;
 import com.test.app.domain.user.OrderRepository;
+import com.test.app.web.dto.OrderInfoRequestDto;
 import com.test.app.web.dto.OrderRequestDto;
 
 @Service
@@ -41,11 +42,27 @@ public class OrderServiceImpl implements OrderService {
 		return result != 0;
 		
 	}
+	
+	
+	@Override
+	public boolean setOrder2(OrderRequestDto orderRequestDto) {
+				
+		int result = orderRepository.setOrder2(orderRequestDto.entity());
+		System.out.println("디비 갔다옴 : "+result);
+		return result != 0;
+		
+	}
 
 	@Override
 	public boolean selectDel(int product_code) {
 		
 		int result = orderRepository.selectDel(product_code);
+		return result != 0;
+	}
+
+	@Override
+	public boolean insertUserinfo(OrderInfoRequestDto orderInfoRequestDto) {
+		int result = orderRepository.insertUserinfo(orderInfoRequestDto.entity());
 		return result != 0;
 	}
 

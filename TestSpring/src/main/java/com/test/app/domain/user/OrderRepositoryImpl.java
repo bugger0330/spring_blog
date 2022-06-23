@@ -25,6 +25,12 @@ public class OrderRepositoryImpl implements OrderRepository {
 		
 		return session.insert(path + "setOrder", order);
 	}
+	
+	@Override
+	public int setOrder2(Order order) {
+		
+		return session.insert(path + "setOrder2", order);
+	}
 
 	@Override
 	public List<Order> productCheck(Order order) {
@@ -36,5 +42,11 @@ public class OrderRepositoryImpl implements OrderRepository {
 	public int selectDel(int product_code) {
 
 		return session.delete(path + "selectDel", product_code);
+	}
+
+	@Override
+	public int insertUserinfo(OrderInfo orderInfo) {
+		
+		return session.delete(path + "insertUserinfo", orderInfo);
 	}
 }

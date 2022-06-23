@@ -40,7 +40,7 @@
             <div class="btns">
             	<button class="back-btn">뒤로가기</button>
             	<button class="delete-btn2">선택삭제</button>
-            	<button class="order2">결제하기</button>
+            	<button class="order2">모두 결제하기</button>
             </div>
 
         </div>

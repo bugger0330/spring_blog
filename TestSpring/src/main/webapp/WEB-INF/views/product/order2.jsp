@@ -1,21 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<jsp:include page="../top/header.jsp"></jsp:include>
 	<link href="/app/static/css/product/order2.css" rel="stylesheet">
-</head>
-
-<body>
 
 
-
-    <div id="container">
+<div id="container">
+    <div class="main-div">
         <h1 class="tit-cart">
             주문서 작성</h1>
 
@@ -23,10 +13,10 @@
             <h4 class="form_h4">주문상품 내역</h4>
             <div class="clearfix">
                 <table width="900px" height="100px">
-                    <tbody>
+                    <thead>
                         <tr>
                             <th scope="col">
-                                <div class="tb-center"></div>
+                                <div class="tb-center">선택</div>
                             </th>
                             <th scope="col">
                                 <div class="tb-center">이미지</div>
@@ -35,33 +25,27 @@
                                 <div class="tb-center">상품명</div>
                             </th>
                             <th scope="col">
-                                <div class="tb-center">적립</div>
-                            </th>
-                            <th scope="col">
                                 <div class="tb-center">가격</div>
                             </th>
+                            <th scope="col">
+                                <div class="tb-center">삭제</div>
+                            </th>
                         </tr>
-
+					</thead>
                         <!-- ========================================================================================================= -->
-
-                        <tr class="tbody_tr">
-                            <td></td>
-                            <td><img src="#" width="100px" height="80px" /></td>
-                            <td class="td1"></td>
-                            <td>원</td>
-                            <td>원</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5">
-                                <h4 align="center">장바구니가 비어있습니다.</h4>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <!-- ========================================================================================================= -->
+					<tbody></tbody>
                 </table>
+                                <h4 class="flag">장바구니가 비어있습니다.</h4>
+            </div>
+            <div class="btns">
+            	<button class="back-btn">뒤로가기</button>
+            	<button class="delete-btn2">선택삭제</button>
             </div>
 
         </div>
+
+
+
 
         <div class="form-tbl-new">
             <h4 class="form_h">받으시는 분 정보
@@ -137,7 +121,7 @@
             <table>
 
                 <tr>
-                    <td class="all-price">총 가격 : 원</td>
+                    <td class="all-price">총 가격 : <span class="all-price">111</span> 원</td>
                 </tr>
             </table>
         </div>
@@ -161,23 +145,16 @@
             </div>
         </div>
 
-        <p>
+        <div class="btn-div">
             <button type="button" class="submit-btn">
                 결제하기</button><br>
-        </p>
+        </div>
 
 
+	
   </div>
-
-
-
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script>
-    </script>
-
-
-
+</div>
+<script src="/app/static/javascript/product/order.js"></script>
 <script src="/app/static/javascript/product/order2.js"></script>
-</body>
-
-</html>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<jsp:include page="../top/footer.jsp"></jsp:include>

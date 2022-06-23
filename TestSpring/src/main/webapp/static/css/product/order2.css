@@ -7,10 +7,48 @@
 
 #container{
     min-width: 1800px;
+    min-height: 1500px;
     width: 1800px;
+    height: 1700px;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
+}
+
+
+
+table{
+	margin: 30px auto;
+}
+
+button{
+	border: none;
+	background: skyblue;
+	color: white;
+	padding: 5px;
+	margin-right: 5px;
+}
+
+.btns{
+	padding: 20px;
+	display: flex;
+	justify-content: flex-end;
+}
+.main-div{
+	margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.flag{
+	display: none;
+}
+.flag_on{
+	text-align: center;
+	margin: 20px 0px;
+	color: red;
+	font-size: 25px;
 }
 
 .tit-cart{
@@ -439,9 +477,12 @@ th{
 
 }
 
-
-
-
+.btn-div{
+	width: 100%;
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+}
 
 
 

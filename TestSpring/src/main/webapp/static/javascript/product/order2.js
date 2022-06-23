@@ -1,3 +1,5 @@
+
+//도로명 주소 검색
 function sample6_execDaumPostcode() {
     new daum.Postcode({
         oncomplete: function(data) {

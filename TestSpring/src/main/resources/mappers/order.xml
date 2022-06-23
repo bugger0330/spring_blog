@@ -19,6 +19,31 @@
 		);
 	</insert>
 	
+	<insert id="setOrder2" parameterType="com.test.app.domain.user.Order">
+		insert into order2 values(
+			#{product_code},
+			#{product_img1},
+			#{product_title},
+			#{product_price},
+			#{username}
+		);
+	</insert>
+	
+	<insert id="insertUserinfo" parameterType="com.test.app.domain.user.OrderInfo">
+		insert into order3 values(
+			0,
+			#{username},
+			#{name},
+			#{phone},
+			#{phone2},
+			#{address_num},
+			#{address},
+			#{address2},
+			#{requests},
+			#{all_price},
+		);
+	</insert>
+	
 	<select id="productCheck" parameterType="com.test.app.domain.user.Order" resultType="com.test.app.domain.user.Order">
 		select 
 			product_code
@@ -28,7 +53,7 @@
 	</select>
 	
 	<delete id="selectDel" parameterType="Integer">
-		delete form order1 where product_code = #{product_code};
+		delete from order1 where product_code = #{product_code};
 	</delete>
 
 
