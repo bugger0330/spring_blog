@@ -28,10 +28,18 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public boolean setOrder(OrderRequestDto orderRequestDto) {
+		List<Order> test = orderRepository.productCheck(orderRequestDto.entity());
 		
+		for(Order order : test) {
+			if(order.getProduct_code() == orderRequestDto.getProduct_code()) {
+				return false;
+			}
+		}
 		
 		int result = orderRepository.setOrder(orderRequestDto.entity());
+		System.out.println("디비 갔다옴 : "+result);
 		return result != 0;
+		
 	}
 
 	

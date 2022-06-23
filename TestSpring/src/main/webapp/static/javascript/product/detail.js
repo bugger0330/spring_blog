@@ -84,7 +84,7 @@ function orderClick(ss){
 				if(data == "true"){
 					alert("성공");
 				}else{
-					alert("실패");
+					alert("이미 장바구니에 상품이 담겨 있습니다.");
 				}
 			},
 			error : function(data){

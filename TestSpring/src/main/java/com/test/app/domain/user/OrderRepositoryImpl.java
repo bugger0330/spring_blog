@@ -25,4 +25,10 @@ public class OrderRepositoryImpl implements OrderRepository {
 		
 		return session.insert(path + "setOrder", order);
 	}
+
+	@Override
+	public List<Order> productCheck(Order order) {
+		
+		return session.selectOne(path + "productCheck", order);
+	}
 }
