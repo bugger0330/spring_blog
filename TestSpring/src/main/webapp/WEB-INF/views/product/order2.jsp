@@ -121,7 +121,7 @@
             <table>
 
                 <tr>
-                    <td class="all-price">총 가격 : <span class="all-price">111</span> 원</td>
+                    <td class="all-price">총 가격 : <span class="all-price2">111</span> 원</td>
                 </tr>
             </table>
         </div>
@@ -154,7 +154,6 @@
 	
   </div>
 </div>
-<script src="/app/static/javascript/product/order.js"></script>
 <script src="/app/static/javascript/product/order2.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <jsp:include page="../top/footer.jsp"></jsp:include>

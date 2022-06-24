@@ -47,6 +47,6 @@ public class OrderRepositoryImpl implements OrderRepository {
 	@Override
 	public int insertUserinfo(OrderInfo orderInfo) {
 		
-		return session.delete(path + "insertUserinfo", orderInfo);
+		return session.insert(path + "insertUserinfo", orderInfo);
 	}
 }

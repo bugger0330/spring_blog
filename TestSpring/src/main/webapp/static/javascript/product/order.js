@@ -6,18 +6,6 @@ const order2 = document.querySelector(".order2");
 
 const endOrderBtn = document.querySelector(".submit-btn");
 
-const userOrderList = document.querySelectorAll(".w-half");
-const oName = userOrderList[0].querySelector("input");
-const oPhone = userOrderList[1].querySelector("input");
-const oPhone2 = userOrderList[2].querySelector("input");
-const oAddressNum = document.querySelector("#addr-num");
-const oAddress = document.querySelector(".w-half2");
-const oAddress2 = document.querySelector(".w-half3");
-const oRequests = document.querySelector(".w-pull");
-const oAllPrice = document.querySelector(".all-price");
-
-
-
 
 const userinfo = loginSession();
 const username1 = userinfo.username;
@@ -98,55 +86,7 @@ function orderListGet(ss){
 			}
 		}
 	}
-	
-	endOrderBtn.onclick = () => {
-		for(let i = 0; i < productCode.length; i++){
-			$.ajax({
-				type : "post",
-				url : "/app/product/order2/insert",
-				data : {
-					product_code : productCode[i].value,
-					product_img1 : productImage[i].src,
-					product_title : productTitle[i].textContent,
-					product_price : productPrice[i].textContent,
-					username : username1
-				},
-				dataType : "text",
-				success : function(data){
-					console.log("order2 성공 : " + data);
-				},
-				error : function(data){
-					console.log("비동기처리 오류");
-				}
-			});
-		}
 
-
-
-		
-		$.ajax({
-			type : "post",
-			url : "/app/product/order2/userinfo",
-			data : {
-				username : username1,
-				name : oName.value,
-				phone : oPhone.value,
-				phone2 : oPhone2.value,
-				address_num : oAddressNum.value,
-				address : oAddress.value,
-				address2 : oAddress2.value,
-				requests : oRequests.textContent,
-				all_price : oAllPrice.textContent
-			},
-			dataType : "text",
-			success : function(data){
-				alert("성공");
-			},
-			error : function(data){
-				alert("비동기 처리 오류");
-			}
-		})
-	}
 	
 }
 

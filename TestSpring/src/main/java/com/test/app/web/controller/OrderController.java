@@ -46,9 +46,9 @@ public class OrderController {
 	@ResponseBody
 	@RequestMapping(value = "/product/order2/insert", method = RequestMethod.POST)
 	public String setOrder2(OrderRequestDto orderRequestDto) {
-		System.out.println("컨트롤러 들어옴 : " + orderRequestDto.toString());
-		boolean result = orderService.setOrder(orderRequestDto);
-		System.out.println("서비스 갔다옴 : " + result);
+		System.out.println("컨트롤러 들어옴-order2/insert : " + orderRequestDto.toString());
+		boolean result = orderService.setOrder2(orderRequestDto);
+		System.out.println("서비스 갔다옴-order2/insert : " + result);
 		
 		return Boolean.toString(result);
 	}
@@ -65,12 +65,17 @@ public class OrderController {
 	}
 	
 	
+	
 	@ResponseBody
-	@RequestMapping(value = "/product/order2/userinfo", method = RequestMethod.POST)
-	public String insertUserinfo(OrderInfoRequestDto orderInfoRequestDto) {
-		boolean result = orderService.insertUserinfo(orderInfoRequestDto);
-		return Boolean.toString(result);
+	@RequestMapping(value = "/product/order2/userinfo", method = RequestMethod.POST) 
+	public String insertUserinfo(OrderInfoRequestDto orderInfoRequestDto) { 
+		System.out.println("컨트롤러 들어옴-userinfo : " + orderInfoRequestDto.toString());
+		boolean result = orderService.insertUserinfo(orderInfoRequestDto); 
+		
+		System.out.println("서비스 갔다옴-userinfo : " + result);
+		return Boolean.toString(result); 
 	}
+	 
 	
 	
 	

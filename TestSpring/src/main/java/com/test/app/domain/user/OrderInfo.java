@@ -20,5 +20,5 @@ public class OrderInfo {
 	private String address;
 	private String address2;
 	private String requests;
-	private int all_price;
+	private String all_price;
 }

@@ -20,7 +20,7 @@ public class OrderInfoRequestDto {
 	private String address;
 	private String address2;
 	private String requests;
-	private int all_price;
+	private String all_price;
 	
 	public OrderInfo entity() {
 		return OrderInfo.builder()

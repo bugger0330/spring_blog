@@ -30,7 +30,9 @@
 	</insert>
 	
 	<insert id="insertUserinfo" parameterType="com.test.app.domain.user.OrderInfo">
-		insert into order3 values(
+		insert into 
+			order_info 
+		values(
 			0,
 			#{username},
 			#{name},
@@ -40,7 +42,7 @@
 			#{address},
 			#{address2},
 			#{requests},
-			#{all_price},
+			#{all_price}
 		);
 	</insert>
 	

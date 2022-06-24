@@ -1,3 +1,182 @@
+const tbody = document.querySelector("tbody");
+const submitBtn = document.querySelector(".submit-btn");
+
+
+const userinfo = loginSession();
+const username1 = userinfo.username;
+console.log(username1);
+
+
+
+/*===========================================================*/
+load1();
+
+function load1(){
+	$.ajax({
+		type : "post",
+		url : "/app/product/order",
+		data : {
+			username : username1
+		},
+		dataType : "text",
+		success : function(data){
+			if(data != null){
+				alert("성공");
+				let data2 = JSON.parse(data);
+				orderListGet(data2);
+				
+			}else{
+				alert("실패");
+			}
+		},
+		error : function(data){
+			alert("비동기 처리 오류");
+		}
+	});
+}
+
+
+function orderListGet(ss){
+	let innr = "";
+	for(let i = 0; i < ss.length; i++){
+		innr += `
+					<tr class="tbody_tr">
+                        <td class="td-01">
+                        	<input type="checkbox" class="check" value="${ss[i].product_code}">
+                        </td>
+                        <td><img class="img01" src="/app/static/upload_img/${ss[i].product_img1}" id="${ss[i].product_img1}" width="100px" height="80px" /></td>
+                        <td class="td1">${ss[i].product_title}</td>
+                        <td class="td2">${ss[i].product_price}원</td>
+                        <td><button class="delete-btn" value="${ss[i].product_code}">삭제</button></td>
+                    </tr>
+				`;
+	}
+	tbody.innerHTML = innr;
+	
+	const product_code = document.querySelectorAll(".check");
+	const product_img1 = document.querySelectorAll(".img01");
+	const product_title = document.querySelectorAll(".td1");
+	const product_price = document.querySelectorAll(".td2");
+	
+	const inputList = document.querySelectorAll(".w-half");//이름,전화번호2개
+	const address_num = document.querySelector("#addr-num");
+	const address = document.querySelector(".w-half2");
+	const address2 = document.querySelector(".w-half3");
+	const requests = document.querySelector(".w-pull");
+	const allPrice = document.querySelector(".all-price2");
+
+	let arrays = new Array();
+	arrays.push(product_code);
+	arrays.push(product_img1);
+	arrays.push(product_title);
+	arrays.push(product_price);
+	
+	arrays.push(inputList);//4
+	arrays.push(address_num);
+	arrays.push(address);
+	arrays.push(address2);
+	arrays.push(requests);
+	arrays.push(allPrice);
+	
+	
+	
+	productListGet(arrays);
+	
+}
+
+/*===========================================================*/
+
+
+
+function productListGet(ss){
+	let product_code = ss[0];
+	let product_img1 = ss[1];
+	let product_title = ss[2];
+	let product_price = ss[3];
+	let inputList = ss[4];
+	
+	
+	submitBtn.onclick = () => {
+		for(let i = 0; i < ss[0].length; i++){
+			$.ajax({
+				type : "post",
+				url : "/app/product/order2/insert",
+				data : {
+					product_code : product_code[i].value,
+					product_img1 : product_img1[i].id,
+					product_title : product_title[i].textContent,
+					product_price : product_price[i].textContent,
+					username : username1
+				},
+				dataType : "text",
+				success : function(data){
+					if(data != null){
+						console.log("product성공");
+					}else{
+						console.log("product실패");
+					}
+				},
+				error : function(data){
+					alert("비동기 처리 오류");
+				}
+			});
+		}
+		
+		$.ajax({
+			type : "post",
+			url : "/app/product/order2/userinfo",
+			data : {
+				username : username1,
+				name : inputList[0].value,
+				phone : inputList[1].value,
+				phone2 : inputList[2].value,
+				address_num : ss[5].value,
+				address : ss[6].value,
+				address2 : ss[7].value,
+				requests : ss[8].value,
+				all_price : ss[9].textContent
+			},
+			dataType : "text",
+			success : function(data){
+				if(data != null){
+					console.log("info성공");
+				}else{
+					console.log("info실패");
+				}
+			},
+			error : function(data){
+					alert("비동기 처리 오류");
+			}
+		});
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //도로명 주소 검색
 function sample6_execDaumPostcode() {
@@ -47,3 +226,19 @@ function sample6_execDaumPostcode() {
         }
     }).open();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
