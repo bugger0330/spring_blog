@@ -1,6 +1,8 @@
 const tbody = document.querySelector("tbody");
 const submitBtn = document.querySelector(".submit-btn");
 
+const money1Btn = document.querySelector(".money1");
+const money3Btn = document.querySelector(".money3");
 
 const userinfo = loginSession();
 const username1 = userinfo.username;
@@ -46,7 +48,7 @@ function orderListGet(ss){
                         </td>
                         <td><img class="img01" src="/app/static/upload_img/${ss[i].product_img1}" id="${ss[i].product_img1}" width="100px" height="80px" /></td>
                         <td class="td1">${ss[i].product_title}</td>
-                        <td class="td2">${ss[i].product_price}원</td>
+                        <td class="td2" id="${ss[i].product_price}">${ss[i].product_price}원</td>
                         <td><button class="delete-btn" value="${ss[i].product_code}">삭제</button></td>
                     </tr>
 				`;
@@ -64,6 +66,14 @@ function orderListGet(ss){
 	const address2 = document.querySelector(".w-half3");
 	const requests = document.querySelector(".w-pull");
 	const allPrice = document.querySelector(".all-price2");
+	let sumPrice = 0;
+	
+	for(let i = 0; i < product_price.length; i++){
+		sumPrice += Number(product_price[i].id);
+	}
+	allPrice.textContent = sumPrice;
+	
+	
 
 	let arrays = new Array();
 	arrays.push(product_code);
@@ -186,7 +196,12 @@ function allTrue(ss){
 	
 }
 
-
+money1Btn.onclick = () => {
+	location.href = "/app/product/card";	
+}
+money3Btn.onclick = () => {
+	location.href = "/app/product/no";	
+}
 
 
 

@@ -139,7 +139,10 @@
                         <p class="help_p">
                             주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.
                         </p>
-
+						<div class="modal">
+							<div class="modal1"></div>
+							<div class="modal1"></div>
+						</div>
                     </div>
                 </div>
             </div>
