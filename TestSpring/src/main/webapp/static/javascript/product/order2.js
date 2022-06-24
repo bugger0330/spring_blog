@@ -97,10 +97,13 @@ function productListGet(ss){
 	
 	
 	submitBtn.onclick = () => {
+		let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
+		let flag2 = ""; // ajax안에 async: false 를 써야만 한다
 		for(let i = 0; i < ss[0].length; i++){
 			$.ajax({
 				type : "post",
 				url : "/app/product/order2/insert",
+				async: false,
 				data : {
 					product_code : product_code[i].value,
 					product_img1 : product_img1[i].id,
@@ -112,6 +115,7 @@ function productListGet(ss){
 				success : function(data){
 					if(data != null){
 						console.log("product성공");
+						flag1 = "true";
 					}else{
 						console.log("product실패");
 					}
@@ -125,6 +129,7 @@ function productListGet(ss){
 		$.ajax({
 			type : "post",
 			url : "/app/product/order2/userinfo",
+			async: false,
 			data : {
 				username : username1,
 				name : inputList[0].value,
@@ -140,6 +145,7 @@ function productListGet(ss){
 			success : function(data){
 				if(data != null){
 					console.log("info성공");
+					flag2 = "true";
 				}else{
 					console.log("info실패");
 				}
@@ -148,12 +154,37 @@ function productListGet(ss){
 					alert("비동기 처리 오류");
 			}
 		});
-		
+
+		if(flag1 == "true" && flag2 == "true"){
+			console.log("삭제 실행");
+			allTrue(product_code);
+		}
+			
 	}
 	
 }
 
-
+function allTrue(ss){
+	console.log("ss:"+ss[0].value);
+	for(let i = 0; i < ss.length; i++){
+		$.ajax({
+			type : "delete",
+			url : `/app/product/order1/delete/${ss[i].value}`,
+			dataType : "text",
+			success : function(data){
+				if(data == "true"){
+					console.log("성공");
+				}else{
+					console.log("실패");
+				}
+			},
+			error : function(data){
+				alert("비동기 처리 오류");
+			}
+		})
+	}
+	
+}
 
 
 

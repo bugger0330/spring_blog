@@ -54,6 +54,18 @@ public class OrderController {
 	}
 	
 	
+	@ResponseBody
+	@RequestMapping(value = "/product/order2/userinfo", method = RequestMethod.POST) 
+	public String insertUserinfo(OrderInfoRequestDto orderInfoRequestDto) { 
+		System.out.println("컨트롤러 들어옴-userinfo : " + orderInfoRequestDto.toString());
+		boolean result = orderService.insertUserinfo(orderInfoRequestDto); 
+		
+		System.out.println("서비스 갔다옴-userinfo : " + result);
+		return Boolean.toString(result); 
+	}
+
+	
+	
 	//장바구니에서 삭제 기능
 	@ResponseBody
 	@RequestMapping(value = "/product/order/delete/{product_code}", method = RequestMethod.DELETE)
@@ -65,18 +77,15 @@ public class OrderController {
 	}
 	
 	
-	
+	//결제완료 시 장바구니 데이터 삭제 
 	@ResponseBody
-	@RequestMapping(value = "/product/order2/userinfo", method = RequestMethod.POST) 
-	public String insertUserinfo(OrderInfoRequestDto orderInfoRequestDto) { 
-		System.out.println("컨트롤러 들어옴-userinfo : " + orderInfoRequestDto.toString());
-		boolean result = orderService.insertUserinfo(orderInfoRequestDto); 
-		
-		System.out.println("서비스 갔다옴-userinfo : " + result);
-		return Boolean.toString(result); 
+	@RequestMapping(value = "/product/order1/delete/{product_code}", method = RequestMethod.DELETE)
+	public String selectDel2(@PathVariable int product_code) {
+		System.out.println("컨트롤러 들어옴delete2 : " + product_code);
+		boolean result = orderService.selectDel(product_code);
+		System.out.println("서비스 갔다옴delete2 : " + result);
+		return Boolean.toString(result);
 	}
-	 
-	
 	
 	
 	
