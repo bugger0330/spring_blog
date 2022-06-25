@@ -22,8 +22,14 @@
 		 	create_date,
 		 	update_date
 		 from board_mst
+		 order by board_code desc
 		 limit #{page}, 10;
 	</select>
+	
+	<select id="getBoardRead" parameterType="Integer" resultType="com.test.app.domain.user.Board">
+		select * from board_mst where board_code = #{num};
+	</select>
+	
 	
 	<insert id="getBoardInsert" parameterType="com.test.app.domain.user.Board">
 		insert into board_mst values(
@@ -31,18 +37,18 @@
 			#{username},
 			#{title},
 			#{content},
-			#{count}
-			#{createDate},
-			#{updateDate}
+			#{count},
+			now(),
+			now()
 		);
 	</insert>
 	
 	<update id="getBoardUpdate" parameterType="com.test.app.domain.user.Board">
-		update board_mst set #{title}, #{content} where username = #{username};
+		update board_mst set title = #{title}, content = #{content} where username = #{username} and board_code = #{board_code};
 	</update>
 	
-	<delete id="getDelete" parameterType="String">
-		delete from board_mst where board_code = #{boardCode};
+	<delete id="getDelete" parameterType="Integer">
+		delete from board_mst where board_code = #{num};
 	</delete>
 	
 </mapper>

@@ -29,19 +29,25 @@ public class BoardRepositoryImpl implements BoardRepository {
 	@Override
 	public int getBoardUpdate(Board board) {
 		
-		return session.insert(path + "getBoardUpdate", board);
+		return session.update(path + "getBoardUpdate", board);
 	}
 
 	@Override
-	public int getDelete(int boardcode) {
+	public int getDelete(int num) {
 		
-		return session.delete(path + "getDelete", boardcode);
+		return session.delete(path + "getDelete", num);
 	}
 
 	@Override
 	public int getCount() {
 		
 		return session.selectOne(path + "getCount");
+	}
+
+	@Override
+	public Board getBoardRead(int num) {
+		
+		return session.selectOne(path + "getBoardRead", num);
 	}
 
 }

@@ -1,22 +1,33 @@
-const inputItem = document.querySelectorAll(".input-item");
-const submitBtn = document.querySelector(".submit-btn");
+const inputItem = document.querySelectorAll(".form-control");
+const submitBtn = document.querySelector("#insert-btn");
+
+
+const userinfo = loginSession();
+const username1 = userinfo.username;
+console.log(username1);
+
+
+
+
 
 
 //등록
-submitBtn[0].onclick = () => {
+submitBtn.onclick = () => {
 	$.ajax({
-		type : "put",
-		url : "/app/board/update",
+		type : "post",
+		url : "/app/board/insert",
 		data : {
-			"title" : inputItem[0].value,
-			"content" : inputItem[1].value
+			username : username1,
+			title : inputItem[0].value,
+			content : inputItem[1].value,
+			count : 0
 		},
-		contentType : "application/json",
 		dataType : "text",
 		success : function(data) {
 			alert(data);
 			if(data == "true"){
 				alert("등록되었습니다");
+				location.href = "/app/board/community";
 			}else{
 				alert("등록 실패");
 			}
@@ -27,26 +38,3 @@ submitBtn[0].onclick = () => {
 	});
 }
 
-
-//삭제
-submitBtn[1].onclick = () => {
-	const boardCode = 
-	$.ajax({
-		type : "delete",
-		url : "/app/board/delete",
-		data : boardCode,
-		contentType : "application/json",
-		dataType : "text",
-		success : function(data) {
-			alert(data);
-			if(data == "true"){
-				alert("등록되었습니다");
-			}else{
-				alert("등록 실패");
-			}
-		},
-		error : function(data) {
-			alert("비동기 통신 오류");
-		}
-	});
-}

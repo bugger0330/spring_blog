@@ -10,6 +10,7 @@ public interface BoardService {
 	public List<Board> getBoardList(int page);
 	public boolean getBoardInsert(BoardRequestDto boardRequestDto);
 	public boolean getBoardUpdate(BoardRequestDto boardRequestDto);
-	public boolean getDelete(int boardCode);
+	public boolean getDelete(int num);
 	public int getCount();
+	public Board getBoardRead(int num);
 }

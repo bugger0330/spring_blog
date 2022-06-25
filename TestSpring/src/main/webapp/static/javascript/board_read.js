@@ -44,78 +44,26 @@ function getBoardData(ss){
 			</div>
 			<div class="mb-3">
 				<label class="form-label">제목</label> <input type="text"
-					class="form-control" value="${ss.title}">
+					class="form-control" value="${ss.title}" readonly="readonly">
 			</div>
 			<div class="mb-3">
 				<label class="form-label">내용</label>
-				<textarea class="form-control" rows="12">${ss.content}</textarea>
+				<textarea class="form-control" rows="12" readonly="readonly" disabled>${ss.content}</textarea>
 			</div>
 			<button class="update-btn">수정</button>
-			<button class="delete-btn">삭제</button>
 			`;
 			
 	contentList.innerHTML = innr;
 	
 	const updateBtn = document.querySelector(".update-btn");
-	const deleteBtn = document.querySelector(".delete-btn");
 	const inputItems = document.querySelectorAll(".form-control");
 	updateBtn.onclick = () => {
-		console.log("code :" + ss.board_code);
-		console.log("username :" + inputItems[0].value);
-		console.log("title :" + inputItems[1].value);
-		console.log("content : " + inputItems[2].value);
-		
-		let data = {
-				boardcode : ss.board_code,
-				username : inputItems[0].value,
-				title : inputItems[1].value,
-				content : inputItems[2].value
+		if(inputItems[0].value != username1){
+			alert("본인만 게시글을 수정할 수 있습니다.");
+		}else{
+			location.href = `/app/board/update/${ss.board_code}`;
 		}
-		console.log(data);
-		
-		$.ajax({
-			type : "PUT",
-			url : "/app/board/update",
-			data : JSON.stringify(data),
-			contentType : "application/json",
-			dataType : "text",
-			success : function(data){
-				if(data == "true"){
-					alert("성공");
-					location.href = "/app/board/community";
-				}else{
-					alert("실패");
-				}
-			},
-			error : function(xhr, status){
-				console.log(xhr);
-				console.log(status);
-				alert("비동기처리 오류");
-			}
-		});
-		
 	}
-	
-	deleteBtn.onclick = () => {
-		$.ajax({
-			type : "delete",
-			url : `/app/board/delete/${num}`,
-			dataType : "text",
-			success : function(data){
-				if(data == "true"){
-					alert("성공");
-					location.href = "/app/board/community";
-				}else{
-					alert("실패");
-				}
-			},
-			error : function(data){
-				alert("비동기 처리 오류");
-			}
-		});
-	}
-	
-	
 	
 	
 }

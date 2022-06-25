@@ -30,13 +30,13 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public boolean getBoardUpdate(BoardRequestDto boardRequestDto) {
-		int result = boardRepository.getBoardUpdate(boardRequestDto.toEntity());
+		int result = boardRepository.getBoardUpdate(boardRequestDto.updateEntity());
 		return result != 0;
 	}
 
 	@Override
-	public boolean getDelete(int boardCode) {
-		int result = boardRepository.getDelete(boardCode);
+	public boolean getDelete(int num) {
+		int result = boardRepository.getDelete(num);
 		return result != 0;
 	}
 
@@ -44,6 +44,17 @@ public class BoardServiceImpl implements BoardService {
 	public int getCount() {
 		int result = boardRepository.getCount();
 		return result;
+	}
+
+	@Override
+	public Board getBoardRead(int num) {
+		Board board = boardRepository.getBoardRead(num);
+		if(board == null) {
+			return null;
+		}else {
+			return board;
+		}
+		
 	}
 
 }

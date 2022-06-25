@@ -63,25 +63,28 @@ public class PageController {
 	
 	/* ================= 게시판 관련 ====================== */
 	
-	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
-	public String boardList() {
-		return "board/board_list";
+	@RequestMapping(value = "/board/community", method = RequestMethod.GET)
+	public String community() {
+		return "board/community";
 	}
-	
+
 	
 	@RequestMapping(value = "/board/insert", method = RequestMethod.GET)
 	public String boardInsert() {
 		return "board/board_insert";
 	}
-	@RequestMapping(value = "/board/update", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/board/update/{num}", method = RequestMethod.GET)
 	public String boardUpdate() {
 		return "board/board_update";
 	}
 	
-	@RequestMapping(value = "/board/community", method = RequestMethod.GET)
-	public String community() {
-		return "board/community";
+	
+	@RequestMapping(value = "/board/read/{num}", method = RequestMethod.GET)
+	public String boardRead() {
+		return "board/board_read";
 	}
+	
 	
 	/* ================= 홈 헤더 푸터 ====================== */
 	

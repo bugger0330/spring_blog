@@ -1,0 +1,63 @@
+
+.main{
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    border: 1px solid black;
+    width: 500px;
+}
+td, th{
+    border: 1px solid black;
+}
+textarea{
+    width: 100%;
+    border: none;
+}
+input{
+    border: none;
+    width: 100%;
+}
+.submit-btn{
+    margin-top: 10px;
+}
+
+.row{
+	min-height: 500px;
+	height: 700px;
+}
+
+.update-btn{
+	padding: 10px;
+	font-size: 20px;
+	float: right;
+	border: none;
+	background: skyblue;
+	color: white;
+}
+.delete-btn{
+	padding: 10px;
+	font-size: 20px;
+	float: right;
+	border: none;
+	background: red;
+	color: white;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -18,7 +18,6 @@ public class Board {
 	private String title;
 	private String content;
 	private int count;
-	private int page;
 	private int boardCount;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;

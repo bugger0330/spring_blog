@@ -20,9 +20,6 @@ public class BoardRequestDto {
 	private String title;
 	private String content;
 	private int count;
-	private int page;
-	private LocalDateTime createDate;
-	private LocalDateTime updateDate;
 	
 	public Board toEntity() {
 		return Board.builder()
@@ -31,9 +28,15 @@ public class BoardRequestDto {
 				.title(title)
 				.content(content)
 				.count(count)
-				.page(page)
-				.create_date(createDate)
-				.update_date(updateDate)
+				.build();
+	}
+	
+	public Board updateEntity() {
+		return Board.builder()
+				.board_code(boardCode)
+				.username(username)
+				.title(title)
+				.content(content)
 				.build();
 	}
 }
