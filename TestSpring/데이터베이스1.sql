@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `board_mst` (
   `create_date` datetime NOT NULL,
   `update_date` datetime NOT NULL,
   PRIMARY KEY (`board_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=269 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=271 DEFAULT CHARSET=utf8mb3;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_img6` varchar(500) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL,
   PRIMARY KEY (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `user_dtl` (
   UNIQUE KEY `username` (`username`),
   KEY `usercode_for_user_detail` (`usercode`),
   CONSTRAINT `usercode_for_user_detail` FOREIGN KEY (`usercode`) REFERENCES `user_mst` (`usercode`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `user_mst` (
   `address2` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`usercode`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1022 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1028 DEFAULT CHARSET=utf8mb3;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 

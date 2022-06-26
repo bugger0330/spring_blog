@@ -66,7 +66,7 @@ function getBoardData(ss){
 		console.log("content : " + inputItems[2].value);
 		
 		let data = {
-				boardcode : ss.board_code,
+				boardCode : ss.board_code,
 				username : inputItems[0].value,
 				title : inputItems[1].value,
 				content : inputItems[2].value
@@ -74,10 +74,9 @@ function getBoardData(ss){
 		console.log(data);
 		
 		$.ajax({
-			type : "PUT",
+			type : "post",
 			url : "/app/board/update",
-			data : JSON.stringify(data),
-			contentType : "application/json",
+			data : data,
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){

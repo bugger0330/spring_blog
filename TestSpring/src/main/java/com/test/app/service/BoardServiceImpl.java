@@ -30,7 +30,10 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public boolean getBoardUpdate(BoardRequestDto boardRequestDto) {
+		System.out.println("서비스1 : " +boardRequestDto.toString() );
 		int result = boardRepository.getBoardUpdate(boardRequestDto.updateEntity());
+		System.out.println("서비스2 : " +boardRequestDto.updateEntity());
+		System.out.println("서비스3 : " +result);
 		return result != 0;
 	}
 
