@@ -36,4 +36,16 @@ public class UserRepositoryImpl implements UserRepository{
 		return session.selectOne(path + "selectPassword", username);
 	}
 
+	@Override
+	public int userOver(String username) {
+		
+		return session.delete(path + "userOver", username);
+	}
+
+	@Override
+	public int updatePassword(User user) {
+		
+		return session.update(path + "updatePassword", user);
+	}
+
 }

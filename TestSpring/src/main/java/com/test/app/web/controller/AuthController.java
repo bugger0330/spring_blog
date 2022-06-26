@@ -85,5 +85,52 @@ public class AuthController {
 		return "true";
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/mypage/password-update/check", method = RequestMethod.POST)
+	public String updatePasswordCheck(SigninRequestDto signinRequestDto) {
+		System.out.println("컨트롤러 들어옴 : " + signinRequestDto.toString());
+		
+		boolean result = authService.passwordCheck(signinRequestDto);
+		
+		return Boolean.toString(result);
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/mypage/password-update", method = RequestMethod.POST)
+	public String updatePassword(SigninRequestDto signinRequestDto) {
+		System.out.println("컨트롤러 들어옴 : " + signinRequestDto.toString());
+		
+			boolean result = authService.updatePassword(signinRequestDto);
+			return Boolean.toString(result);
+		
+		
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/mypage/user-over/ok", method = RequestMethod.DELETE)
+	public String userOver(@RequestBody SigninRequestDto signinRequestDto) {
+		System.out.println("컨트롤러 들어옴 : " + signinRequestDto.toString());
+		boolean result = authService.userOver(signinRequestDto);
+		
+		return Boolean.toString(result);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

@@ -35,5 +35,13 @@
 		where
 			username = #{username};
 	</select>
+	
+	<update id="updatePassword" parameterType="com.test.app.domain.user.User">
+		update user_mst set password = #{password} where username = #{username};
+	</update>
+	
+	<delete id="userOver" parameterType="com.test.app.domain.user.User">
+		delete from user_mst where username = #{username};
+	</delete>
 		
 </mapper>

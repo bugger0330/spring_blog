@@ -60,6 +60,47 @@ public class PageController {
 		return "redirect: /app/auth/signin";
 	}
 	
+	//주문배송 조회
+	@RequestMapping(value = "/mypage/order-lists", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
+	public String orderLists() {
+		return "mypage/order-lists";
+	}
+	
+	
+	//회원정보 수정
+	@RequestMapping(value = "/mypage/modify", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
+	public String userModify() {
+		return "mypage/user_modify";
+	}
+	//비밀번호 수정
+	@RequestMapping(value = "/mypage/password-modify", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
+	public String passwordModify() {
+		return "mypage/password_modify";
+	}
+	
+	
+	//회원 탈퇴
+	@RequestMapping(value = "/mypage/user-over", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
+	public String userOver() {
+		return "mypage/user-over";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/* ================= 게시판 관련 ====================== */
 	

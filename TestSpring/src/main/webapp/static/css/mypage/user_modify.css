@@ -1,0 +1,205 @@
+.revise-wrapper {
+    width: 100%;
+    min-width: 700px;
+}
+
+.mypage-sub-title{
+	text-align: center;
+}
+
+.revise-wrapper h5 {
+    background: #f5f5f5;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    font-size: 16px;
+    letter-spacing: -0.04em;
+    color: #333;
+    padding: 15px 0;
+}
+
+.modify-box {
+    display: flex;
+    flex-direction: column;
+    width: 720px !important;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.modify-box div {
+    display: flex;
+}
+
+.modify-box input {
+    outline: none;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.modify-box>div {
+    padding: 40px 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modify-box label {
+    display: inline-block;
+    width: 165px;
+    font-size: 16px;
+    letter-spacing: -0.04em;
+    color: #333;
+    vertical-align: middle
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 165px);
+    vertical-align: middle;
+}
+
+.input-box input {
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.email {
+    flex-direction: row;
+}
+
+.border-on {
+    border-bottom: 1px solid #333;
+}
+
+
+.change {
+    font-size: 13px;
+    color: #666;
+    letter-spacing: -0.04em;
+    display: block;
+    padding-top: 10px;
+}
+
+.line-contents {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.line-contents input {
+    padding: 20px 0;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: -0.04em;
+}
+
+#address1 {
+    width: 30%;
+    height: 20px;
+    margin: 10px 0px;
+    
+}
+
+#address1-1,
+#address2 {
+    width: 80%;
+    height: 20px;
+    margin: 10px 0px;
+}
+
+.btn {
+    
+    width: 87px;
+    height:40px;
+    border: 1px solid #333;
+    background: #fafafa;
+    font-size: 14px;
+    color: #333;
+    font-weight: 700;
+    margin-left: 20px;
+    
+    position: absolute;
+    top:10px;
+    right:280px;
+}
+
+.email-sp {
+    font-size: 16px;
+    margin: 0px 10px;
+}
+
+#select-email {
+    margin-left: 10px;
+}
+
+.input-box.email .ui-select-menu-button.ui-button {
+    width: 150px;
+    padding-bottom: 10px;
+    padding-top: 4px;
+    margin-left: 10px;
+}
+
+.input-box .ui-select-menu-button.ui-button {
+    border: 0;
+    border-bottom: 1px solid #333 !important;
+    width: 80px;
+    padding: 0;
+    padding-bottom: 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.w30 {
+    width: 100px;
+    height: 29px;
+    top: 5px;
+    right: 7px;
+    transform: translateY(0);
+    background-position: 0;
+}
+
+
+.ui-select-menu-text {
+    display: block;
+    margin-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: -0.04em;
+    font-weight: 300;
+}
+
+.input-shoes {
+    display: flex;
+}
+
+.mm {
+    font-size: 16px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.submit-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 0px;
+}
+
+.submit {
+    width: 500px;
+    background: #a71c20;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    padding: 20px 0;
+}
+
+select {
+    -moz-appearance: none;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding-bottom: 5px;
+}

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.test.app.domain.user.User;
 import com.test.app.domain.user.UserRepository;
+import com.test.app.web.dto.SigninRequestDto;
 import com.test.app.web.dto.SignupRequestDto;
 
 @Service
@@ -45,6 +46,33 @@ public class AuthServiceImpl implements AuthService {
 	public boolean usernameCheck(String username) {
 		return userRepository.usernameCheck(username) != 0;
 		
+	}
+
+	@Override
+	public boolean userOver(SigninRequestDto signinRequestDto) {
+		int result = userRepository.userOver(signinRequestDto.getUsername());
+		
+		return result != 0;
+	}
+
+	@Override
+	public boolean updatePassword(SigninRequestDto signinRequestDto) {
+		int result = userRepository.updatePassword(signinRequestDto.signinEntity());
+		return result != 0;
+	}
+
+	@Override
+	public boolean passwordCheck(SigninRequestDto signinRequestDto) {
+		if(signinRequestDto.getUsername() == null && signinRequestDto.getPassword() == null) {
+			return false;
+		}else {
+			String dbPassword = userRepository.selectPassword(signinRequestDto.getUsername());
+			if(BCrypt.checkpw(signinRequestDto.getPassword(), dbPassword) == true) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 
 }

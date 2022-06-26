@@ -6,4 +6,6 @@ public interface UserRepository {
 	public User signin(String username);
 	public int usernameCheck(String username);
 	public String selectPassword(String username);
+	public int userOver(String username);
+	public int updatePassword(User user);
 }

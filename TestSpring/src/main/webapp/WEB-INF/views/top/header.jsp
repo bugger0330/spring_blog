@@ -26,15 +26,18 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
 
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/product/register"><i class="fas fa-paw"></i>&nbsp;상품등록</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/product/order"><i class="fas fa-paw"></i>&nbsp;장바구니</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/product/order2"><i class="fas fa-paw"></i>&nbsp;결제페이지</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/logout"><i class="fas fa-paw"></i>&nbsp;로그아웃</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/signin"><i class="fas fa-paw"></i>&nbsp;로그인</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/signup"><i class="fas fa-paw"></i>&nbsp;회원가입</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/auth/mypage"><i class="fas fa-paw"></i>&nbsp;마이페이지</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="/app/board/community"><i class="fas fa-paw"></i>&nbsp;게시판</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa" href="#"><i class="fas fa-paw"></i>&nbsp;상품</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa1" href="/app/product/register">상품등록</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa2" href="/app/product/order">장바구니</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa3" href="/app/product/order2">결제페이지</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa4" href="/app/logout">로그아웃</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa5" href="/app/auth/signin">로그인</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa6" href="/app/auth/signup">회원가입</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa7" href="/app/auth/mypage">마이페이지</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa8" href="/app/board/community">게시판</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa9" href="/app/mypage/order-lists">주문배송조회</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa10" href="/app/mypage/modify">회원정보수정</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa11" href="/app/mypage/password-modify">비밀번호수정</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa12" href="/app/mypage/user-over">회원탈퇴</a></li>
 					
 				</ul>
 			</div>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <jsp:include page="../top/header.jsp"></jsp:include>
-<link rel="stylesheet" href="/app/static/css/mypage.css">
+<link rel="stylesheet" href="/app/static/css/mypage/mypage.css">
 
 
     <div class="main-div">
@@ -61,11 +61,6 @@
                                 <br>
                                 적립금 500원 드립니다.
                             </p>
-                            <span>
-                                한 주문번호로 동일한상품 구매 시
-                                <br>
-                                중복적립되지 않습니다.
-                            </span>
                         </a>
                     </li>
                     <li class="quick-content-items">
@@ -84,4 +79,4 @@
         
     </div>
     <script src="/app/static/javascript/mypage.js"></script>
-<jsp:include page="../top/header.jsp"></jsp:include>
+<jsp:include page="../top/footer.jsp"></jsp:include>

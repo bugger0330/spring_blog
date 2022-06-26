@@ -1,0 +1,12 @@
+.help-title {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mypage .line {
+    width: 100%;
+    border: 1px solid #dddddd;
+    display: inline-block;
+}

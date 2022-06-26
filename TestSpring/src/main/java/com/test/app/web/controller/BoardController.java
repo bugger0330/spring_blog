@@ -65,7 +65,7 @@ public class BoardController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/board/update", method = RequestMethod.PUT, produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "/board/update", method = RequestMethod.PUT)
 	public String getUpdate(@RequestBody BoardRequestDto boardRequestDto) {
 		System.out.println("컨트롤러 들어옴 : " + boardRequestDto.toString());
 		boolean result = boardService.getBoardUpdate(boardRequestDto);
