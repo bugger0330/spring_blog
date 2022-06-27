@@ -40,14 +40,7 @@ public class PageController {
 	
 	@RequestMapping(value = "/auth/mypage", method = RequestMethod.GET)
 	public String getMypage(ServletRequest request, ServletResponse response) {
-		HttpServletRequest servletRequest = (HttpServletRequest)request;
-		HttpServletResponse servletResponse = (HttpServletResponse)response;
 		
-		HttpSession session = servletRequest.getSession();
-		User user = (User)session.getAttribute("login");
-		String username = user.getUsername();
-		session.setAttribute("profile", profileRepository.checkNickname(username));
-//		profileService.checkNickname(username);
 		return "auth/mypage";
 	}
 	

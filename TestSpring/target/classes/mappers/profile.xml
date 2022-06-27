@@ -5,23 +5,20 @@
 
 <mapper namespace="com.test.app.domain.user.ProfileRepository">
 
-	
-	<select id="checkNickname" parameterType="String" resultType="com.test.app.domain.user.Profile">
+	<select id="getProfile" parameterType="String" resultType="com.test.app.domain.user.Profile">
 		select * from user_dtl where username = #{username};
 	</select>
 	
-	<update id="nickname" parameterType="com.test.app.domain.user.Profile">
-		update user_dtl set nickname = #{nickname} where usercode = #{usercode};
-	</update>
-	<update id="address" parameterType="com.test.app.domain.user.Profile">
-		update user_dtl set address = #{address} where usercode = #{usercode};
-	</update>
-	<update id="gender" parameterType="com.test.app.domain.user.Profile">
-		update user_dtl set gender =  #{gender} where usercode = #{usercode};
+
+	
+	<update id="insertProfile" parameterType="com.test.app.domain.user.Profile">
+		update user_dtl set 
+			nickname = #{nickname},
+			email = #{email},
+			phone = #{phone},
+			address = #{address},
+			address2 = #{address2}
+		where username = #{username};
 	</update>
 
-	<delete id="deleteProfile" parameterType="String">
-		delete from user_mst where username = #{username};
-	</delete>
-		
 </mapper>

@@ -74,9 +74,10 @@ function getBoardData(ss){
 		console.log(data);
 		
 		$.ajax({
-			type : "post",
+			type : "put",
 			url : "/app/board/update",
-			data : data,
+			data : JSON.stringify(data),
+			contentType: "application/json",
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){

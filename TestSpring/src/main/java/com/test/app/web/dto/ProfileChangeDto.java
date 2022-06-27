@@ -14,19 +14,25 @@ import lombok.NoArgsConstructor;
 public class ProfileChangeDto {
 	
 	private int usercode;
+	private String username;
+	private String name;
 	private String nickname;
+	private String email;
+	private String phone;
 	private String address;
-	private String gender;
+	private String address2;
 	
 	
 	
-	public Profile change() {
+	public Profile entity() {
 		
 		return Profile.builder()
-				.usercode(usercode)
+				.username(username)
 				.nickname(nickname)
+				.email(email)
+				.phone(phone)
 				.address(address)
-				.gender(gender)
+				.address2(address2)
 				.build();
 	}
 

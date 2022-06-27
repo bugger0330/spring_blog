@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- 호스트:                          127.0.0.1
--- 서버 버전:                        10.6.7-MariaDB - mariadb.org binary distribution
+-- 서버 버전:                        10.7.3-MariaDB - mariadb.org binary distribution
 -- 서버 OS:                        Win64
 -- HeidiSQL 버전:                  11.3.0.6295
 -- --------------------------------------------------------
@@ -29,9 +29,14 @@ CREATE TABLE IF NOT EXISTS `board_mst` (
   `create_date` datetime NOT NULL,
   `update_date` datetime NOT NULL,
   PRIMARY KEY (`board_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=271 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=272 DEFAULT CHARSET=utf8mb3;
 
--- 내보낼 데이터가 선택되어 있지 않습니다.
+-- 테이블 데이터 test.board_mst:~1 rows (대략적) 내보내기
+DELETE FROM `board_mst`;
+/*!40000 ALTER TABLE `board_mst` DISABLE KEYS */;
+INSERT INTO `board_mst` (`board_code`, `username`, `title`, `content`, `count`, `create_date`, `update_date`) VALUES
+	(271, 'eee', 'test1234', 'testaaaaa1234', 0, '2022-06-27 09:33:23', '2022-06-27 09:33:23');
+/*!40000 ALTER TABLE `board_mst` ENABLE KEYS */;
 
 -- 테이블 test.order1 구조 내보내기
 DROP TABLE IF EXISTS `order1`;
@@ -43,7 +48,10 @@ CREATE TABLE IF NOT EXISTS `order1` (
   `username` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- 내보낼 데이터가 선택되어 있지 않습니다.
+-- 테이블 데이터 test.order1:~0 rows (대략적) 내보내기
+DELETE FROM `order1`;
+/*!40000 ALTER TABLE `order1` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order1` ENABLE KEYS */;
 
 -- 테이블 test.order2 구조 내보내기
 DROP TABLE IF EXISTS `order2`;
@@ -55,7 +63,13 @@ CREATE TABLE IF NOT EXISTS `order2` (
   `username` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- 내보낼 데이터가 선택되어 있지 않습니다.
+-- 테이블 데이터 test.order2:~2 rows (대략적) 내보내기
+DELETE FROM `order2`;
+/*!40000 ALTER TABLE `order2` DISABLE KEYS */;
+INSERT INTO `order2` (`product_code`, `product_img1`, `product_title`, `product_price`, `username`) VALUES
+	(47, '8c942a18_9444_4341_ab57_4714016fd12barrow_1.png', 'sdds', '22원', 'eee'),
+	(49, '21285403_870e_43a3_bae6_267d931f3a06오른쪽 화살표.PNG', 'dsffds', '222원', 'eee');
+/*!40000 ALTER TABLE `order2` ENABLE KEYS */;
 
 -- 테이블 test.order_info 구조 내보내기
 DROP TABLE IF EXISTS `order_info`;
@@ -71,9 +85,18 @@ CREATE TABLE IF NOT EXISTS `order_info` (
   `requests` varchar(500) DEFAULT NULL,
   `all_price` varchar(50) NOT NULL,
   PRIMARY KEY (`order_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3;
 
--- 내보낼 데이터가 선택되어 있지 않습니다.
+-- 테이블 데이터 test.order_info:~5 rows (대략적) 내보내기
+DELETE FROM `order_info`;
+/*!40000 ALTER TABLE `order_info` DISABLE KEYS */;
+INSERT INTO `order_info` (`order_code`, `username`, `name`, `phone`, `phone2`, `address_num`, `address`, `address2`, `requests`, `all_price`) VALUES
+	(20, 'eee', 'ds', 'ds', 'ds', '04427', '서울 용산구 양녕로 445', 'sddds', 'sdsd', '679'),
+	(21, 'eee', 'ds', 'ds', 'ds', '04427', '서울 용산구 양녕로 445', 'sddds', 'sdsd', '679'),
+	(22, 'eee', 'ds', 'ds', 'ds', '04427', '서울 용산구 양녕로 445', 'sddds', 'sdsd', '679'),
+	(23, 'eee', 'ds', 'ds', 'ds', '04427', '서울 용산구 양녕로 445', 'sddds', 'sdsd', '679'),
+	(24, 'eee', 'sd', 'sd', 'sd', '08854', '서울 관악구 난우길 2', 'ds', 'ds', '244');
+/*!40000 ALTER TABLE `order_info` ENABLE KEYS */;
 
 -- 테이블 test.product 구조 내보내기
 DROP TABLE IF EXISTS `product`;
@@ -96,9 +119,17 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_img6` varchar(500) DEFAULT NULL,
   `create_date` datetime DEFAULT NULL,
   PRIMARY KEY (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb3;
 
--- 내보낼 데이터가 선택되어 있지 않습니다.
+-- 테이블 데이터 test.product:~4 rows (대략적) 내보내기
+DELETE FROM `product`;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` (`product_code`, `product_username`, `product_phone`, `product_title`, `product_content`, `product_price`, `product_delivery`, `product_status`, `product_exchange`, `product_select`, `product_img1`, `product_img2`, `product_img3`, `product_img4`, `product_img5`, `product_img6`, `create_date`) VALUES
+	(47, 'ddd', 'd', 'sdds', 'dssd', '22', '택배거리', '새 상품', '불가', '스마트폰', '8c942a18_9444_4341_ab57_4714016fd12barrow_1.png', NULL, NULL, NULL, NULL, NULL, '2022-06-27 09:22:55'),
+	(48, 'ddd', 'd', 'dgf', 'fgd', '45', '택배거리', '새 상품', '불가', '스마트폰', '2015c670_adf7_447f_98aa_eb38530b71d7베스트 아이콘.PNG', NULL, NULL, NULL, NULL, NULL, '2022-06-27 09:23:11'),
+	(49, 'ddd', 'd', 'dsffds', 'dsf', '222', '택배거리', '새 상품', '불가', '스마트폰', '21285403_870e_43a3_bae6_267d931f3a06오른쪽 화살표.PNG', NULL, NULL, NULL, NULL, NULL, '2022-06-27 09:23:22'),
+	(50, 'ddd', 'd', '764', '457', '457', '택배거리', '새 상품', '불가', '스마트폰', 'bae7f912_91d9_42e8_9a03_3b098a9b35da지갑.jpg', NULL, NULL, NULL, NULL, NULL, '2022-06-27 09:23:32');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- 테이블 test.user_dtl 구조 내보내기
 DROP TABLE IF EXISTS `user_dtl`;
@@ -106,16 +137,25 @@ CREATE TABLE IF NOT EXISTS `user_dtl` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usercode` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `nickname` varchar(50) DEFAULT '',
-  `address` varchar(50) DEFAULT '',
-  `gender` varchar(50) DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  `nickname` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `address2` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   KEY `usercode_for_user_detail` (`usercode`),
   CONSTRAINT `usercode_for_user_detail` FOREIGN KEY (`usercode`) REFERENCES `user_mst` (`usercode`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb3;
 
--- 내보낼 데이터가 선택되어 있지 않습니다.
+-- 테이블 데이터 test.user_dtl:~1 rows (대략적) 내보내기
+DELETE FROM `user_dtl`;
+/*!40000 ALTER TABLE `user_dtl` DISABLE KEYS */;
+INSERT INTO `user_dtl` (`id`, `usercode`, `username`, `name`, `nickname`, `email`, `phone`, `address`, `address2`) VALUES
+	(49, 1030, 'ddd', '222', 'ddd', 'ddd', 'ddd', '서울 동대문구 신설동 53-3', 'sdsdsd'),
+	(50, 1031, 'eee', 'eee', 'eee', 'eee', 'eee', 'ee', '');
+/*!40000 ALTER TABLE `user_dtl` ENABLE KEYS */;
 
 -- 테이블 test.user_mst 구조 내보내기
 DROP TABLE IF EXISTS `user_mst`;
@@ -131,9 +171,15 @@ CREATE TABLE IF NOT EXISTS `user_mst` (
   `address2` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`usercode`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1028 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1032 DEFAULT CHARSET=utf8mb3;
 
--- 내보낼 데이터가 선택되어 있지 않습니다.
+-- 테이블 데이터 test.user_mst:~2 rows (대략적) 내보내기
+DELETE FROM `user_mst`;
+/*!40000 ALTER TABLE `user_mst` DISABLE KEYS */;
+INSERT INTO `user_mst` (`usercode`, `username`, `password`, `name`, `nickname`, `email`, `phone`, `address`, `address2`) VALUES
+	(1030, 'ddd', '$2a$10$XYapWz5wkrU5KI/oFGCEMORNZ9DpTRCgXSIaKTBCWjfG6MvlOKsJa', 'ddd', 'ddd', 'ddd', 'dd', 'ddd', ''),
+	(1031, 'eee', '$2a$10$KJ6dvYJalGJfjq1F4BO7V.TEkgQUE3aTuwL7d4xzq9o51SNpxPARS', 'eee', 'eee', 'eee', 'eee', 'ee', '');
+/*!40000 ALTER TABLE `user_mst` ENABLE KEYS */;
 
 -- 트리거 test.user_mst_after_insert 구조 내보내기
 DROP TRIGGER IF EXISTS `user_mst_after_insert`;
@@ -146,9 +192,12 @@ CREATE TRIGGER `user_mst_after_insert` AFTER INSERT ON `user_mst` FOR EACH ROW B
 		0,
 		NEW.usercode,
 		NEW.username,
+		NEW.name,
 		NEW.nickname,
+		NEW.email,
+		NEW.phone,
 		NEW.address,
-		NULL
+		NEW.address2
 	);
 	
 END//

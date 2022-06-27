@@ -40,12 +40,13 @@ submitBtn.onclick = () => {
 		alert("기존의 비밀번호와 같습니다");
 	}else{
 		$.ajax({
-			type : "post",
+			type : "put",
 			url : "/app/mypage/password-update",
-			data : {
+			data : JSON.stringify({
 				username : userinfo,
 				password : password1.value
-			},
+			}),
+			contentType : "application/json",
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){

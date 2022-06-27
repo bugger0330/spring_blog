@@ -97,8 +97,8 @@ public class AuthController {
 	
 	
 	@ResponseBody
-	@RequestMapping(value = "/mypage/password-update", method = RequestMethod.POST)
-	public String updatePassword(SigninRequestDto signinRequestDto) {
+	@RequestMapping(value = "/mypage/password-update", method = RequestMethod.PUT)
+	public String updatePassword(@RequestBody SigninRequestDto signinRequestDto) {
 		System.out.println("컨트롤러 들어옴 : " + signinRequestDto.toString());
 		
 			boolean result = authService.updatePassword(signinRequestDto);

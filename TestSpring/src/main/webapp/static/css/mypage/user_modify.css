@@ -3,6 +3,11 @@
     min-width: 700px;
 }
 
+#address1,#address2,#address3{
+	padding-left: 10px;
+	height: 16px;
+}
+
 .mypage-sub-title{
 	text-align: center;
 }
