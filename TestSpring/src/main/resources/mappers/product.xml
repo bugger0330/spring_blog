@@ -36,6 +36,8 @@
 		);
 	</insert>
 
-
+	<select id="getMyProductList" parameterType="String" resultType="com.test.app.domain.user.Product">
+		select * from product where product_username = #{username};
+	</select>
 
 </mapper>

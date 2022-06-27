@@ -77,6 +77,11 @@ public class PageController {
 	public String userOver() {
 		return "mypage/user-over";
 	}
+	//내가 등록한 상품 리스트
+	@RequestMapping(value = "/mypage/product", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
+	public String myProduct() {
+		return "mypage/my-product";
+	}
 	
 	
 	

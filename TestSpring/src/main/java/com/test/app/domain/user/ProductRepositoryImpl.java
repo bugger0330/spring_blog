@@ -32,5 +32,11 @@ public class ProductRepositoryImpl implements ProductRepository {
 		return session.selectOne(path + "getProductList", product_code);
 	}
 
+	@Override
+	public List<Product> getMyProductList(String username) {
+		return session.selectList(path + "getMyProductList", username);
+	}
+
+
 	
 }

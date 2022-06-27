@@ -1,11 +1,16 @@
 package com.test.app.service;
 
+import java.util.List;
+
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.test.app.domain.user.Product;
+import com.test.app.domain.user.ProductRepository;
 import com.test.app.domain.user.User;
 import com.test.app.domain.user.UserRepository;
+import com.test.app.web.dto.ProductRequestDto;
 import com.test.app.web.dto.SigninRequestDto;
 import com.test.app.web.dto.SignupRequestDto;
 
@@ -14,6 +19,9 @@ public class AuthServiceImpl implements AuthService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 	
 	
 	
@@ -72,6 +80,16 @@ public class AuthServiceImpl implements AuthService {
 			} else {
 				return false;
 			}
+		}
+	}
+
+	@Override
+	public List<Product> getMyProductList(String username) {
+		List<Product> products = productRepository.getMyProductList(username);
+		if(products == null) {
+			return null;
+		}else {
+			return products;
 		}
 	}
 

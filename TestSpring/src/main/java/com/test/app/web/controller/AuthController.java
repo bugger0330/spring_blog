@@ -1,5 +1,7 @@
 package com.test.app.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.test.app.domain.user.Product;
 import com.test.app.domain.user.User;
 import com.test.app.service.AuthService;
+import com.test.app.web.dto.ProductRequestDto;
 import com.test.app.web.dto.SigninRequestDto;
 import com.test.app.web.dto.SignupRequestDto;
 import com.test.app.web.script.SignupScript;
@@ -118,7 +122,14 @@ public class AuthController {
 	}
 	
 	
-	
+	@ResponseBody
+	@RequestMapping(value = "/mypage/product", method = RequestMethod.POST)
+	public List<Product> getMyProductList(String username){
+		System.out.println("컨트롤러 들어옴 : " + username);
+		List<Product> products = authService.getMyProductList(username);
+		System.out.println("서비스 갔아옴 : " + products.toString());
+		return products;
+	}
 	
 	
 	
