@@ -31,14 +31,14 @@ function load1(){
 	});
 }
 function homeImgLists(ss){
-	console.log(ss);
+	console.log(ss[0].product_img1);
 	let innr = "";
 	for(let i = 0; i < ss.length; i++){
 		innr += `
 			<div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" style="height:200px;" src="static/upload_img/${ss[i].product_img1}">
+                    <img class="card-img-top" style="height:200px;" src="/app/static/upload_img/${ss[i].product_img1}">
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
