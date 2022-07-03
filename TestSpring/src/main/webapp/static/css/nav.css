@@ -1,10 +1,166 @@
-nav{
+#nav-main{
 	display: flex;
+	flex-direction:column;
 	justify-content: center;
 	align-items: center;
 }
 
-nav > div {
-	font-size: 20px;
-	line-height: 20px;
+
+.sub-innr{
+    margin: 0px auto 50px; 
+    padding: 0px; 
+    font-family: NanumGothic, 나눔고딕, sans-serif; 
+    position: relative; 
+    min-width: 1200px;
+    width: 1200px;
+    color: rgb(51, 51, 51); 
 }
+
+.sub-innr_con{
+    margin: 0px auto; 
+    padding: 0px; 
+    position: relative; 
+    width: 1200px;
+}
+
+#gnb{
+    margin: 0px; 
+    padding: 0px; 
+    position: absolute; 
+    top: 60px; 
+    right: 0px; 
+    z-index: 90;
+    width: 100%;
+    border-bottom: 1px solid black;
+    background: gray;
+}
+
+.ul1{
+    margin: 0px; 
+    padding: 0px; 
+    list-style: none;
+}
+
+
+
+.home{
+    margin-right: 240px; 
+    padding: 0px; 
+    list-style: none; 
+    position: relative; 
+    float: left;
+}
+
+
+.first{
+    margin: 0px; 
+    padding: 0px; 
+    list-style: none; 
+    position: relative; 
+    float: left;
+}
+
+.home1{
+    color: rgb(51, 51, 51); 
+    text-decoration-line: none; 
+    width: 160px; 
+    font-size: 30px; 
+    display: block; 
+    height: 71px; 
+    line-height: 71px; 
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+}
+.dep01{
+    color: rgb(51, 51, 51); 
+    text-decoration-line: none; 
+    width: 160px; 
+    font-size: 20px; 
+    font-weight: bold; 
+    display: block; 
+    height: 71px; 
+    line-height: 71px; 
+    text-align: center;
+}
+
+.ul2{
+    margin: 0px; 
+    padding: 10px 0px; 
+    list-style: none; 
+    width: 158px; 
+    height: 180px; 
+    position: absolute; 
+    top: 72px; 
+    left: 1px; 
+    border-right: 1px solid rgb(211, 211, 211); 
+    z-index: 91; 
+    border-left: 1px solid rgb(211, 211, 211);
+}
+.ul2:hover{
+    margin: 0px; 
+    padding: 10px 0px; 
+    list-style: none; 
+    width: 158px; 
+    height: 180px; 
+    position: absolute; 
+    top: 72px; 
+    left: 1px; 
+    border-right: 1px solid rgb(211, 211, 211); 
+    z-index: 91; 
+    border-left: 1px solid rgb(211, 211, 211);
+    background-color: skyblue;
+}
+
+.li2{
+    margin: 0px; 
+    padding-left: 20px; 
+    list-style: none; 
+    position: relative; 
+    float: left; 
+    width: 158px; 
+    background-image: none; 
+    clear: both;
+}
+
+.li2-a{
+    color: rgb(51, 51, 51); 
+    text-decoration-line: none; 
+    display: block; 
+    padding: 8px 10px; 
+    font-size: 16px;
+}
+
+.gnb_bg{
+    margin: 0px; 
+    padding: 0px; 
+    background: rgb(247, 247, 247); 
+    height: 315px; 
+    width: 100%; 
+    border-top: 1px solid rgb(57, 84, 139); 
+    border-bottom: 1px solid rgb(57, 84, 139); 
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

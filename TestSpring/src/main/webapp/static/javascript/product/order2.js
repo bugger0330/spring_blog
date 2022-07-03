@@ -184,7 +184,6 @@ function allTrue(ss){
 			success : function(data){
 				if(data == "true"){
 					console.log("성공");
-					location.href = "/app/auth/mypage";
 				}else{
 					console.log("실패");
 				}

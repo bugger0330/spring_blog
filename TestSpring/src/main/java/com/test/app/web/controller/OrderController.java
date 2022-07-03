@@ -87,15 +87,7 @@ public class OrderController {
 		return Boolean.toString(result);
 	}
 	
-	//주문 배송조회
-		@ResponseBody
-		@RequestMapping(value = "/mypage/order-lists", method = RequestMethod.POST)
-		public List<Order> getOrderList2(String username) {
-			System.out.println("컨트롤러 들어옴 : " + username);
-			List<Order> orders = orderService.getOrderList(username);
-			System.out.println("서비스 갔다옴 : " + orders);
-			return orders;
-		}
+	
 	
 	
 	

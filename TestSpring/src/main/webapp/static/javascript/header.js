@@ -15,5 +15,18 @@ function loginSession(){
 	});
 	return User;
 }
+let user1 = loginSession();
+let username1 = user1.username;
+console.log("아이디1 : " + username1);
+
+
+
+
+
+
+
+
+
+
 
 

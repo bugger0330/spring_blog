@@ -66,16 +66,5 @@ public class OrderServiceImpl implements OrderService {
 		return result != 0;
 	}
 
-	@Override
-	public List<Order> getOrderList2(String username) {
-		List<Order> orders = orderRepository.getOrderList2(username);
-		
-		if(orders == null) {
-			return null;
-		}else {
-			return orders;
-		}
-	}
-
 	
 }

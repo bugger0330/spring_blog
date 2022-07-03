@@ -91,7 +91,7 @@
 						<div class="sc-ccSCjj">
 							<div class="sc-feryYK">
 								<select>
-									<option value="택배">택배거래</option>
+									<option value="택배거리">택배거래</option>
 									<option value="직거래">직거래</option>
 								</select>
 							</div>

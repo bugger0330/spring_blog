@@ -49,9 +49,4 @@ public class OrderRepositoryImpl implements OrderRepository {
 		
 		return session.insert(path + "insertUserinfo", orderInfo);
 	}
-
-	@Override
-	public List<Order> getOrderList2(String username) {
-		return session.selectList(path + "getOrderList2", username);
-	}
 }

@@ -38,6 +38,23 @@ body {
 	font-smoothing: antialiased;
 }
 
+#img-div{
+	margin: 0px auto;
+	padding: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .btn-outline-dark {
 	color: #212529;
 	border-color: #212529;
@@ -649,15 +666,16 @@ ol {
 
 .hero__search {
 	overflow: hidden;
-	margin-bottom: 30px;
+	margin-bottom: -80px;
+	margin-top: 100px;
 }
 
 .hero__search__form {
-	width: 610px;
+	width: 600px;
 	height: 50px;
 	border: 1px solid #ebebeb;
 	position: relative;
-	float: left;
+	float: right;
 }
 
 .hero__search__form form .hero__search__categories {
@@ -2918,11 +2936,11 @@ ol {
 
 @media only screen and (min-width: 1200px) {
 	.container {
-		max-width: 1170px;
+		min-width: 1200px;
+		width: 1200px;
+		margin: 0px auto;
 	}
 }
-
-/* Medium Device = 1200px */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.header__menu ul li {

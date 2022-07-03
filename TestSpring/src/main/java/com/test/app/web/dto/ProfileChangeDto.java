@@ -1,5 +1,7 @@
 package com.test.app.web.dto;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.test.app.domain.user.Profile;
 
 import lombok.AllArgsConstructor;
@@ -13,8 +15,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProfileChangeDto {
 	
+	private int id;
 	private int usercode;
 	private String username;
+	private String password;
 	private String name;
 	private String nickname;
 	private String email;
@@ -23,11 +27,11 @@ public class ProfileChangeDto {
 	private String address2;
 	
 	
-	
 	public Profile entity() {
-		
 		return Profile.builder()
+				.usercode(usercode)
 				.username(username)
+				.name(name)
 				.nickname(nickname)
 				.email(email)
 				.phone(phone)
@@ -37,3 +41,14 @@ public class ProfileChangeDto {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+

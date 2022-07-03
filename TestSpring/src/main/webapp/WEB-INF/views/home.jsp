@@ -6,9 +6,9 @@
     <!-- 검색창 -->
     <section class="hero">
         <div class="container">
-            <div class="row">
+            <div class="row" id=""main-div1>
 
-                <div class="col-lg-9">
+                <div class="col-lg19">
                     <div class="hero__search">
                         <div class="hero__search__form">
                             <form action="#">
@@ -26,7 +26,7 @@
     
     
 <!-- 이미지 리스트 -->
-<section class="py-5">
+<section class="py-1" id="img-div">
     <div class="container px-4 px-lg-5 mt-5">
         <div id="img-lists" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"></div>
 	</div>

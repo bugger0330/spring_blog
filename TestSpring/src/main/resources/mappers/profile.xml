@@ -5,20 +5,10 @@
 
 <mapper namespace="com.test.app.domain.user.ProfileRepository">
 
+	
 	<select id="getProfile" parameterType="String" resultType="com.test.app.domain.user.Profile">
 		select * from user_dtl where username = #{username};
 	</select>
 	
-
-	
-	<update id="insertProfile" parameterType="com.test.app.domain.user.Profile">
-		update user_dtl set 
-			nickname = #{nickname},
-			email = #{email},
-			phone = #{phone},
-			address = #{address},
-			address2 = #{address2}
-		where username = #{username};
-	</update>
-
+		
 </mapper>

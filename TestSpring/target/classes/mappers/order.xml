@@ -8,9 +8,6 @@
 	<select id="getOrderList" parameterType="String" resultType="com.test.app.domain.user.Order">
 		select * from order1 where username = #{username};
 	</select>
-	<select id="getOrderList2" parameterType="String" resultType="com.test.app.domain.user.Order">
-		select * from order2 where username = #{username};
-	</select>
 
 	<insert id="setOrder" parameterType="com.test.app.domain.user.Order">
 		insert into order1 values(

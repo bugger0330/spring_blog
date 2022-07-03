@@ -40,8 +40,15 @@ public class PageController {
 	
 	@RequestMapping(value = "/auth/mypage", method = RequestMethod.GET)
 	public String getMypage(ServletRequest request, ServletResponse response) {
-		
-		return "auth/mypage";
+		/*
+		 * HttpServletRequest servletRequest = (HttpServletRequest)request;
+		 * HttpServletResponse servletResponse = (HttpServletResponse)response;
+		 * 
+		 * HttpSession session = servletRequest.getSession(); User user =
+		 * (User)session.getAttribute("login"); String username = user.getUsername();
+		 * session.setAttribute("profile", profileRepository.checkNickname(username));
+		 * // profileService.checkNickname(username);
+		 */		return "auth/mypage";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
@@ -76,11 +83,6 @@ public class PageController {
 	@RequestMapping(value = "/mypage/user-over", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
 	public String userOver() {
 		return "mypage/user-over";
-	}
-	//내가 등록한 상품 리스트
-	@RequestMapping(value = "/mypage/product", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
-	public String myProduct() {
-		return "mypage/my-product";
 	}
 	
 	

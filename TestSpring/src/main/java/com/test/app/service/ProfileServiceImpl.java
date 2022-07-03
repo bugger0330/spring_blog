@@ -16,21 +16,16 @@ public class ProfileServiceImpl implements ProfileService {
 	@Override
 	public Profile getProfile(String username) {
 		Profile profile = profileRepository.getProfile(username);
-		if(profile == null) {
-			return null;
-		}else {
+		if(profile != null) {
 			return profile;
+		}else {
+			return null;
 		}
-	}
-
-	@Override
-	public boolean insertProfile(ProfileChangeDto profileChangeDto) {
-		int result = profileRepository.insertProfile(profileChangeDto.entity());
 		
-		return result != 0;
 	}
 
-	
+
+
 
 
 
