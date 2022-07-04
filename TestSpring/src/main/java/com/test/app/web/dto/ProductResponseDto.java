@@ -1,9 +1,6 @@
 package com.test.app.web.dto;
 
-import java.time.LocalDateTime;
 import java.util.List;
-
-import org.springframework.web.multipart.MultipartFile;
 
 import com.test.app.domain.user.Product;
 
@@ -18,7 +15,12 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductResponseDto {
 
-	private List<Product> products;
+	private List<Product> products1;
+	private List<Product> products2;
+	private List<Product> products3;
+	private List<Product> products4;
 	private String product_address;
+	
+	
 	
 }

@@ -88,20 +88,6 @@ public class PageController {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/* ================= 게시판 관련 ====================== */
 	
 	@RequestMapping(value = "/board/community", method = RequestMethod.GET)
@@ -176,6 +162,29 @@ public class PageController {
 	@RequestMapping(value = "/product/detail/{product_code}", method = RequestMethod.GET)
 	public String detail() {
 		return "product/detail";
+	}
+	
+	@RequestMapping(value = "/product/smart1", method = RequestMethod.GET)
+	public String smart1() {
+		return "plist/smart1";
+	}
+	
+	
+	@RequestMapping(value = "/product/smart2", method = RequestMethod.GET)
+	public String smart2() {
+		return "plist/smart2";
+	}
+	
+	
+	@RequestMapping(value = "/product/smart3", method = RequestMethod.GET)
+	public String smart3() {
+		return "plist/smart3";
+	}
+	
+	
+	@RequestMapping(value = "/product/smart4", method = RequestMethod.GET)
+	public String smart4() {
+		return "plist/smart4";
 	}
 	
 	

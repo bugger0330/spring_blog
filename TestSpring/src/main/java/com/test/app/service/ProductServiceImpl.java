@@ -10,13 +10,11 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.test.app.config.FileConfig;
 import com.test.app.domain.user.Product;
 import com.test.app.domain.user.ProductRepository;
 import com.test.app.web.dto.ProductRequestDto;
@@ -78,24 +76,19 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.productInsert(product) != 0;
 	}
 
-	@Override
-	public ProductResponseDto homeList(int number) {
-		String address = sc.getRealPath("/static/upload_img");
-		System.out.println(address);
-		
-		List<Product> products = productRepository.homeList(number);
-		
-		if(products == null) {
-			return null;
-		}else {
-			
-			return ProductResponseDto.builder()
-					.products(products)
-					.product_address(address)
-					.build();
-		}
-		
-	}
+	/*
+	 * @Override public ProductResponseDto homeList(int number) { String address =
+	 * sc.getRealPath("/static/upload_img"); System.out.println(address);
+	 * 
+	 * List<Product> products = productRepository.homeList(number);
+	 * 
+	 * if(products == null) { return null; }else {
+	 * 
+	 * return ProductResponseDto.builder() .products(products)
+	 * .product_address(address) .build(); }
+	 * 
+	 * }
+	 */
 
 	@Override
 	public Product getProductList(int product_code) {
@@ -108,6 +101,79 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
+	@Override
+	public ProductResponseDto homeList1(int number) {
+		String address = sc.getRealPath("/static/upload_img");
+		System.out.println(address);
+		
+		List<Product> products1 = productRepository.homeList1(number);
+		
+		if(products1 == null) {
+			return null;
+		}else {
+			
+			return ProductResponseDto.builder()
+					.products1(products1)
+					.product_address(address)
+					.build();
+		}
+	}
+
+	@Override
+	public ProductResponseDto homeList2(int number) {
+		String address = sc.getRealPath("/static/upload_img");
+		System.out.println(address);
+		
+		List<Product> products2 = productRepository.homeList2(number);
+		
+		if(products2 == null) {
+			return null;
+		}else {
+			
+			return ProductResponseDto.builder()
+					.products2(products2)
+					.product_address(address)
+					.build();
+		}
+	}
+
+	@Override
+	public ProductResponseDto homeList3(int number) {
+		String address = sc.getRealPath("/static/upload_img");
+		System.out.println(address);
+		
+		List<Product> products3 = productRepository.homeList3(number);
+		
+		if(products3 == null) {
+			return null;
+		}else {
+			
+			return ProductResponseDto.builder()
+					.products3(products3)
+					.product_address(address)
+					.build();
+		}
+	}
+
+	@Override
+	public ProductResponseDto homeList4(int number) {
+		String address = sc.getRealPath("/static/upload_img");
+		System.out.println(address);
+		
+		List<Product> products4 = productRepository.homeList4(number);
+		
+		if(products4 == null) {
+			return null;
+		}else {
+			
+			return ProductResponseDto.builder()
+					.products4(products4)
+					.product_address(address)
+					.build();
+		}
+	}
+
+	
 	
 	
 	

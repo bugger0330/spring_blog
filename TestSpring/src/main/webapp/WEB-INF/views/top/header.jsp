@@ -34,7 +34,7 @@
                 <ul class="ul1">
                     <!-- ======================================== -->
                     <li class="home">
-                        <a href="/app/" class="home1">중고마을</a>
+                        <a href="/app/" class="home1">IT 중고마을</a>
                     </li>
                     <!-- ======================================== -->
                     <li class="first">
@@ -53,16 +53,16 @@
                         <ul class="ul2">
                             <!-- ======================================== -->
                             <li class="li2">
-                                <a class="li2-a" href="#">스마트폰</a>
+                                <a class="li2-a" href="/app/product/smart1">스마트폰</a>
                             </li>
                             <li class="li2">
-                                <a class="li2-a" href="#">태블릿</a>
+                                <a class="li2-a" href="/app/product/smart2">태블릿</a>
                             </li>
                             <li class="li2">
-                                <a class="li2-a" href="#">노트북</a>
+                                <a class="li2-a" href="/app/product/smart3">PC</a>
                             </li>
                             <li class="li2">
-                                <a class="li2-a" href="#">기타 IT기기</a>
+                                <a class="li2-a" href="/app/product/smart4">기타 IT기기</a>
                             </li>
                             <!-- ======================================== -->
                         </ul>

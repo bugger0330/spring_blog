@@ -43,9 +43,20 @@ body {
 	padding: 0px;
 }
 
+.smart{
+	width: 100%;
+	font-size: 30px;
+	margin: 0px;
+	padding: 5px 150px;
+	background-color: yellow;
+	display: flex;
+	justify-content: space-between;
+}
 
-
-
+.smart > div{
+	background-color: white;
+	padding: 5px 10px;
+}
 
 
 
@@ -593,6 +604,7 @@ ol {
 
 .hero {
 	padding-bottom: 50px;
+	margin-bottom: 100px;
 }
 
 .hero.hero-normal {

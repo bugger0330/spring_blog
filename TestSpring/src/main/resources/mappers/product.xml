@@ -5,9 +5,108 @@
 
 <mapper namespace="com.test.app.domain.user.ProductRepository">
 
-	<select id="homeList" parameterType="Integer" resultType="com.test.app.domain.user.Product">
-		select * from product limit #{number},8;
+	<select id="homeList1" parameterType="Integer" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product 
+		where product_select = '스마트폰' 
+		LIMIT #{number},20;
 	</select>
+	
+	<select id="homeList2" parameterType="Integer" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product 
+		where product_select = '태블릿' 
+		LIMIT #{number},20;
+	</select>
+	
+	<select id="homeList3" parameterType="Integer" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product 
+		where product_select = 'pc' 
+		LIMIT #{number},20;
+	</select>
+	
+	<select id="homeList4" parameterType="Integer" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product 
+		where product_select = '기타' 
+		LIMIT #{number},20;
+	</select>
+	
+
+	
 	
 	<select id="getProductList" parameterType="Integer" resultType="com.test.app.domain.user.Product">
 		select * from product where  product_code = #{product_code};

@@ -32,6 +32,7 @@ public class Product {
 	private String product_img5;
 	private String product_img6;
 	private LocalDateTime create_date;
+	private int count1;
 	
 	
 	

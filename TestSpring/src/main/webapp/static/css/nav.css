@@ -44,7 +44,7 @@
 
 
 .home{
-    margin-right: 240px; 
+    margin-right: 200px; 
     padding: 0px; 
     list-style: none; 
     position: relative; 
@@ -63,7 +63,7 @@
 .home1{
     color: rgb(51, 51, 51); 
     text-decoration-line: none; 
-    width: 160px; 
+    width: 200px; 
     font-size: 30px; 
     display: block; 
     height: 71px; 

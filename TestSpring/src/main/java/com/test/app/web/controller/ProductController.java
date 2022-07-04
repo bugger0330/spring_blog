@@ -32,9 +32,26 @@ public class ProductController {
 	@ResponseBody
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ProductResponseDto homeList(int number){
-		ProductResponseDto dto = productService.homeList(number);
-		System.out.println("컨트롤러 통과 : " + dto);
-		System.out.println("리얼패스 : " + dto.getProduct_address());
+		ProductResponseDto dto1 = productService.homeList1(number);
+		ProductResponseDto dto2 = productService.homeList2(number);
+		ProductResponseDto dto3 = productService.homeList3(number);
+		ProductResponseDto dto4 = productService.homeList4(number);
+		
+		ProductResponseDto dto = new ProductResponseDto();
+		dto.setProducts1(dto1.getProducts1());
+		dto.setProducts2(dto2.getProducts2());
+		dto.setProducts3(dto3.getProducts3());
+		dto.setProducts4(dto4.getProducts4());
+		
+		System.out.println("컨트롤러 통과 : " + dto1);
+		System.out.println("컨트롤러 통과 : " + dto2);
+		System.out.println("컨트롤러 통과 : " + dto3);
+		System.out.println("컨트롤러 통과 : " + dto4);
+		System.out.println("컨트롤러 통과44444 : " + dto.toString());
+//		System.out.println("리얼패스 : " + dto1.getProduct_address());
+		
+		
+		
 		
 		/*
 		 * 
