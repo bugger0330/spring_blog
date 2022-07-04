@@ -27,7 +27,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = '스마트폰' 
-		LIMIT #{number},20;
+		LIMIT #{number},16;
 	</select>
 	
 	<select id="homeList2" parameterType="Integer" resultType="com.test.app.domain.user.Product">
@@ -52,7 +52,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = '태블릿' 
-		LIMIT #{number},20;
+		LIMIT #{number},16;
 	</select>
 	
 	<select id="homeList3" parameterType="Integer" resultType="com.test.app.domain.user.Product">
@@ -77,7 +77,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = 'pc' 
-		LIMIT #{number},20;
+		LIMIT #{number},16;
 	</select>
 	
 	<select id="homeList4" parameterType="Integer" resultType="com.test.app.domain.user.Product">
@@ -102,7 +102,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = '기타' 
-		LIMIT #{number},20;
+		LIMIT #{number},16;
 	</select>
 	
 

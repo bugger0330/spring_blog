@@ -58,6 +58,13 @@ body {
 	padding: 5px 10px;
 }
 
+.page-link_on{
+	margin: 0px 10px;
+	padding: 6px 12px;
+    color: #dee2e6;
+    background-color: #8080ff;
+    cursor: default;
+}
 
 
 

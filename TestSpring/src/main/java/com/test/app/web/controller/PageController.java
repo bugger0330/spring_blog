@@ -189,10 +189,13 @@ public class PageController {
 	
 	
 
-	/* =================  ====================== */
+	/* ================= 기타 ====================== */
 	
 	
-	
+	@RequestMapping(value = "/event", method = RequestMethod.GET)
+	public String event() {
+		return "etc/event";
+	}
 }
 
 

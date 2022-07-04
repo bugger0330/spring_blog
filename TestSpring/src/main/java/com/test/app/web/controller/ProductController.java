@@ -32,6 +32,16 @@ public class ProductController {
 	@ResponseBody
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ProductResponseDto homeList(int number){
+		
+		System.out.println("컨트롤러 들어옴 number : " + number);
+		if(number == 1) {
+			number = 0;
+		}else if(number > 1) {
+			number = (number - 1) * 16;
+		}
+		System.out.println("컨트롤러 계산된 number : " + number);
+		
+		
 		ProductResponseDto dto1 = productService.homeList1(number);
 		ProductResponseDto dto2 = productService.homeList2(number);
 		ProductResponseDto dto3 = productService.homeList3(number);

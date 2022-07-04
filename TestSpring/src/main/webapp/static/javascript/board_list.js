@@ -24,10 +24,7 @@ function load(page) {
 			alert("비동기 처리 오류");
 		}
 	});
-	
-	$.ajax({
-		
-	});
+
 }
 
 function createPageNumber(data) {

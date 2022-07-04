@@ -63,10 +63,10 @@ function homeImgLists1(ss){
                             <!-- Product name-->
                             <h5 class="fw-bolder">${data1[i].product_title}</h5>
                             <!-- Product price-->
-                            ${numb2}원
                         </div>
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div style="text-align: center; font-size:25px; margin-bottom:10px;">${numb2}원</div>
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/app/product/detail/${data1[i].product_code}">구경가기</a></div>
                     </div>
                 </div>
@@ -96,10 +96,10 @@ function homeImgLists2(ss){
                             <!-- Product name-->
                             <h5 class="fw-bolder">${data2[i].product_title}</h5>
                             <!-- Product price-->
-                            ${numb2}원
                         </div>
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                           <div style="text-align: center; font-size:25px; margin-bottom:10px;">${numb2}원</div>
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/app/product/detail/${data2[i].product_code}">구경가기</a></div>
                     </div>
                 </div>
@@ -129,10 +129,10 @@ function homeImgLists3(ss){
                             <!-- Product name-->
                             <h5 class="fw-bolder">${data3[i].product_title}</h5>
                             <!-- Product price-->
-                            ${numb2}원
                         </div>
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                           <div style="text-align: center; font-size:25px; margin-bottom:10px;">${numb2}원</div>
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/app/product/detail/${data3[i].product_code}">구경가기</a></div>
                     </div>
                 </div>
@@ -162,10 +162,10 @@ function homeImgLists4(ss){
                             <!-- Product name-->
                             <h5 class="fw-bolder">${data4[i].product_title}</h5>
                             <!-- Product price-->
-                            ${numb2}원
                         </div>
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div style="text-align: center; font-size:25px; margin-bottom:10px;">${numb2}원</div>
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/app/product/detail/${data4[i].product_code}">구경가기</a></div>
                     </div>
                 </div>

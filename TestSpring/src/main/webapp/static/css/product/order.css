@@ -6,10 +6,8 @@
 
 
 #container{
-    min-width: 1800px;
     min-height: 1000px;
-    width: 1800px;
-    height: 1000px;
+    height: auto;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
