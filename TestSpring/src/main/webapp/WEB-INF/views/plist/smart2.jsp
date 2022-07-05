@@ -16,11 +16,11 @@
 	<div class="row">
 		<div class="col">
 			<ul class="pagination justify-content-center">
-				<li class="pre-next-btn"><a class="page-link"  href="#">이전</a></li>
+				<li class="pre-next-btn" id="page-link">이전</a></li>
 				
 				<li class="board-list-page" style="display: flex; justify-content: center; padding: 0px 10px"></li>
 				
-				<li class="pre-next-btn"><a class="page-link" href="#">다음</a></li>
+				<li class="pre-next-btn" id="page-link">다음</li>
 			</ul>
 		</div>
 	</div>

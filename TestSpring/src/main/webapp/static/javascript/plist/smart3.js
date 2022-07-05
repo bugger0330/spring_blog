@@ -1,4 +1,5 @@
 const imgLists = document.querySelector("#img-lists");
+let allRow = 0;
 let nowPage = 1;
 
 load1(nowPage);
@@ -10,6 +11,7 @@ function load1(page) {
 		data : {
 			number : page
 		},
+		async: false,
 		contentType : "application/json",
 		dataType : "text",
 		success : function(data){
@@ -65,8 +67,6 @@ function homeImgLists1(ss){
 }
 
 
-
-
 function createPageNumber(data) {
 	const boardListPage = document.querySelector('.board-list-page');
 	const preNextBtn = document.querySelectorAll('.pre-next-btn');	
@@ -80,7 +80,8 @@ function createPageNumber(data) {
 	let pageStr = ``;
 	
 	for(let i = startIndex; i <= endIndex; i++){
-		pageStr += `<div class="page-link" style="margin : 0px 10px; cursor:pointer">${i}</div>`;
+		pageStr += (i == nowPage) ? `<div class="page-link_on" style="margin : 0px 10px; cursor:pointer">${i}</div>`
+		: `<div class="page-link" style="margin : 0px 10px; cursor:pointer">${i}</div>`;
 	}
 	
 	boardListPage.innerHTML = pageStr;
@@ -96,11 +97,12 @@ function createPageNumber(data) {
 	}
 	
 	
-	const pageButton = boardListPage.querySelectorAll('div');
+	let pageButton = boardListPage.querySelectorAll('div');
 	for(let i = 0; i < pageButton.length; i++){
 	pageButton[i].onclick = () => {
 		nowPage = pageButton[i].textContent;
 		load1(nowPage);
+		pageButton = boardListPage.querySelectorAll('div');
 		pageButton[i].className = "page-link_on";
 		
 	}
