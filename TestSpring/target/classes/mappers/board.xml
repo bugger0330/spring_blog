@@ -19,8 +19,8 @@
 		 	content,
 		 	count,
 		 	(select count(*) from board_mst) as boardCount,
-		 	create_date,
-		 	update_date
+		 	DATE_FORMAT(create_date, '%Y-%m-%d') as create_date,
+		 	DATE_FORMAT(update_date, '%Y-%m-%d') as update_date
 		 from board_mst
 		 order by board_code desc
 		 limit #{page}, 10;

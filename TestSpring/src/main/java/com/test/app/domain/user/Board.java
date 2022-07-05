@@ -19,7 +19,7 @@ public class Board {
 	private String content;
 	private int count;
 	private int boardCount;
-	private LocalDateTime create_date;
-	private LocalDateTime update_date;
+	private String create_date;
+	private String update_date;
 
 }
