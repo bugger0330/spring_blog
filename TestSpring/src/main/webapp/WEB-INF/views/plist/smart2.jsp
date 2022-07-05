@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <jsp:include page="../top/header.jsp"></jsp:include>
 <link href="/app/static/css/home/home.css" rel="stylesheet">
-
+<link href="/app/static/css/product/plists.css" rel="stylesheet">
 
     
     
@@ -24,6 +24,26 @@
 			</ul>
 		</div>
 	</div>
+	
+	<div class="row justify-content-center" style="margin-top: 40px;">
+		<div class="col-md-8 col-md-offset-3" id="ddd">
+			<div class="input-group ">
+			
+				<div class="input-group-prepend ">
+					<select class="custom-select" name="typeSearch" style="height: 38px; margin-right: 10px;">
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+							<option value="username">작성자</option>
+					</select>
+				</div>
+				<input class="form-control" name="keyword" value="" style="margin: 0px 12px 0px 0px;" placeholder="검색">
+				<div class="input-group-append" id="button-addon4">
+					<button type="button" class="btn btn-outline-secondary btn-search" id="search"><i class="fa fa-search"></i>검색</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 </section>
 <br><br>
 

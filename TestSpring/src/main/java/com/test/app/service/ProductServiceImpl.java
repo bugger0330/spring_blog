@@ -19,6 +19,7 @@ import com.test.app.domain.user.Product;
 import com.test.app.domain.user.ProductRepository;
 import com.test.app.web.dto.ProductRequestDto;
 import com.test.app.web.dto.ProductResponseDto;
+import com.test.app.web.dto.ProductSearchDto;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -102,11 +103,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductResponseDto homeList1(int number) {
+	public ProductResponseDto homeList1(ProductSearchDto productSearchDto) {
 		String address = sc.getRealPath("/static/upload_img");
 		System.out.println(address);
 		
-		List<Product> products1 = productRepository.homeList1(number);
+		List<Product> products1 = productRepository.homeList1(productSearchDto.entity());
 		
 		if(products1 == null) {
 			return null;
@@ -120,11 +121,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductResponseDto homeList2(int number) {
+	public ProductResponseDto homeList2(ProductSearchDto productSearchDto) {
 		String address = sc.getRealPath("/static/upload_img");
 		System.out.println(address);
 		
-		List<Product> products2 = productRepository.homeList2(number);
+		List<Product> products2 = productRepository.homeList2(productSearchDto.entity());
 		
 		if(products2 == null) {
 			return null;
@@ -138,11 +139,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductResponseDto homeList3(int number) {
+	public ProductResponseDto homeList3(ProductSearchDto productSearchDto) {
 		String address = sc.getRealPath("/static/upload_img");
 		System.out.println(address);
 		
-		List<Product> products3 = productRepository.homeList3(number);
+		List<Product> products3 = productRepository.homeList3(productSearchDto.entity());
 		
 		if(products3 == null) {
 			return null;
@@ -156,11 +157,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductResponseDto homeList4(int number) {
+	public ProductResponseDto homeList4(ProductSearchDto productSearchDto) {
 		String address = sc.getRealPath("/static/upload_img");
 		System.out.println(address);
 		
-		List<Product> products4 = productRepository.homeList4(number);
+		List<Product> products4 = productRepository.homeList4(productSearchDto.entity());
 		
 		if(products4 == null) {
 			return null;

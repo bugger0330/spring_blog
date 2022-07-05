@@ -32,27 +32,27 @@ public class ProductRepositoryImpl implements ProductRepository {
 	}
 
 	@Override
-	public List<Product> homeList1(int number) {
+	public List<Product> homeList1(ProductSearch productSearch) {
 		
-		return session.selectOne(path + "homeList1", number);
+		return session.selectOne(path + "homeList1", productSearch);
 	}
 
 	@Override
-	public List<Product> homeList2(int number) {
+	public List<Product> homeList2(ProductSearch productSearch) {
 
-		return session.selectOne(path + "homeList2", number);
+		return session.selectOne(path + "homeList2", productSearch);
 	}
 
 	@Override
-	public List<Product> homeList3(int number) {
+	public List<Product> homeList3(ProductSearch productSearch) {
 
-		return session.selectOne(path + "homeList3", number);
+		return session.selectOne(path + "homeList3", productSearch);
 	}
 
 	@Override
-	public List<Product> homeList4(int number) {
+	public List<Product> homeList4(ProductSearch productSearch) {
 
-		return session.selectOne(path + "homeList4", number);
+		return session.selectOne(path + "homeList4", productSearch);
 	}
 
 	

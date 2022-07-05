@@ -1,16 +1,51 @@
 const imgLists = document.querySelector("#img-lists");
+
+const selectBtn = document.querySelector(".custom-select");
+const optionBtn = document.querySelectorAll("option");
+const searchContent = document.querySelector("#search-con");
+const searchBtn = document.querySelector("#search");
+
+let appends = new Array();
+let select = "";
+let search = "";
+
 let allRow = 0;
 let nowPage = 1;
 
 load1(nowPage);
 
+
+searchBtn.onclick = () => {
+	search = searchContent.value;
+	
+	for(let i = 0; i < optionBtn.length; i++){
+		if(optionBtn[i].selected){
+			select = optionBtn[i].value;
+		}
+	}
+	console.log("옵션 선택 : " + select);
+	console.log("검색어 : " + search);
+	appends.push(select);
+	appends.push(search);
+	
+	load1(appends);
+}
+
+		
+
+
+
+
+
 function load1(page) {
 	$.ajax({
 		type : "get",
 		url : "/app/home",
-		data : {
+		data : JSON.stringify({
+			select : appends[0],
+			search : appends[1],
 			number : page
-		},
+		}),
 		async: false,
 		contentType : "application/json",
 		dataType : "text",
