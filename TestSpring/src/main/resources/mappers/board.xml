@@ -26,6 +26,30 @@
 		 limit #{page}, 10;
 	</select>
 	
+	<select id="getBoardList2" parameterType="com.test.app.domain.user.Board" resultType="com.test.app.domain.user.Board">
+		select
+		 	board_code,
+		 	username,
+		 	title,
+		 	content,
+		 	count,
+		 	(select count(*) from board_mst) as boardCount,
+		 	DATE_FORMAT(create_date, '%Y-%m-%d') as create_date,
+		 	DATE_FORMAT(update_date, '%Y-%m-%d') as update_date
+		 from board_mst
+			<if test="select == 'title'">
+				where title like concat('%',#{search},'%')
+			</if>
+			<if test="select == 'content'">
+				where content like concat('%',#{search},'%')
+			</if>
+			<if test="select == 'username'">
+				where username like concat('%',#{search},'%')
+			</if>
+		 order by board_code desc
+		 limit #{number}, 10;
+	</select>
+	
 	<select id="getBoardRead" parameterType="Integer" resultType="com.test.app.domain.user.Board">
 		select * from board_mst where board_code = #{num};
 	</select>

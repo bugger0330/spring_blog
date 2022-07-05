@@ -50,4 +50,12 @@ public class BoardRepositoryImpl implements BoardRepository {
 		return session.selectOne(path + "getBoardRead", num);
 	}
 
+	@Override
+	public List<Board> getBoardList2(Board board) {
+		
+		return session.selectList(path + "getBoardList2", board);
+	}
+
+
+
 }

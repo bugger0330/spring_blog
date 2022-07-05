@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.test.app.domain.user.Board;
 import com.test.app.service.BoardService;
 import com.test.app.web.dto.BoardRequestDto;
+import com.test.app.web.dto.SearchRequestDto;
 
 @Controller
 public class BoardController {
@@ -33,6 +34,22 @@ public class BoardController {
 		System.out.println("컨트롤러 계산된 page : " + page);
 		
 		List<Board> board = boardService.getBoardList(page);
+		System.out.println("board리스트"+board.toString());	
+		return board;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/board/list/search", method = RequestMethod.POST)
+	public List<Board> boardListSearch(@RequestBody SearchRequestDto searchRequestDto) {
+		System.out.println("컨트롤러 들어옴 page : " + searchRequestDto.toString());
+		if(searchRequestDto.getNumber() == 1) {
+			searchRequestDto.setNumber(0);
+		}else if(searchRequestDto.getNumber() > 1) {
+			searchRequestDto.setNumber((searchRequestDto.getNumber() - 1) * 10);
+		}
+		System.out.println("컨트롤러 계산된 page : " + searchRequestDto.toString());
+		
+		List<Board> board = boardService.getBoardList2(searchRequestDto);
 		System.out.println("board리스트"+board.toString());	
 		return board;
 	}

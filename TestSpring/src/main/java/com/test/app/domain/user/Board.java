@@ -22,4 +22,8 @@ public class Board {
 	private String create_date;
 	private String update_date;
 
+	private int number;
+	private String select;
+	private String search;
+
 }

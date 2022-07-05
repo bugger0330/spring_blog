@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.test.app.domain.user.Board;
 import com.test.app.domain.user.BoardRepository;
 import com.test.app.web.dto.BoardRequestDto;
+import com.test.app.web.dto.SearchRequestDto;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -58,6 +59,13 @@ public class BoardServiceImpl implements BoardService {
 			return board;
 		}
 		
+	}
+
+	@Override
+	public List<Board> getBoardList2(SearchRequestDto searchRequestDto) {
+		List<Board> board = boardRepository.getBoardList2(searchRequestDto.boardEntity());
+		
+		return board;
 	}
 
 }

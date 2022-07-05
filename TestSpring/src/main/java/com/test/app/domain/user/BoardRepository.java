@@ -5,6 +5,7 @@ import java.util.List;
 public interface BoardRepository {
 
 	public List<Board> getBoardList(int page);
+	public List<Board> getBoardList2(Board board);
 	public int getBoardInsert(Board board);
 	public int getBoardUpdate(Board board);
 	public int getDelete(int num);

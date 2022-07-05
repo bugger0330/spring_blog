@@ -51,23 +51,23 @@
 			
 
 			
-			<div class="row justify-content-center" style="margin-top: 20px;">
-				<div class="col-md-8 col-md-offset-3  ">
+			<div class="row justify-content-center" style="margin-top: 50px;">
+				<div class="col-md-4 col-md-offset-3">
 					<div class="input-group ">
-						<div class="input-group-prepend ">
-							<select class="custom-select" name="typeSearch" style="height: 38px;">
+						<div class="input-group-prepend">
+							<select class="custom-select" name="typeSearch" style="height: 38px; margin-right: 10px;">
 									<option value="title">제목</option>
 									<option value="content">내용</option>
 									<option value="username">작성자</option>
 							</select>
 						</div>
-						<input class="form-control" name="keyword" value="" style="margin: 0px 12px 0px 0px;" placeholder="검색">
+						<input class="form-control" id="keyword" value="" style="margin: 0px 12px 0px 0px;" placeholder="검색">
 						<div class="input-group-append" id="button-addon4">
 							<button type="button" class="btn btn-outline-secondary btn-search" id="search"><i class="fa fa-search"></i>검색</button>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>	
 		</div>
 	</div>
 <br><br><br>
