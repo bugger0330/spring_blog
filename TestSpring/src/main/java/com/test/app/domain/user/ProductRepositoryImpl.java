@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.test.app.web.dto.SearchRequestDto;
+
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
 	
@@ -32,27 +34,51 @@ public class ProductRepositoryImpl implements ProductRepository {
 	}
 
 	@Override
-	public List<Product> homeList1(ProductSearch productSearch) {
+	public List<Product> homeList1(int number) {
 		
-		return session.selectOne(path + "homeList1", productSearch);
+		return session.selectOne(path + "homeList1", number);
 	}
 
 	@Override
-	public List<Product> homeList2(ProductSearch productSearch) {
+	public List<Product> homeList2(int number) {
 
-		return session.selectOne(path + "homeList2", productSearch);
+		return session.selectOne(path + "homeList2", number);
 	}
 
 	@Override
-	public List<Product> homeList3(ProductSearch productSearch) {
+	public List<Product> homeList3(int number) {
 
-		return session.selectOne(path + "homeList3", productSearch);
+		return session.selectOne(path + "homeList3", number);
 	}
 
 	@Override
-	public List<Product> homeList4(ProductSearch productSearch) {
+	public List<Product> homeList4(int number) {
 
-		return session.selectOne(path + "homeList4", productSearch);
+		return session.selectOne(path + "homeList4", number);
+	}
+
+	@Override
+	public List<Product> homeList5(Search search) {
+
+		return session.selectOne(path + "homeList5", search);
+	}
+
+	@Override
+	public List<Product> homeList6(Search search) {
+
+		return session.selectOne(path + "homeList6", search);
+	}
+
+	@Override
+	public List<Product> homeList7(Search search) {
+
+		return session.selectOne(path + "homeList7", search);
+	}
+
+	@Override
+	public List<Product> homeList8(Search search) {
+
+		return session.selectOne(path + "homeList8", search);
 	}
 
 	

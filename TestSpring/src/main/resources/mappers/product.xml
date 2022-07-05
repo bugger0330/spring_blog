@@ -5,7 +5,7 @@
 
 <mapper namespace="com.test.app.domain.user.ProductRepository">
 
-	<select id="homeList1" parameterType="com.test.app.domain.user.ProductSearch" resultType="com.test.app.domain.user.Product">
+	<select id="homeList1" parameterType="Integer" resultType="com.test.app.domain.user.Product">
 		select
 			product_code,
 			product_username, 
@@ -26,25 +26,11 @@
 			create_date,
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
-		<choose>
-		<when test="select == null || search == null">
-			where product_select = '스마트폰'
-		</when>
-		<when test="select == title">
-			where product_select = '스마트폰' and product_title like ('%',#{search},'%')
-		</when>
-		<when test="select == content">
-			where product_select = '스마트폰' and product_content like ('%',#{search},'%')
-		</when>
-		<when test="select == username">
-			where product_select = '스마트폰' and product_username like ('%',#{search},'%')
-		</when>
-		</choose>
-		
+		where product_select = '스마트폰' 
 		LIMIT #{number},16;
 	</select>
 	
-	<select id="homeList2" parameterType="com.test.app.domain.user.ProductSearch" resultType="com.test.app.domain.user.Product">
+	<select id="homeList2" parameterType="Integer" resultType="com.test.app.domain.user.Product">
 		select
 			product_code,
 			product_username, 
@@ -65,24 +51,11 @@
 			create_date,
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
-		<choose>
-		<when test="select == null || search == null">
-			where product_select = '태블릿'
-		</when>
-		<when test="select == title">
-			where product_select = '태블릿' and product_title like ('%',#{search},'%')
-		</when>
-		<when test="select == content">
-			where product_select = '태블릿' and product_content like ('%',#{search},'%')
-		</when>
-		<when test="select == username">
-			where product_select = '태블릿' and product_username like ('%',#{search},'%')
-		</when>
-		</choose>
+		where product_select = '태블릿' 
 		LIMIT #{number},16;
 	</select>
 	
-	<select id="homeList3" parameterType="com.test.app.domain.user.ProductSearch" resultType="com.test.app.domain.user.Product">
+	<select id="homeList3" parameterType="Integer" resultType="com.test.app.domain.user.Product">
 		select
 			product_code,
 			product_username, 
@@ -103,24 +76,11 @@
 			create_date,
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
-		<choose>
-		<when test="select == null || search == null">
-			where product_select = 'pc'
-		</when>
-		<when test="select == title">
-			where product_select = 'pc' and product_title like ('%',#{search},'%')
-		</when>
-		<when test="select == content">
-			where product_select = 'pc' and product_content like ('%',#{search},'%')
-		</when>
-		<when test="select == username">
-			where product_select = 'pc' and product_username like ('%',#{search},'%')
-		</when>
-		</choose>
+		where product_select = 'pc' 
 		LIMIT #{number},16;
 	</select>
 	
-	<select id="homeList4" parameterType="com.test.app.domain.user.ProductSearch" resultType="com.test.app.domain.user.Product">
+	<select id="homeList4" parameterType="Integer" resultType="com.test.app.domain.user.Product">
 		select
 			product_code,
 			product_username, 
@@ -141,22 +101,155 @@
 			create_date,
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
-		<choose>
-		<when test="select == null || search == null">
-			where product_select = '기타'
-		</when>
-		<when test="select == title">
-			where product_select = '기타' and product_title like ('%',#{search},'%')
-		</when>
-		<when test="select == content">
-			where product_select = '기타' and product_content like ('%',#{search},'%')
-		</when>
-		<when test="select == username">
-			where product_select = '기타' and product_username like ('%',#{search},'%')
-		</when>
-		</choose>
+		where product_select = '기타' 
 		LIMIT #{number},16;
 	</select>
+	
+	
+	<select id="homeList5" parameterType="com.test.app.domain.user.Search" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product
+		where product_select = '스마트폰'
+		<if test="select == 'title'">
+			and product_title like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'content'">
+			and product_content like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'username'">
+			and product_username like concat('%',#{search},'%')
+		</if>
+		 
+		LIMIT #{number},16;
+	</select>
+	
+	
+	<select id="homeList6" parameterType="com.test.app.domain.user.Search" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product
+		where product_select = '태블릿'
+		<if test="select == 'title'">
+			and product_title like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'content'">
+			and product_content like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'username'">
+			and product_username like concat('%',#{search},'%')
+		</if>
+		 
+		LIMIT #{number},16;
+	</select>
+	
+	
+	<select id="homeList7" parameterType="com.test.app.domain.user.Search" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product
+		where product_select = 'pc'
+		<if test="select == 'title'">
+			and product_title like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'content'">
+			and product_content like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'username'">
+			and product_username like concat('%',#{search},'%')
+		</if>
+		 
+		LIMIT #{number},16;
+	</select>
+	
+	
+	<select id="homeList8" parameterType="com.test.app.domain.user.Search" resultType="com.test.app.domain.user.Product">
+		select
+			product_code,
+			product_username, 
+			product_phone, 
+			product_title, 
+			product_content, 
+			product_price, 
+			product_delivery, 
+			product_status, 
+			product_exchange, 
+			product_select, 
+			product_img1, 
+			product_img2, 
+			product_img3, 
+			product_img4, 
+			product_img5, 
+			product_img6, 
+			create_date,
+			(SELECT COUNT(product_code) FROM product) AS count1
+		from product
+		where product_select = '기타'
+		<if test="select == 'title'">
+			and product_title like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'content'">
+			and product_content like concat('%',#{search},'%')
+		</if>
+		<if test="select == 'username'">
+			and product_username like concat('%',#{search},'%')
+		</if>
+		 
+		LIMIT #{number},16;
+	</select>
+	
+	
 	
 
 	

@@ -69,23 +69,18 @@ function getBoardList(data)	{
 
 function boardPageNum(data) {
 	const boardListPage = document.querySelector('.board-list-page');
-	const preNextBtn = document.querySelectorAll('.pre-next-btn');	
+	const preNextBtn = document.querySelectorAll('.pre-next-btn');	// 이전/다음 버튼
 	
 	const totalBoardCount = data;
-	const totalPageCount = data % 10 == 0 ? data / 10 : (data / 10) + 1;
+	const totalPageCount = data % 5 == 0 ? Math.floor(data / 5) : Math.floor(data / 5) + 1;
 	
-	const startIndex = nowPage % 10 == 0 ? nowPage - 9 : nowPage - (nowPage % 10) + 1;
-	const endIndex = startIndex + 9 <= totalPageCount ? startIndex + 9 : totalPageCount;
+	const startIndex = nowPage % 5 == 0 ? (nowPage + 1) : nowPage - Math.floor(nowPage % 5) + 1;
+	const endIndex = startIndex + 4 <= totalPageCount ? startIndex + 4 : totalPageCount;
 	
 	let pageNum = ``;
 	
-/*	for(let i = startIndex; i <= endIndex; i++){
-		pageNum += `<div class="page-link" style="margin : 0px 10px; cursor:pointer">${i}</div>`;
-	}*/
-	
 	for(let i = startIndex; i <= endIndex; i++){
-		pageNum += (i == nowPage) ? `<div class="page-link_on" style="margin : 0px 10px; cursor:pointer">${i}</div>`
-		: `<div class="page-link" style="margin : 0px 10px; cursor:pointer">${i}</div>`;
+		pageNum += `<div class="page-link" style="margin : 0px 10px; cursor:pointer">${i}</div>`;
 	}
 	 
 	boardListPage.innerHTML = pageNum;

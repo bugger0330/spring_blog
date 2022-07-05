@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ProductSearch {
+public class Search {
 
 	private int number;
 	private String select;
-	private String search; 
+	private String search;
 }

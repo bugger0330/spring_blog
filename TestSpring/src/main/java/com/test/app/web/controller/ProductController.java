@@ -3,17 +3,15 @@ package com.test.app.web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.app.domain.user.Product;
 import com.test.app.service.ProductService;
 import com.test.app.web.dto.ProductRequestDto;
 import com.test.app.web.dto.ProductResponseDto;
-import com.test.app.web.dto.ProductSearchDto;
+import com.test.app.web.dto.SearchRequestDto;
 
 @Controller
 public class ProductController {
@@ -33,22 +31,21 @@ public class ProductController {
 
 	@ResponseBody
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public ProductResponseDto homeList(@RequestBody ProductSearchDto productSearchDto){
-
+	public ProductResponseDto homeList(int number){
 		
-		System.out.println("컨트롤러 들어옴 number : " + productSearchDto.getNumber());
-		if(productSearchDto.getNumber() == 1) {
-			productSearchDto.setNumber(0);
-		}else if(productSearchDto.getNumber() > 1) {
-			productSearchDto.setNumber((productSearchDto.getNumber() - 1) * 16);
+		System.out.println("컨트롤러 들어옴 number : " + number);
+		if(number == 1) {
+			number = 0;
+		}else if(number > 1) {
+			number = (number - 1) * 16;
 		}
-		System.out.println("컨트롤러 계산된 number : " + productSearchDto.getNumber());
+		System.out.println("컨트롤러 계산된 number : " + number);
 		
 		
-		ProductResponseDto dto1 = productService.homeList1(productSearchDto);
-		ProductResponseDto dto2 = productService.homeList2(productSearchDto);
-		ProductResponseDto dto3 = productService.homeList3(productSearchDto);
-		ProductResponseDto dto4 = productService.homeList4(productSearchDto);
+		ProductResponseDto dto1 = productService.homeList1(number);
+		ProductResponseDto dto2 = productService.homeList2(number);
+		ProductResponseDto dto3 = productService.homeList3(number);
+		ProductResponseDto dto4 = productService.homeList4(number);
 		
 		ProductResponseDto dto = new ProductResponseDto();
 		dto.setProducts1(dto1.getProducts1());
@@ -82,6 +79,41 @@ public class ProductController {
 		
 		return dto;
 	}
+	
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/home/search", method = RequestMethod.GET)
+	public ProductResponseDto homeList2(SearchRequestDto searchRequestDto){
+		
+		System.out.println("search컨트롤러 들어옴 : " + searchRequestDto.toString());
+		if(searchRequestDto.getNumber() == 1) {
+			searchRequestDto.setNumber(0);
+		}else if(searchRequestDto.getNumber() > 1) {
+			searchRequestDto.setNumber((searchRequestDto.getNumber() - 1) * 16);
+		}
+		System.out.println("search컨트롤러 계산된 number : " + searchRequestDto.toString());
+		
+		
+		
+		  ProductResponseDto dto1 = productService.homeList5(searchRequestDto);
+		  ProductResponseDto dto2 = productService.homeList6(searchRequestDto);
+		  ProductResponseDto dto3 = productService.homeList7(searchRequestDto);
+		  ProductResponseDto dto4 = productService.homeList8(searchRequestDto);
+		  
+		  ProductResponseDto dto = new ProductResponseDto();
+		  dto.setProducts1(dto1.getProducts5()); dto.setProducts2(dto2.getProducts6());
+			dto.setProducts3(dto3.getProducts7()); dto.setProducts4(dto4.getProducts8()); 
+		  
+		  System.out.println("컨트롤러 통과 : " + dto1); System.out.println("컨트롤러 통과 : " +
+		  dto2); System.out.println("컨트롤러 통과 : " + dto3);
+			 System.out.println("컨트롤러 통과 : " + dto4);  System.out.println("컨트롤러 통과44444 : "
+		  + dto.toString());
+		  
+		  return dto;
+	}
+	
+	
 	@ResponseBody
 	@RequestMapping(value = "/product/get/{product_code}", method = RequestMethod.GET)
 	public Product getProductList(@PathVariable int product_code) {

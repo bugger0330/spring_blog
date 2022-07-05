@@ -19,8 +19,11 @@ public class ProductResponseDto {
 	private List<Product> products2;
 	private List<Product> products3;
 	private List<Product> products4;
+	private List<Product> products5;
+	private List<Product> products6;
+	private List<Product> products7;
+	private List<Product> products8;
 	private String product_address;
-	
 	
 	
 }

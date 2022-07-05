@@ -2,35 +2,99 @@ const imgLists = document.querySelector("#img-lists");
 let allRow = 0;
 let nowPage = 1;
 
+//검색
+const selects = document.querySelector("select");
+const options = selects.querySelectorAll("option");
+const searchInput = document.querySelector("#keyword");
+const searchBtn2 = document.querySelector("#search");
+let select = "";
+let search = "";
+let arr2 = new Array();
+
+searchBtn2.onclick = () => {
+	console.log("검색버튼 클릭");
+	for(let i = 0; i < options.length; i++){
+		if(options[i].selected){
+			select = options[i].value;
+		}
+	}
+	search = searchInput.value;
+	console.log("선택:" + select);
+	console.log("검색:" + search);
+	arr2.push(select);
+	arr2.push(search);
+	
+	load1(nowPage, arr2);
+}
+
+
+
+
+
+
 load1(nowPage);
 
-function load1(page) {
-	$.ajax({
-		type : "get",
-		url : "/app/home",
-		data : {
-			number : page
-		},
-		async: false,
-		contentType : "application/json",
-		dataType : "text",
-		success : function(data){
-			if(data == null){
-				alert("불러오기 실패");
-			}else{
-				console.log("불러오기 성공");
-				let list = JSON.parse(data);
-				console.log("데이타1번 코드번호 : " + list.products1[0].product_code);
-				homeImgLists1(list);
-				allRow = list.products1[0].count1;
-				console.log("카운트 : " + allRow);
-				createPageNumber(allRow);
+function load1(page, arr) {
+	
+	if(arr == null){
+		$.ajax({
+			type : "get",
+			url : "/app/home",
+			data : {
+				number : page
+			},
+			async: false,
+			contentType : "application/json",
+			dataType : "text",
+			success : function(data){
+				if(data == null){
+					alert("불러오기 실패");
+				}else{
+					console.log("불러오기 성공");
+					let list = JSON.parse(data);
+					console.log("데이타1번 코드번호 : " + list.products1[0].product_code);
+					homeImgLists1(list);
+					allRow = list.products1[0].count1;
+					console.log("카운트 : " + allRow);
+					createPageNumber(allRow);
+				}
+			},
+			error : function(data){
+				alert("비동기 처리 오류");
 			}
-		},
-		error : function(data){
-			alert("비동기 처리 오류");
-		}
-	});
+		});
+	}else{
+		$.ajax({
+			type : "get",
+			url : "/app/home/search",
+			data : {
+				number : page,
+				select : arr[0],
+				search : arr[1]
+			},
+			async: false,
+			contentType : "application/json",
+			dataType : "text",
+			success : function(data){
+				if(data == null){
+					alert("불러오기 실패");
+				}else{
+					console.log("불러오기 성공");
+					let list = JSON.parse(data);
+					console.log("데이타1번 코드번호 : " + list.products1[0].product_code);
+					homeImgLists1(list);
+					allRow = list.products1[0].count1;
+					console.log("카운트 : " + allRow);
+					createPageNumber(allRow);
+				}
+			},
+			error : function(data){
+				alert("비동기 처리 오류");
+			}
+		});
+	}
+	
+		
 }
 
 function homeImgLists1(ss){
