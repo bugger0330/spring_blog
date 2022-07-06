@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.app.domain.user.Order;
+import com.test.app.domain.user.OrderInfo;
 import com.test.app.service.OrderService;
 import com.test.app.web.dto.OrderInfoRequestDto;
 import com.test.app.web.dto.OrderRequestDto;
@@ -86,8 +87,22 @@ public class OrderController {
 		System.out.println("서비스 갔다옴delete2 : " + result);
 		return Boolean.toString(result);
 	}
+	@ResponseBody
+	@RequestMapping(value = "/mypage/order/list1", method = RequestMethod.POST)
+	public List<Order> getMypageOrderList(String username) {
+		List<Order> order = orderService.getMypageOrderList(username);
+		
+		return order;
+	}
 	
 	
+	@ResponseBody
+	@RequestMapping(value = "/mypage/order/list2", method = RequestMethod.POST)
+	public List<OrderInfo> getMypageUserInfo(String username) {
+		List<OrderInfo> orderInfo = orderService.getMypageUserInfo(username);
+		
+		return orderInfo;
+	}
 	
 	
 	

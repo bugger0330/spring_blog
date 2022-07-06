@@ -47,7 +47,7 @@ function orderListGet(ss){
                         	<input type="checkbox" class="check" value="${ss[i].product_code}">
                         </td>
                         <td><img class="img01" src="/app/static/upload_img/${ss[i].product_img1}" id="${ss[i].product_img1}" width="100px" height="80px" /></td>
-                        <td class="td1">${ss[i].product_title}</td>
+                        <td class="td1" id="${ss[i].youname}">${ss[i].product_title}</td>
                         <td class="td2" id="${ss[i].product_price}">${ss[i].product_price}원</td>
                         <td><button class="delete-btn" value="${ss[i].product_code}">삭제</button></td>
                     </tr>
@@ -81,13 +81,13 @@ function orderListGet(ss){
 	arrays.push(product_title);
 	arrays.push(product_price);
 	
+	
 	arrays.push(inputList);//4
 	arrays.push(address_num);
 	arrays.push(address);
 	arrays.push(address2);
 	arrays.push(requests);
 	arrays.push(allPrice);
-	
 	
 	
 	productListGet(arrays);
@@ -105,7 +105,6 @@ function productListGet(ss){
 	let product_price = ss[3];
 	let inputList = ss[4];
 	
-	
 	submitBtn.onclick = () => {
 		let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
 		let flag2 = ""; // ajax안에 async: false 를 써야만 한다
@@ -119,7 +118,8 @@ function productListGet(ss){
 					product_img1 : product_img1[i].id,
 					product_title : product_title[i].textContent,
 					product_price : product_price[i].textContent,
-					username : username1
+					username : username1,
+					youname : product_title[i].id
 				},
 				dataType : "text",
 				success : function(data){
@@ -168,6 +168,7 @@ function productListGet(ss){
 		if(flag1 == "true" && flag2 == "true"){
 			console.log("삭제 실행");
 			allTrue(product_code);
+			
 		}
 			
 	}
@@ -183,7 +184,9 @@ function allTrue(ss){
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){
-					console.log("성공");
+					console.log("삭제완료");
+					alert("구매 완료되었습니다.");
+					location.href = "/app/";
 				}else{
 					console.log("실패");
 				}

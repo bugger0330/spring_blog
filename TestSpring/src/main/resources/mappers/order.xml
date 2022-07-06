@@ -15,7 +15,9 @@
 			#{product_img1},
 			#{product_title},
 			#{product_price},
-			#{username}
+			#{username},
+			#{youname},
+			now()
 		);
 	</insert>
 	
@@ -25,7 +27,9 @@
 			#{product_img1},
 			#{product_title},
 			#{product_price},
-			#{username}
+			#{username},
+			#{youname},
+			now()
 		);
 	</insert>
 	
@@ -57,6 +61,14 @@
 	<delete id="selectDel" parameterType="Integer">
 		delete from order1 where product_code = #{product_code};
 	</delete>
+	
+	<select id="getMypageOrderList" parameterType="String" resultType="com.test.app.domain.user.Order">
+		select * from order2 where username = #{username};
+	</select>
+	
+	<select id="getMypageUserInfo" parameterType="String" resultType="com.test.app.domain.user.OrderInfo">
+		select * from order_info where username = #{username};
+	</select>
 
 
 </mapper>

@@ -15,7 +15,7 @@
                 <table width="900px" height="100px">
                     <thead>
                         <tr>
-                            <th scope="col">
+                            <th scope="col" >
                                 <div class="tb-center">선택</div>
                             </th>
                             <th scope="col">
@@ -24,10 +24,10 @@
                             <th scope="col">
                                 <div class="tb-center">상품명</div>
                             </th>
-                            <th scope="col">
+                            <th scope="col" style="width: 15%;">
                                 <div class="tb-center">가격</div>
                             </th>
-                            <th scope="col">
+                            <th scope="col" style="width: 10%;">
                                 <div class="tb-center">삭제</div>
                             </th>
                         </tr>

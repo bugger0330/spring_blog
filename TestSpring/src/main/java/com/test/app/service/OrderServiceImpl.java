@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.app.domain.user.Order;
+import com.test.app.domain.user.OrderInfo;
 import com.test.app.domain.user.OrderRepository;
 import com.test.app.web.dto.OrderInfoRequestDto;
 import com.test.app.web.dto.OrderRequestDto;
@@ -64,6 +65,26 @@ public class OrderServiceImpl implements OrderService {
 	public boolean insertUserinfo(OrderInfoRequestDto orderInfoRequestDto) {
 		int result = orderRepository.insertUserinfo(orderInfoRequestDto.entity());
 		return result != 0;
+	}
+
+	@Override
+	public List<Order> getMypageOrderList(String username) {
+		List<Order> order = orderRepository.getMypageOrderList(username);
+		if(order == null) {
+			return null;
+		}else {
+			return order;
+		}
+	}
+
+	@Override
+	public List<OrderInfo> getMypageUserInfo(String username) {
+		List<OrderInfo> orderInfo = orderRepository.getMypageUserInfo(username);
+		if(orderInfo == null) {
+			return null;
+		}else {
+			return orderInfo;
+		}
 	}
 
 	

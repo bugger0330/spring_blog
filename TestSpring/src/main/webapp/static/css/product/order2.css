@@ -6,8 +6,8 @@
 
 
 #container{
-    min-height: 1500px;
-    height: 1700px;
+    min-height: 1000px;
+    height: auto;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
@@ -484,7 +484,7 @@ th{
 
 .btn-div{
 	width: 100%;
-	margin: 10px auto;
+	margin: 30px auto;
 	display: flex;
 	justify-content: center;
 }

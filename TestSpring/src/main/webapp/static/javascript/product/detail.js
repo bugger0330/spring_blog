@@ -68,6 +68,7 @@ function orderClick(ss){
 		console.log("title:"+jqueryDATA.product_title);
 		console.log("price:"+jqueryDATA.product_price);
 		console.log("username:"+userinfo);
+		console.log("youname:"+jqueryDATA.product_username);
 		
 		$.ajax({
 			type : "post",
@@ -77,7 +78,8 @@ function orderClick(ss){
 				product_img1 : jqueryDATA.product_img1,
 				product_title : jqueryDATA.product_title,
 				product_price : jqueryDATA.product_price,
-				username : userinfo
+				username : userinfo,
+				youname : jqueryDATA.product_username
 			},
 			dataType : "text",
 			success : function(data){

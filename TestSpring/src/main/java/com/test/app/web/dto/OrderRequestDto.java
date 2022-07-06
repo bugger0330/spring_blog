@@ -16,6 +16,7 @@ public class OrderRequestDto {
 	private String product_title;
 	private String product_price;
 	private String username;
+	private String youname;
 	
 	public Order entity() {
 		return Order.builder()
@@ -24,6 +25,7 @@ public class OrderRequestDto {
 				.product_title(product_title)
 				.product_price(product_price)
 				.username(username)
+				.youname(youname)
 				.build();
 	}
 }

@@ -1,5 +1,7 @@
 package com.test.app.domain.user;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,4 +17,6 @@ public class Order {
 	private String product_title;
 	private String product_price;
 	private String username;
+	private String youname;
+	private String create_date;
 }

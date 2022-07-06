@@ -10,4 +10,7 @@ public interface OrderRepository {
 	public List<Order> productCheck(Order order);
 	public int selectDel(int product_code);
 	public int insertUserinfo(OrderInfo orderInfo);
+	
+	public List<Order> getMypageOrderList(String username);
+	public List<OrderInfo> getMypageUserInfo(String username);
 }

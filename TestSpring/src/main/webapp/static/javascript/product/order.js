@@ -46,7 +46,7 @@ function orderListGet(ss){
                         	<input type="checkbox" class="check" value="${ss[i].product_code}">
                         </td>
                         <td><img class="img01" src="/app/static/upload_img/${ss[i].product_img1}" width="100px" height="80px" /></td>
-                        <td class="td1">${ss[i].product_title}</td>
+                        <td class="td1" id="${ss[i].product_username}">${ss[i].product_title}</td>
                         <td class="td2">${ss[i].product_price}원</td>
                         <td><button class="delete-btn" value="${ss[i].product_code}">삭제</button></td>
                     </tr>
