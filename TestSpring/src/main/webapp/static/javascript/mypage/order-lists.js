@@ -4,16 +4,13 @@ const session = loginSession();
 const userinfo = session.username;
 console.log("세션아이디:"+session.username);
 
-
-let userData1 = "";
-let userData2 = "";
-
 load1();
 
 function load1(){
+	
 	$.ajax({
 		type : "post",
-		url : "/app/mypage/order/list1",
+		url : "/app/mypage/order/list",
 		data : {
 			username : userinfo
 		},
@@ -21,29 +18,7 @@ function load1(){
 		success : function(data){
 			if(data != null){
 				alert("성공");
-				userData1 = data;
-			}else{
-				alert("실패");
-			}
-		},
-		error : function(data){
-			alert("비동기 처리 오류");
-		}
-	});
-	
-	
-	$.ajax({
-		type : "post",
-		url : "/app/mypage/order/list2",
-		data : {
-			username : userinfo
-		},
-		dataType : "json",
-		success : function(data){
-			if(data != null){
-				alert("성공");
-				userData2 = data[0];
-				innrHtmls();
+				innrHtmls(data);
 			}else{
 				alert("실패");
 			}
@@ -53,26 +28,27 @@ function load1(){
 		}
 	});
 }
-function innrHtmls(){
+
+function innrHtmls(ss){
 		let innr = "";
 		console.log("실행");
-		for(let i = 0; i < userData1.length; i++){
+		for(let i = 0; i < ss.length; i++){
 		innr += `
 	        <tr>
 	            <th scope="rowgroup" rowspan="5" class="deal_info">
 	                <div class="date_num">
 	                    <p class="dt">
-	                        <strong>${userData1[i].create_date}</strong>
+	                        <strong>${ss[i].create_date}</strong>
 	                    </p>
 	                    <p class="buy_num">
 	                        <span class="txt">주문번호</span>
-	                        <strong>${userData1[i].product_code}</strong>
+	                        <strong>${ss[i].product_code}</strong>
 	                    </p>
 	                </div>
 	                <div class="payment">
 	                    <p>총 주문 금액</p>
 	                    <p class="won">
-	                        <span class="span01">${userData1[i].product_price}</span>
+	                        <span class="span01">${ss[i].product_price}</span>
 	                        <span class="span02">원</span>
 	                    </p>
 	                    <p class="delivery">
@@ -93,7 +69,7 @@ function innrHtmls(){
 	            <td colspan="3" class="delivery_wrap">
 	                <div class="delivery_num">
 	                    <span class="span1">배송번호 :</span>
-	                    <span class="span2">${userData2.order_code}</span>
+	                    <span class="span2">${ss[i].delivery_code}</span>
 	                    
 	                </div>
 	            </td>
@@ -101,13 +77,13 @@ function innrHtmls(){
 	        <tr>
 	            <th class="sum_up">
 	                <div class="thmb_area">
-	                        <img src="/app/static/upload_img/${userData1[i].product_img1}" width="110" height="110" alt="구매상품 썸네일" class="thmb" style="">
+	                        <img src="/app/static/upload_img/${ss[i].product_img1}" width="110" height="110" alt="구매상품 썸네일" class="thmb" style="">
 	                    <h4>
-	                        <span>${userData1[i].product_title}</span>
+	                        <span>${ss[i].product_title}</span>
 	                    </h4>
 	                    <p class="pay_info">
 	                        <span class="won2">
-	                            <span class="span5">${userData1[i].product_price}</span>원
+	                            <span class="span5">${ss[i].product_price}</span>원
 	                        </span>
 	                        </p>
 	                </div>
@@ -122,7 +98,7 @@ function innrHtmls(){
 	                <div class="seller_contacts_wrap">
 	                    <div class="slr_title" style=" float: left;">
 	                        <p class="title_wrap" style="margin-left: -1px;">판매자 :
-	                            <span class="span6">${userData1[i].youname}</span>
+	                            <span class="span6">${ss[i].youname}</span>
 	                        </p>
 	                    </div>
 	                </div>
@@ -139,13 +115,13 @@ function innrHtmls(){
 	            <td colspan="3" class="delivery1">
 	                <span title="" class="adr">
 	                    <p class="addr"><span class="span7">배송지 정보 :</span>
-	                        강민, 010-9046-7290<br>${userData2.address},${userData2.address2}</p>
+	                        강민, 010-9046-7290<br>${ss[i].address},${ss[i].address2}</p>
 	                </span>
 	            </td>
 	        </tr>
 	        <tr>
 	            <td colspan="3" class="delivery2">
-	                <span class="adr"><strong>배송지 메모</strong>: ${userData2.requests}</span></td>
+	                <span class="adr"><strong>배송지 메모</strong>: ${ss[i].requests}</span></td>
 	        </tr>
 		`;
 	}

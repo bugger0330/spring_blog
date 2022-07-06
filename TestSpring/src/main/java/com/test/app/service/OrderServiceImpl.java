@@ -45,15 +45,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 	
 	
-	@Override
-	public boolean setOrder2(OrderRequestDto orderRequestDto) {
-				
-		int result = orderRepository.setOrder2(orderRequestDto.entity());
-		System.out.println("디비 갔다옴 : "+result);
-		return result != 0;
-		
-	}
-
+	
 	@Override
 	public boolean selectDel(int product_code) {
 		
@@ -67,15 +59,7 @@ public class OrderServiceImpl implements OrderService {
 		return result != 0;
 	}
 
-	@Override
-	public List<Order> getMypageOrderList(String username) {
-		List<Order> order = orderRepository.getMypageOrderList(username);
-		if(order == null) {
-			return null;
-		}else {
-			return order;
-		}
-	}
+	
 
 	@Override
 	public List<OrderInfo> getMypageUserInfo(String username) {

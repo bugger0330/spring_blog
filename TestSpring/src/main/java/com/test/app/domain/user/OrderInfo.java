@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 public class OrderInfo {
 
 	private int order_code;
+	private String product_code;
+	private String delivery_code;
 	private String username;
 	private String name;
 	private String phone;
@@ -21,4 +23,9 @@ public class OrderInfo {
 	private String address2;
 	private String requests;
 	private String all_price;
+	private String product_img1;
+	private String product_title;
+	private String product_price;
+	private String youname;
+	private String create_date;
 }

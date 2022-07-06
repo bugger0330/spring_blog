@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class OrderInfoRequestDto {
 
-	private int order_code;
+	private String product_code;
+	private String delivery_code;
 	private String username;
 	private String name;
 	private String phone;
@@ -21,10 +22,15 @@ public class OrderInfoRequestDto {
 	private String address2;
 	private String requests;
 	private String all_price;
+	private String product_img1;
+	private String product_title;
+	private String product_price;
+	private String youname;
 	
 	public OrderInfo entity() {
 		return OrderInfo.builder()
-				.order_code(order_code)
+				.product_code(product_code)
+				.delivery_code(delivery_code)
 				.username(username)
 				.name(name)
 				.phone(phone)
@@ -34,6 +40,10 @@ public class OrderInfoRequestDto {
 				.address2(address2)
 				.requests(requests)
 				.all_price(all_price)
+				.product_img1(product_img1)
+				.product_title(product_title)
+				.product_price(product_price)
+				.youname(youname)
 				.build();
 	}
 	

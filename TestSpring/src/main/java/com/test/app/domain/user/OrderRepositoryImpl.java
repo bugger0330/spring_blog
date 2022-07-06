@@ -26,12 +26,7 @@ public class OrderRepositoryImpl implements OrderRepository {
 		return session.insert(path + "setOrder", order);
 	}
 	
-	@Override
-	public int setOrder2(Order order) {
-		
-		return session.insert(path + "setOrder2", order);
-	}
-
+	
 	@Override
 	public List<Order> productCheck(Order order) {
 		
@@ -50,12 +45,7 @@ public class OrderRepositoryImpl implements OrderRepository {
 		return session.insert(path + "insertUserinfo", orderInfo);
 	}
 
-	@Override
-	public List<Order> getMypageOrderList(String username) {
-		
-		return session.selectList(path + "getMypageOrderList", username);
-	}
-
+	
 	@Override
 	public List<OrderInfo> getMypageUserInfo(String username) {
 		

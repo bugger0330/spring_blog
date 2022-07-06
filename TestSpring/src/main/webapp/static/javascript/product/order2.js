@@ -67,27 +67,38 @@ function orderListGet(ss){
 	const requests = document.querySelector(".w-pull");
 	const allPrice = document.querySelector(".all-price2");
 	let sumPrice = 0;
+	let pNum1 = new Array();
+	let pNum2 = new Array();
+	let today = new Date();
+	
+	let today2 = "OLD" + today.getFullYear() + today.getMonth() + today.getDay() + "-";
+	console.log("주몬번호 : " + today2);
 	
 	for(let i = 0; i < product_price.length; i++){
 		sumPrice += Number(product_price[i].id);
 	}
 	allPrice.textContent = sumPrice;
 	
-	
+	for(let i = 0; i < product_code.length; i++){
+		pNum1.push(`${today2}${product_code[i].value}`); 
+		pNum2.push(`${today2}` + Number((`${product_code[i].value}`)*8)); 
+	}
+		console.log("주문번호222:"+pNum1[1]);
+		console.log("주문번호222:"+pNum2[1]);
 
 	let arrays = new Array();
-	arrays.push(product_code);
-	arrays.push(product_img1);
-	arrays.push(product_title);
-	arrays.push(product_price);
-	
-	
+	arrays.push(pNum1);
+	arrays.push(pNum2);
 	arrays.push(inputList);//4
 	arrays.push(address_num);
 	arrays.push(address);
 	arrays.push(address2);
 	arrays.push(requests);
 	arrays.push(allPrice);
+	arrays.push(product_img1);
+	arrays.push(product_title);
+	arrays.push(product_price);
+	arrays.push(product_code);
 	
 	
 	productListGet(arrays);
@@ -99,32 +110,37 @@ function orderListGet(ss){
 
 
 function productListGet(ss){
-	let product_code = ss[0];
-	let product_img1 = ss[1];
-	let product_title = ss[2];
-	let product_price = ss[3];
-	let inputList = ss[4];
-	
 	submitBtn.onclick = () => {
 		let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
 		let flag2 = ""; // ajax안에 async: false 를 써야만 한다
 		for(let i = 0; i < ss[0].length; i++){
 			$.ajax({
 				type : "post",
-				url : "/app/product/order2/insert",
+				url : "/app/product/order2/userinfo",
 				async: false,
 				data : {
-					product_code : product_code[i].value,
-					product_img1 : product_img1[i].id,
-					product_title : product_title[i].textContent,
-					product_price : product_price[i].textContent,
+					product_code : ss[0][i],
+					delivery_code : ss[1][i],
 					username : username1,
-					youname : product_title[i].id
+					name : ss[2][0].value,
+					phone : ss[2][1].value,
+					phone2 : ss[2][2].value,
+					address_num : ss[3].value,
+					address : ss[4].value,
+					address2 : ss[5].value,
+					requests : ss[6].value,
+					all_price : ss[7].textContent,
+					
+					product_img1 : ss[8][i].id,
+					product_title : ss[9][i].textContent,
+					youname : ss[9][i].id,
+					product_price : ss[10][i].textContent
 				},
 				dataType : "text",
 				success : function(data){
 					if(data != null){
 						console.log("product성공");
+						allTrue(ss[11]);
 						flag1 = "true";
 					}else{
 						console.log("product실패");
@@ -135,42 +151,6 @@ function productListGet(ss){
 				}
 			});
 		}
-		
-		$.ajax({
-			type : "post",
-			url : "/app/product/order2/userinfo",
-			async: false,
-			data : {
-				username : username1,
-				name : inputList[0].value,
-				phone : inputList[1].value,
-				phone2 : inputList[2].value,
-				address_num : ss[5].value,
-				address : ss[6].value,
-				address2 : ss[7].value,
-				requests : ss[8].value,
-				all_price : ss[9].textContent
-			},
-			dataType : "text",
-			success : function(data){
-				if(data != null){
-					console.log("info성공");
-					flag2 = "true";
-				}else{
-					console.log("info실패");
-				}
-			},
-			error : function(data){
-					alert("비동기 처리 오류");
-			}
-		});
-
-		if(flag1 == "true" && flag2 == "true"){
-			console.log("삭제 실행");
-			allTrue(product_code);
-			
-		}
-			
 	}
 	
 }

@@ -43,16 +43,7 @@ public class OrderController {
 
 		return Boolean.toString(result);
 	}
-	//장바구니에서 모두 구매하기 클릭시 이벤트
-	@ResponseBody
-	@RequestMapping(value = "/product/order2/insert", method = RequestMethod.POST)
-	public String setOrder2(OrderRequestDto orderRequestDto) {
-		System.out.println("컨트롤러 들어옴-order2/insert : " + orderRequestDto.toString());
-		boolean result = orderService.setOrder2(orderRequestDto);
-		System.out.println("서비스 갔다옴-order2/insert : " + result);
-		
-		return Boolean.toString(result);
-	}
+	
 	
 	
 	@ResponseBody
@@ -87,23 +78,17 @@ public class OrderController {
 		System.out.println("서비스 갔다옴delete2 : " + result);
 		return Boolean.toString(result);
 	}
-	@ResponseBody
-	@RequestMapping(value = "/mypage/order/list1", method = RequestMethod.POST)
-	public List<Order> getMypageOrderList(String username) {
-		List<Order> order = orderService.getMypageOrderList(username);
-		
-		return order;
-	}
+
 	
 	
 	@ResponseBody
-	@RequestMapping(value = "/mypage/order/list2", method = RequestMethod.POST)
-	public List<OrderInfo> getMypageUserInfo(String username) {
-		List<OrderInfo> orderInfo = orderService.getMypageUserInfo(username);
-		
-		return orderInfo;
+	@RequestMapping(value = "/mypage/order/list", method = RequestMethod.POST)
+	public List<OrderInfo> getMypageUserInfo(String username){
+		System.out.println("mypage/order/list컨트롤러 들어옴 : " + username);
+		List<OrderInfo> orderInfos = orderService.getMypageUserInfo(username);
+		System.out.println("mypage/order/list컨트롤러 들어옴 : " + orderInfos.toString());
+		return orderInfos;
 	}
-	
 	
 	
 }
