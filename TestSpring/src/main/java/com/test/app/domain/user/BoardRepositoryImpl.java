@@ -55,7 +55,48 @@ public class BoardRepositoryImpl implements BoardRepository {
 		
 		return session.selectList(path + "getBoardList2", board);
 	}
+	/*------------------------------------------------------------------------------*/
 
+	@Override
+	public List<Board> getBoardList11(int page) {
+		
+		return session.selectList(path + "getBoardList11", page);
+	}
 
+	@Override
+	public int getBoardInsert2(Board board) {
+		
+		return session.insert(path + "getBoardInsert2", board);
+	}
+
+	@Override
+	public int getBoardUpdate2(Board board) {
+		
+		return session.update(path + "getBoardUpdate2", board);
+	}
+
+	@Override
+	public int getDelete2(int num) {
+		
+		return session.delete(path + "getDelete2", num);
+	}
+
+	@Override
+	public int getCount2() {
+		
+		return session.selectOne(path + "getCount2");
+	}
+
+	@Override
+	public Board getBoardRead2(int num) {
+		
+		return session.selectOne(path + "getBoardRead2", num);
+	}
+
+	@Override
+	public List<Board> getBoardList22(Board board) {
+		
+		return session.selectList(path + "getBoardList22", board);
+	}
 
 }

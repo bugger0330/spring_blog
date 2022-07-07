@@ -110,7 +110,7 @@
                         <ul class="ul2">
                             <!-- ======================================== -->
                             <li class="li2">
-                                <a class="li2-a" href="#">공지사항</a>
+                                <a class="li2-a" href="/app/board/notice">공지사항</a>
                             </li>
                             <li class="li2">
                                 <a class="li2-a" href="/app/board/community">자유게시판</a>

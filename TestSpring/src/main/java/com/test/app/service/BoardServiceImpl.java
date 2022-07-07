@@ -68,4 +68,57 @@ public class BoardServiceImpl implements BoardService {
 		return board;
 	}
 
+	/*-------------------------------------------------------------------------------*/
+	
+	@Override
+	public List<Board> getBoardList11(int page) {
+		List<Board> board = boardRepository.getBoardList11(page);
+		
+		return board;
+	}
+ 
+	@Override
+	public boolean getBoardInsert2(BoardRequestDto boardRequestDto) {
+		int result = boardRepository.getBoardInsert2(boardRequestDto.toEntity());
+		return result != 0;
+	}
+
+	@Override
+	public boolean getBoardUpdate2(BoardRequestDto boardRequestDto) {
+		System.out.println("서비스1 : " +boardRequestDto.toString() );
+		int result = boardRepository.getBoardUpdate2(boardRequestDto.updateEntity());
+		System.out.println("서비스2 : " +boardRequestDto.updateEntity());
+		System.out.println("서비스3 : " +result);
+		return result != 0;
+	}
+
+	@Override
+	public boolean getDelete2(int num) {
+		int result = boardRepository.getDelete2(num);
+		return result != 0;
+	}
+
+	@Override
+	public int getCount2() {
+		int result = boardRepository.getCount2();
+		return result;
+	}
+
+	@Override
+	public Board getBoardRead2(int num) {
+		Board board = boardRepository.getBoardRead2(num);
+		if(board == null) {
+			return null;
+		}else {
+			return board;
+		}
+		
+	}
+
+	@Override
+	public List<Board> getBoardList22(SearchRequestDto searchRequestDto) {
+		List<Board> board = boardRepository.getBoardList2(searchRequestDto.boardEntity());
+		
+		return board;
+	}
 }

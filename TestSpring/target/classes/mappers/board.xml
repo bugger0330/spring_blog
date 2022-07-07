@@ -9,6 +9,10 @@
 		select count(*) from board_mst;
 	</select>
 	
+	<select id="getCount2" resultType="Integer">
+		select count(*) from board_notice;
+	</select>
+	
 	
 	
 	<select id="getBoardList" parameterType="Integer" resultType="com.test.app.domain.user.Board">
@@ -22,6 +26,20 @@
 		 	DATE_FORMAT(create_date, '%Y-%m-%d') as create_date,
 		 	DATE_FORMAT(update_date, '%Y-%m-%d') as update_date
 		 from board_mst
+		 order by board_code desc
+		 limit #{page}, 10;
+	</select>
+	<select id="getBoardList11" parameterType="Integer" resultType="com.test.app.domain.user.Board">
+		select
+		 	board_code,
+		 	username,
+		 	title,
+		 	content,
+		 	count,
+		 	(select count(*) from board_mst) as boardCount,
+		 	DATE_FORMAT(create_date, '%Y-%m-%d') as create_date,
+		 	DATE_FORMAT(update_date, '%Y-%m-%d') as update_date
+		 from board_notice
 		 order by board_code desc
 		 limit #{page}, 10;
 	</select>
@@ -49,9 +67,35 @@
 		 order by board_code desc
 		 limit #{number}, 10;
 	</select>
+	<select id="getBoardList22" parameterType="com.test.app.domain.user.Board" resultType="com.test.app.domain.user.Board">
+		select
+		 	board_code,
+		 	username,
+		 	title,
+		 	content,
+		 	count,
+		 	(select count(*) from board_mst) as boardCount,
+		 	DATE_FORMAT(create_date, '%Y-%m-%d') as create_date,
+		 	DATE_FORMAT(update_date, '%Y-%m-%d') as update_date
+		 from board_notice
+			<if test="select == 'title'">
+				where title like concat('%',#{search},'%')
+			</if>
+			<if test="select == 'content'">
+				where content like concat('%',#{search},'%')
+			</if>
+			<if test="select == 'username'">
+				where username like concat('%',#{search},'%')
+			</if>
+		 order by board_code desc
+		 limit #{number}, 10;
+	</select>
 	
 	<select id="getBoardRead" parameterType="Integer" resultType="com.test.app.domain.user.Board">
 		select * from board_mst where board_code = #{num};
+	</select>
+	<select id="getBoardRead2" parameterType="Integer" resultType="com.test.app.domain.user.Board">
+		select * from board_notice where board_code = #{num};
 	</select>
 	
 	
@@ -66,13 +110,30 @@
 			now()
 		);
 	</insert>
+	<insert id="getBoardInsert2" parameterType="com.test.app.domain.user.Board">
+		insert into board_notice values(
+			0,
+			#{username},
+			#{title},
+			#{content},
+			#{count},
+			now(),
+			now()
+		);
+	</insert>
 	
 	<update id="getBoardUpdate" parameterType="com.test.app.domain.user.Board">
 		update board_mst set title = #{title}, content = #{content} where username = #{username} and board_code = #{board_code};
 	</update>
+	<update id="getBoardUpdate2" parameterType="com.test.app.domain.user.Board">
+		update board_notice set title = #{title}, content = #{content} where username = #{username} and board_code = #{board_code};
+	</update>
 	
 	<delete id="getDelete" parameterType="Integer">
 		delete from board_mst where board_code = #{num};
+	</delete>
+	<delete id="getDelete2" parameterType="Integer">
+		delete from board_notice where board_code = #{num};
 	</delete>
 	
 </mapper>

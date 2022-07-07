@@ -94,6 +94,10 @@ public class PageController {
 	public String community() {
 		return "board/community";
 	}
+	@RequestMapping(value = "/board/notice", method = RequestMethod.GET)
+	public String notice() {
+		return "board/board_notice";
+	}
 
 	
 	@RequestMapping(value = "/board/insert", method = RequestMethod.GET)
@@ -111,7 +115,23 @@ public class PageController {
 	public String boardRead() {
 		return "board/board_read";
 	}
+	/*------------------------------------------------------------------------*/
 	
+	@RequestMapping(value = "/board/notice/insert", method = RequestMethod.GET)
+	public String boardNoticeInsert() {
+		return "board/board_notice_insert";
+	}
+
+	@RequestMapping(value = "/board/notice/update/{num}", method = RequestMethod.GET)
+	public String boardNoticeUpdate() {
+		return "board/board_notice_update";
+	}
+	
+	
+	@RequestMapping(value = "/board/notice/read/{num}", method = RequestMethod.GET)
+	public String boardNoticeRead() {
+		return "board/board_notice_read";
+	}
 	
 	/* ================= 홈 헤더 푸터 ====================== */
 	
