@@ -8,7 +8,8 @@ const userinfo = loginSession();
 const username1 = userinfo.username;
 console.log(username1);
 
-
+var IMP = window.IMP; // 생략 가능
+IMP.init("imp37413392"); // 예: imp00000000
 
 /*===========================================================*/
 load1();
@@ -111,46 +112,72 @@ function orderListGet(ss){
 
 function productListGet(ss){
 	submitBtn.onclick = () => {
-		let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
-		let flag2 = ""; // ajax안에 async: false 를 써야만 한다
-		for(let i = 0; i < ss[0].length; i++){
-			$.ajax({
-				type : "post",
-				url : "/app/product/order2/userinfo",
-				async: false,
-				data : {
-					product_code : ss[0][i],
-					delivery_code : ss[1][i],
-					username : username1,
-					name : ss[2][0].value,
-					phone : ss[2][1].value,
-					phone2 : ss[2][2].value,
-					address_num : ss[3].value,
-					address : ss[4].value,
-					address2 : ss[5].value,
-					requests : ss[6].value,
-					all_price : ss[7].textContent,
-					
-					product_img1 : ss[8][i].id,
-					product_title : ss[9][i].textContent,
-					youname : ss[9][i].id,
-					product_price : ss[10][i].textContent
-				},
-				dataType : "text",
-				success : function(data){
-					if(data != null){
-						console.log("product성공");
-						allTrue(ss[11]);
-						flag1 = "true";
-					}else{
-						console.log("product실패");
+		for(let i = 0; i < ss.length; i++){
+			IMP.request_pay({ // param
+		        pg: "kakaopay", //어떤 결제 시스템을 쓸껀지 이니시스 = INIpayTest
+		        pay_method: "card",
+		        merchant_uid: ss[0][i],
+		        name: ss[9][i].textContent,
+		        amount: ss[7].textContent,
+		        buyer_email: "gildong@gmail.com",
+		        buyer_name: ss[2][0].value,
+		        buyer_tel: ss[2][2].value,
+		        buyer_addr: `${ss[4].value} ${ss[5].value}`,
+		        buyer_postcode: ss[1][i]
+		    }, function (rsp) { // callback
+		        if (rsp.success) {
+		           alert("결제완료");
+		           console.log(JSON.stringify(rsp));
+		           let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
+					let flag2 = ""; // ajax안에 async: false 를 써야만 한다
+					for(let i = 0; i < ss[0].length; i++){
+						$.ajax({
+							type : "post",
+							url : "/app/product/order2/userinfo",
+							async: false,
+							data : {
+								product_code : ss[0][i],
+								delivery_code : ss[1][i],
+								username : username1,
+								name : ss[2][0].value,
+								phone : ss[2][1].value,
+								phone2 : ss[2][2].value,
+								address_num : ss[3].value,
+								address : ss[4].value,
+								address2 : ss[5].value,
+								requests : ss[6].value,
+								all_price : ss[7].textContent,
+								
+								product_img1 : ss[8][i].id,
+								product_title : ss[9][i].textContent,
+								youname : ss[9][i].id,
+								product_price : ss[10][i].textContent
+							},
+							dataType : "text",
+							success : function(data){
+								if(data != null){
+									console.log("product성공");
+									allTrue(ss[11]);
+									flag1 = "true";
+								}else{
+									console.log("product실패");
+								}
+							},
+							error : function(data){
+								alert("비동기 처리 오류");
+							}
+						});
 					}
-				},
-				error : function(data){
-					alert("비동기 처리 오류");
-				}
-			});
+				           
+		        } else {
+		            alert("결제실패");
+		        }
+		    });
 		}
+
+		
+		
+		
 	}
 	
 }
@@ -187,7 +214,30 @@ money3Btn.onclick = () => {
 }
 
 
-
+//아임포트 결제시스템
+/*
+function requestPay() {
+    // IMP.request_pay(param, callback) 결제창 호출
+    IMP.request_pay({ // param
+        pg: "INIpayTest", //어떤 결제 시스템을 쓸껀지
+        pay_method: "card",
+        merchant_uid: `ORD${now.getFullYear()}${now.getMonth()}${now.getDate()}-1`,
+        name: "갤럭시s22",
+        amount: 649000,
+        buyer_email: "gildong@gmail.com",
+        buyer_name: "홍길동",
+        buyer_tel: "010-4242-4242",
+        buyer_addr: "서울특별시 강남구 신사동",
+        buyer_postcode: "01181"
+    }, function (rsp) { // callback
+        if (rsp.success) {
+           alert("결제완료");
+           console.log(JSON.stringify(rsp));
+        } else {
+            alert("결제실패");
+        }
+    });
+  }*/
 
 
 

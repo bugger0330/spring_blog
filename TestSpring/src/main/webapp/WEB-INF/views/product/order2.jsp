@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="../top/header.jsp"></jsp:include>
 	<link href="/app/static/css/product/order2.css" rel="stylesheet">
-
+	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 
 <div id="container">
     <div class="main-div">
