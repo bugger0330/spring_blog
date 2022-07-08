@@ -5,8 +5,7 @@ const passwordCheck = document.querySelector("#password-check");
 
 
 const session = loginSession();
-const userinfo = session.username;
-console.log("세션아이디:"+session.username);
+const userinfo = session.user != null ? session.user.username : null;
 black.value = userinfo;
 
 

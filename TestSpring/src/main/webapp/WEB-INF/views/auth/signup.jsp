@@ -103,6 +103,6 @@
   </div>
  </div>
     <jsp:include page="../top/footer.jsp"></jsp:include>
-    <script src="/app/static/javascript/signup.js"></script>
+    <script src="/app/static/javascript/auth/signup.js"></script>
 </body>
 </html>

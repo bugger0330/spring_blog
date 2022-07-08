@@ -1,5 +1,8 @@
 package com.test.app.web.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -13,13 +16,14 @@ import com.test.app.domain.user.User;
 @Controller
 public class ApiController {
 
-	@RequestMapping(value = "/api/session", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/session", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
 	@ResponseBody
-	public User getSession(HttpServletRequest request) {
+	public Map<String, User> getSession(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("login");
 		System.out.println("api : "+user);
-		
-		return user;
+		Map<String, User> map = new HashMap<String, User>();
+		map.put("user", user);
+		return map;
 	}
 }

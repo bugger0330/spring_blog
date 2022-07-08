@@ -5,7 +5,7 @@ const money1Btn = document.querySelector(".money1");
 const money3Btn = document.querySelector(".money3");
 
 const userinfo = loginSession();
-const username1 = userinfo.username;
+const username1 = userinfo.user != null ? userinfo.user.username : null;
 console.log(username1);
 
 var IMP = window.IMP; // 생략 가능

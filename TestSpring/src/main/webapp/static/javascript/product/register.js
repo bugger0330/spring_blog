@@ -8,7 +8,8 @@ const content = document.querySelector(".textarea");
 const hiddenInput = document.querySelector(".hidden-input");
 const hiddenInput2 = document.querySelector(".hidden-input2");
 let sessionActive = loginSession();
-let username1 = sessionActive.username;
+const username1 = sessionActive.user != null ? sessionActive.user.username : null;
+
 let phone1 = sessionActive.phone;
 console.log("세션 아이디 가져오기 : "+username1);
 hiddenInput.value = username1;

@@ -7,7 +7,7 @@
 </div>
 
 
-<script src="/app/static/javascript/board_notice_update.js"></script>
+<script src="/app/static/javascript/board/board_notice_update.js"></script>
 
 
 	<jsp:include page="../top/footer.jsp"></jsp:include>

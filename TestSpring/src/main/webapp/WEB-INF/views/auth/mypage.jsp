@@ -78,5 +78,5 @@
             </div>
         
     </div>
-    <script src="/app/static/javascript/mypage.js"></script>
+    <script src="/app/static/javascript/mypage/mypage.js"></script>
 <jsp:include page="../top/footer.jsp"></jsp:include>

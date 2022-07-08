@@ -3,8 +3,8 @@ const inputItems = document.querySelectorAll(".input-items");
 const selectItems = document.querySelector(".select-items");
 const image = document.querySelector(".img-items > img");
 
-let User = loginSession();
-alert(User.username);
+const userinfo = loginSession();
+const User = userinfo.user != null ? userinfo.user : null;
 
 inputItems[1].onchange = () => {
 	let reader = new FileReader();

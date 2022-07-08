@@ -29,7 +29,7 @@
 	</div>
 </div>
 
-<script src="/app/static/javascript/board_insert.js"></script>
+<script src="/app/static/javascript/board/board_insert.js"></script>
 
 
 	<jsp:include page="../top/footer.jsp"></jsp:include>

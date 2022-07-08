@@ -41,7 +41,7 @@
     </div>
   </div>
 </div>
-  <script src="/app/static/javascript/signin.js"></script>
+  <script src="/app/static/javascript/auth/signin.js"></script>
 <jsp:include page="../top/footer.jsp"></jsp:include>
 </body>
 </html>

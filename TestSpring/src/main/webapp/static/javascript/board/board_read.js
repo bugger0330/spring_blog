@@ -8,8 +8,7 @@ let num = link.substring(1, link.length).split("/")[3]; //split("/")[3] 의 의�
 console.log(num);
 
 const userinfo = loginSession();
-const username1 = userinfo.username;
-console.log(username1);
+const username1 = userinfo.user != null ? userinfo.user.username : null;
 
 
 load1();

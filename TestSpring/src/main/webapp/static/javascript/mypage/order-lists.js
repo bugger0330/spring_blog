@@ -1,8 +1,7 @@
 const tbody = document.querySelector("tbody");
 
 const session = loginSession();
-const userinfo = session.username;
-console.log("세션아이디:"+session.username);
+const userinfo = session.user != null ? session.user.username : null;
 
 load1();
 

@@ -5,8 +5,8 @@ const nextBtn = document.querySelectorAll(".next-btn");
 
 
 
-const uuu = loginSession();
-console.log("User : "+uuu);
+/*const uuu = loginSession();*/
+/*console.log("User : "+uuu);*/
 
 
 const nowPage = 1;

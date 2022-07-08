@@ -2,8 +2,7 @@ const boardListTable = document.querySelector('#table-main');
 const btnRegister = document.querySelector("#btn_register");
 
 const userinfo = loginSession();
-const username1 = userinfo.username;
-console.log(username1);
+const username1 = userinfo.user != null ? userinfo.user.username : null;
 
 let nowPage = 1;
 
@@ -41,7 +40,7 @@ btnRegister.onclick = () => {
 		alert("로그인 후에 이용 가능합니다.");
 		location.href = "/app/auth/signin";
 	}else{
-		location.href = "/app/board/notice/insert";
+		location.href = "/app/board/insert";
 	}
 }
 
@@ -54,7 +53,7 @@ function load(page, arr) {
 		console.log("ajax : "+page);
 		$.ajax({
 			type: "post",
-			url: "/app/board/notice/list",
+			url: "/app/board/list",
 			data: JSON.stringify(page),
 			contentType : "application/json",
 			dataType: "text",
@@ -75,7 +74,7 @@ function load(page, arr) {
 		console.log("ajax클릭 실행 : "+arr[1]);
 		$.ajax({
 			type : "post",
-			url : "/app/board/notice/list/search",
+			url : "/app/board/list/search",
 			data : JSON.stringify({
 				number : page,
 				select : arr[0],
@@ -110,7 +109,7 @@ function getBoardList(data)	{
 			<tr>
 				<td>${data[i].board_code}</td>
 				<td>
-					<a class='move'  style="text-decoration:none;" href='/app/board/notice/read/${data[i].board_code}'>
+					<a class='move'  style="text-decoration:none;" href='/app/board/read/${data[i].board_code}'>
 						<small>[${data[i].title}]</small>
 					</a>
 				</td>

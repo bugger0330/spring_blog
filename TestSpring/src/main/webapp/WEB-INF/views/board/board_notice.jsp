@@ -29,7 +29,7 @@
 
 			<div class="row" style="margin: 10px;">
 				<div class="col" align="right">
-					<button type="button" class="btn btn-outline-primary" id="btn_register">글쓰기</button>
+					<!-- <button type="button" class="btn btn-outline-primary" id="btn_register">글쓰기</button> -->
 				<!-- 	
 					<button type="button" class="btn btn-outline-info ">수정</button>
 					<button type="button" class="btn btn-outline-danger ">삭제</button>
@@ -72,7 +72,7 @@
 	</div>
 <br><br><br>
 
-	<script src="/app/static/javascript/board_notice.js"></script>
+	<script src="/app/static/javascript/board/board_notice.js"></script>
 	<jsp:include page="../top/footer.jsp"></jsp:include>
 	
 

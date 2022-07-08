@@ -2,8 +2,9 @@ const sp01 = document.querySelectorAll(".sp01");
 const sp02 = document.querySelectorAll(".sp02");
 
 const session = loginSession();
-const userinfo = session.username;
-console.log("세션아이디:"+session.username);
+/*console.log("세션아이디111:"+session.user.username);*/
+const userinfo = session.user != null ? session.user.username : null;
+/*console.log("세션아이디:"+userinfo);*/
 
 const link =  location.pathname;
 console.log("현재 주소는 " + link);
@@ -69,6 +70,8 @@ function orderClick(ss){
 		console.log("price:"+jqueryDATA.product_price);
 		console.log("username:"+userinfo);
 		console.log("youname:"+jqueryDATA.product_username);
+		
+
 		
 		$.ajax({
 			type : "post",

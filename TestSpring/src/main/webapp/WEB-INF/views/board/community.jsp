@@ -72,7 +72,7 @@
 	</div>
 <br><br><br>
 
-	<script src="/app/static/javascript/community.js"></script>
+	<script src="/app/static/javascript/board/community.js"></script>
 	<jsp:include page="../top/footer.jsp"></jsp:include>
 	
 

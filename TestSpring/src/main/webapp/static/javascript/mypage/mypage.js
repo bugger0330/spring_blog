@@ -5,8 +5,8 @@ const deleteBtn = document.querySelector(".delete-btn");
 
 const doumiBtn = document.querySelector(".doumi-btn");
 
-const User = loginSession();
-alert(User.username);
+const userinfo = loginSession();
+const username1 = userinfo.user != null ? userinfo.user.username : null;
 
 doumiBtn.onclick = () => {
 	location.href = "/app/board/list";
