@@ -21,15 +21,14 @@ function load1(){
 		dataType : "text",
 		success : function(data){
 			if(data != null){
-				alert("성공");
 				data2 = JSON.parse(data);
 				getBoardData(data2);
 			}else{
-				alert("실패");
+				console.log("실패");
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }
@@ -79,16 +78,16 @@ function getBoardData(ss){
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){
-					alert("성공");
+					alert("수정되었습니다.");
 					location.href = "/app/board/community";
 				}else{
-					alert("실패");
+					alert("수정이 실패 하였습니다.");
 				}
 			},
 			error : function(xhr, status){
 				console.log(xhr);
 				console.log(status);
-				alert("비동기처리 오류");
+				console.log("비동기처리 오류");
 			}
 		});
 		
@@ -101,14 +100,14 @@ function getBoardData(ss){
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){
-					alert("성공");
+					alert("삭제 되었습니다.");
 					location.href = "/app/board/community";
 				}else{
-					alert("실패");
+					alert("삭제가 실패 했습니다.");
 				}
 			},
 			error : function(data){
-				alert("비동기 처리 오류");
+				console.log("비동기 처리 오류");
 			}
 		});
 	}

@@ -25,7 +25,7 @@ password.onblur = () => {
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }
@@ -51,11 +51,11 @@ submitBtn.onclick = () => {
 					alert("비밀번호가 변경되었습니다. 새로 로그인이 필요합니다.");
 					location.href = "/app/logout";
 				}else{
-					alert("실패");
+					alert("실패 했습니다.");
 				}
 			},
 			error : function(data){
-				alert("비동기 처리 오류");
+				console.log("비동기 처리 오류");
 			}
 		});
 	}

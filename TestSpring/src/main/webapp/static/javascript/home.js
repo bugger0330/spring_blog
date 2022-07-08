@@ -19,9 +19,9 @@ function load1(){
 		dataType : "text",
 		success : function(data){
 			if(data == null){
-				alert("불러오기 실패");
+				console.log("불러오기 실패");
 			}else{
-				alert("불러오기 성공");
+				console.log("불러오기 성공");
 				let list = JSON.parse(data);
 				console.log("데이타1 : " + list.products1);
 				console.log("데이타2 : " + list.products2);
@@ -37,7 +37,7 @@ function load1(){
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }

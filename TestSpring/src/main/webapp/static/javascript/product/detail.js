@@ -39,18 +39,17 @@ function load1(){
 		dataType : "text",
 		success : function(data){
 			if(data != null){
-				alert("성공");
 				let data2 = JSON.parse(data);
 				
 				getProductList(data2);
 				getImgList(data2);
 				orderClick(data2);
 			}else{
-				alert("실패");
+				console.log("실패");
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }
@@ -90,13 +89,13 @@ function orderClick(ss){
 				dataType : "text",
 				success : function(data){
 					if(data == "true"){
-						alert("성공");
+						alert("장바구니에 상품이 담겼습니다.");
 					}else{
 						alert("이미 장바구니에 상품이 담겨 있습니다.");
 					}
 				},
 				error : function(data){
-					alert("비동기 처리 오류");
+					console.log("비동기 처리 오류");
 				}
 			});
 		}

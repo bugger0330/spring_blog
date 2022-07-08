@@ -36,8 +36,7 @@ for(let i = 0; i < changeBtn.length; i++){
 				}
 			},
 			error : function(data){
-				console.log(data);
-				alert("비동기 처리 오류 : "+data);
+				console.log("비동기 처리 오류 : "+data);
 			}
 		});
 	}
@@ -50,12 +49,12 @@ logoutBtn.onclick = () => {
 		success : function(data){
 			if(data == "true"){
 				alert("로그아웃 되었습니다");
-				location.href="/app/auth/signin";
+				location.href="/app";
 			}
 			
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	})
 }
@@ -73,7 +72,7 @@ deleteBtn.onclick = () => {
 				}
 			},
 		errer : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }

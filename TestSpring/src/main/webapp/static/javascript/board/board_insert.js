@@ -28,11 +28,11 @@ submitBtn.onclick = () => {
 				alert("등록되었습니다");
 				location.href = "/app/board/community";
 			}else{
-				alert("등록 실패");
+				alert("등록 실패했습니다.");
 			}
 		},
 		error : function(data) {
-			alert("비동기 통신 오류");
+			console.log("비동기 통신 오류");
 		}
 	});
 }

@@ -9,7 +9,7 @@ function loginSession(){
 			User = data;
 		},
 		error : function(data){
-			alert("세션 비동기처리 오류")
+			console.log("세션 비동기처리 오류")
 		}
 	});
 	return User;

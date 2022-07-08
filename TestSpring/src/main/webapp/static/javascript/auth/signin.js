@@ -25,7 +25,7 @@ inputs[0].onblur = () => {
 			
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }
@@ -44,15 +44,15 @@ submit_button.onclick = () => {
 		contentType : "application/json",
 		success : function(data){
 			if(data == "null"){
-				alert("실패입니다");
+				alert("아이디나 비밀번호를 확인해주세요!");
 			}else{
-				alert("성공, user객체 : " + data);
+				alert("로그인 되었습니다.");
 			location.href = "/app"
 			}
 			
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 	

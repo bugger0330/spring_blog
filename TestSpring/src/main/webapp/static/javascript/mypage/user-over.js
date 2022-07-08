@@ -31,7 +31,7 @@ useroverBtn.onclick = () => {
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 
@@ -52,14 +52,14 @@ function deleteUser(){
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){
-					alert("성공");
+					alert("탈퇴 완료 되었습니다. 이용해 주셔서 감사합니다.");
 					location.href = "/app/";
 				}else{
-					alert("실패");
+					alert("탈퇴에 실패 하였습니다");
 				}
 			},
 			error : function(data){
-				alert("비동기 처리 오류");
+				console.log("비동기 처리 오류");
 			}
 			
 			

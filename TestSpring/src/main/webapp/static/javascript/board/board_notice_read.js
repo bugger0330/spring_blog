@@ -21,15 +21,14 @@ function load1(){
 		dataType : "text",
 		success : function(data){
 			if(data != null){
-				alert("성공");
 				data2 = JSON.parse(data);
 				getBoardData(data2);
 			}else{
-				alert("실패");
+				alert("로딩에 실패했습니다.");
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }

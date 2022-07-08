@@ -58,14 +58,13 @@ function load(page, arr) {
 			contentType : "application/json",
 			dataType: "text",
 			success: function(data){
-				alert("게시판 불러오기 성공");
 				let boardList = JSON.parse(data);
 				getBoardList(boardList); // 게시판 글 리스트 불러오기
 				boardPageNum(boardList[0].boardCount); // 밑에 번호 추가하기
 				
 			},
 			error: function(){
-				alert("비동기 처리 오류");
+				console.log("비동기 처리 오류");
 			}
 		});
 	}else{
@@ -84,14 +83,13 @@ function load(page, arr) {
 			contentType : "application/json",
 			dataType : "text",
 			success: function(data){
-				alert("게시판 불러오기 성공");
 				let boardList = JSON.parse(data);
 				getBoardList(boardList); // 게시판 글 리스트 불러오기
 				boardPageNum(boardList[0].boardCount); // 밑에 번호 추가하기
 				
 			},
 			error : function(data){
-				alert("비동기 처리 오류");
+				console.log("비동기 처리 오류");
 			}
 		});
 	}

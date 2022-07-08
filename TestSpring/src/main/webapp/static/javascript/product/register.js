@@ -117,14 +117,14 @@ submitBtn.onclick = () => {
 		dataType: "text",
 		success : function(data){
 			if(data == "true"){
-				alert("성공 : "+ data);
+				alert("업로드 완료 되었습니다.");
 			}else{
-				alert("업로드 실패");
+				alert("업로드 실패 하였습니다.");
 			}
 			
 		},
 		error : function(data){
-			alert("비동기처리 오류");
+			console.log("비동기처리 오류");
 		}
 	});
 }

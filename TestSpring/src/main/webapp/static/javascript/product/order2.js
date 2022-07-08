@@ -24,16 +24,15 @@ function load1(){
 		dataType : "text",
 		success : function(data){
 			if(data != null){
-				alert("성공");
 				let data2 = JSON.parse(data);
 				orderListGet(data2);
 				
 			}else{
-				alert("실패");
+				console.log("실패");
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }
@@ -129,7 +128,7 @@ function productListGet(ss){
 		        buyer_postcode: ss[1][i]
 		    }, function (rsp) { // callback
 		        if (rsp.success) {
-		           alert("결제완료");
+		           alert("결제완료 되었습니다.");
 		           console.log(JSON.stringify(rsp));
 		           let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
 					let flag2 = ""; // ajax안에 async: false 를 써야만 한다
@@ -167,13 +166,13 @@ function productListGet(ss){
 								}
 							},
 							error : function(data){
-								alert("비동기 처리 오류");
+								console.log("비동기 처리 오류");
 							}
 						});
 					}
 				           
 		        } else {
-		            alert("결제실패");
+		            alert("결제실패 되었습니다.");
 		        }
 		    });
 		}
@@ -195,14 +194,13 @@ function allTrue(ss){
 			success : function(data){
 				if(data == "true"){
 					console.log("삭제완료");
-					alert("구매 완료되었습니다.");
 					location.href = "/app/";
 				}else{
 					console.log("실패");
 				}
 			},
 			error : function(data){
-				alert("비동기 처리 오류");
+				console.log("비동기 처리 오류");
 			}
 		})
 	}

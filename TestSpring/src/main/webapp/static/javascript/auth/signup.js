@@ -44,13 +44,13 @@ checkBtn.onclick = () => {
 					alert("아이디가 중복됩니다");
 					
 				}else{
-					alert("사용가능합니다.");
+					alert("사용가능한 아이디 입니다.");
 					
 					hiddenUsername.value = "true";
 				}
 			},
 			error : function(data){
-				alert("비동기 처리 오류");
+				console.log("비동기 처리 오류");
 			}
 		});
 

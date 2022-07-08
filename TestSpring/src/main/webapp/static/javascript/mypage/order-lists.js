@@ -16,14 +16,13 @@ function load1(){
 		dataType : "json",
 		success : function(data){
 			if(data != null){
-				alert("성공");
 				innrHtmls(data);
 			}else{
-				alert("실패");
+				console.log("실패");
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }

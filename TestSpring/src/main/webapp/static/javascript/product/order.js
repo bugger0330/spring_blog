@@ -22,15 +22,14 @@ function load1(){
 		dataType : "text",
 		success : function(data){
 			if(data != null){
-				alert("성공");
 				let data2 = JSON.parse(data);
 				orderListGet(data2);
 			}else{
-				alert("실패");
+				console.log("실패");
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }
@@ -102,14 +101,14 @@ function deleteQuery(ss){
 		dataType : "text",
 		success : function(data){
 			if(data == "true"){
-				alert("삭제성공");
+				alert("삭제 되었습니다.");
 				location.reload();
 			}else{
-				alert("삭제실패");
+				alert("삭제 실패 하였습니다.");
 			}
 		},
 		error : function(data){
-			alert("비동기 처리 오류");
+			console.log("비동기 처리 오류");
 		}
 	});
 }
