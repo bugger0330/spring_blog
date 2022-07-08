@@ -72,30 +72,35 @@ function orderClick(ss){
 		console.log("youname:"+jqueryDATA.product_username);
 		
 
-		
-		$.ajax({
-			type : "post",
-			url : "/app/product/order/insert",
-			data : {
-				product_code : jqueryDATA.product_code,
-				product_img1 : jqueryDATA.product_img1,
-				product_title : jqueryDATA.product_title,
-				product_price : jqueryDATA.product_price,
-				username : userinfo,
-				youname : jqueryDATA.product_username
-			},
-			dataType : "text",
-			success : function(data){
-				if(data == "true"){
-					alert("성공");
-				}else{
-					alert("이미 장바구니에 상품이 담겨 있습니다.");
+		if(userinfo == null){
+			alert("로그인이 필요합니다.");
+			location.href = "/app/auth/signin";
+		}else{
+			$.ajax({
+				type : "post",
+				url : "/app/product/order/insert",
+				data : {
+					product_code : jqueryDATA.product_code,
+					product_img1 : jqueryDATA.product_img1,
+					product_title : jqueryDATA.product_title,
+					product_price : jqueryDATA.product_price,
+					username : userinfo,
+					youname : jqueryDATA.product_username
+				},
+				dataType : "text",
+				success : function(data){
+					if(data == "true"){
+						alert("성공");
+					}else{
+						alert("이미 장바구니에 상품이 담겨 있습니다.");
+					}
+				},
+				error : function(data){
+					alert("비동기 처리 오류");
 				}
-			},
-			error : function(data){
-				alert("비동기 처리 오류");
-			}
-		});
+			});
+		}
+			
 		
 	}
 }
@@ -105,10 +110,12 @@ function orderClick(ss){
 
 
 function getProductList(ss){
+	let numb1 = ss.product_price;
+	let numb2 = numb1.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 	
 	img1.src = `/app/static/upload_img/` + `${ss.product_img1}`;
 	title.textContent = `${ss.product_title}`;
-	price.textContent = `${ss.product_price} 원`;
+	price.textContent = `${numb2} 원`;
 	delivery.textContent = `${ss.product_delivery}`;
 	username.textContent = `${ss.product_username}`;
 	phone.textContent = `${ss.product_phone}`;

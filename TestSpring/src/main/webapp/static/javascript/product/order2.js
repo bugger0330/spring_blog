@@ -42,6 +42,8 @@ function load1(){
 function orderListGet(ss){
 	let innr = "";
 	for(let i = 0; i < ss.length; i++){
+		let numb1 = ss[i].product_price;
+		let numb2 = numb1.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 		innr += `
 					<tr class="tbody_tr">
                         <td class="td-01">
@@ -49,7 +51,7 @@ function orderListGet(ss){
                         </td>
                         <td><img class="img01" src="/app/static/upload_img/${ss[i].product_img1}" id="${ss[i].product_img1}" width="100px" height="80px" /></td>
                         <td class="td1" id="${ss[i].youname}">${ss[i].product_title}</td>
-                        <td class="td2" id="${ss[i].product_price}">${ss[i].product_price}원</td>
+                        <td class="td2" id="${ss[i].product_price}">${numb2}원</td>
                         <td><button class="delete-btn" value="${ss[i].product_code}">삭제</button></td>
                     </tr>
 				`;
@@ -73,16 +75,17 @@ function orderListGet(ss){
 	let today = new Date();
 	
 	let today2 = "OLD" + today.getFullYear() + today.getMonth() + today.getDay() + "-";
+	let today3 = today.getFullYear() + today.getMonth() + today.getDay() + "-A1";
 	console.log("주몬번호 : " + today2);
 	
 	for(let i = 0; i < product_price.length; i++){
 		sumPrice += Number(product_price[i].id);
 	}
-	allPrice.textContent = sumPrice;
+	allPrice.textContent = sumPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 	
 	for(let i = 0; i < product_code.length; i++){
 		pNum1.push(`${today2}${product_code[i].value}`); 
-		pNum2.push(`${today2}` + Number((`${product_code[i].value}`)*8)); 
+		pNum2.push(`${today3}` + Number((`${product_code[i].value}`)*8)); 
 	}
 		console.log("주문번호222:"+pNum1[1]);
 		console.log("주문번호222:"+pNum2[1]);
@@ -95,7 +98,7 @@ function orderListGet(ss){
 	arrays.push(address);
 	arrays.push(address2);
 	arrays.push(requests);
-	arrays.push(allPrice);
+	arrays.push(sumPrice);
 	arrays.push(product_img1);
 	arrays.push(product_title);
 	arrays.push(product_price);
@@ -118,7 +121,7 @@ function productListGet(ss){
 		        pay_method: "card",
 		        merchant_uid: ss[0][i],
 		        name: ss[9][i].textContent,
-		        amount: ss[7].textContent,
+		        amount: ss[7],
 		        buyer_email: "gildong@gmail.com",
 		        buyer_name: ss[2][0].value,
 		        buyer_tel: ss[2][2].value,

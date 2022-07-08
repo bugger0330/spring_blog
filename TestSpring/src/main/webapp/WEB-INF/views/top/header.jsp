@@ -38,7 +38,7 @@
                     </li>
                     <!-- ======================================== -->
                     <li class="first">
-                        <a href="#" class="dep01">쿠폰/포인트</a>
+                        <a href="/app/event" class="dep01">쿠폰/포인트</a>
                         <ul class="ul2">
                             <!-- ======================================== -->
                             <li class="li2">
@@ -49,7 +49,7 @@
                     </li>
                     <!-- ======================================== -->
                     <li class="first">
-                        <a href="#" class="dep01">상품</a>
+                        <a href="/app/product/smart1" class="dep01">상품</a>
                         <ul class="ul2">
                             <!-- ======================================== -->
                             <li class="li2">
@@ -69,7 +69,7 @@
                     </li>
                     <!-- ======================================== -->
                     <li class="first">
-                        <a href="#" class="dep01">장바구니</a>
+                        <a href="/app/product/order" class="dep01">장바구니</a>
                         <ul class="ul2">
                             <!-- ======================================== -->
                             <li class="li2">
@@ -106,7 +106,7 @@
                     </li>
                     <!-- ======================================== -->
                     <li class="first">
-                        <a href="#" class="dep01">고객센터</a>
+                        <a href="/app/board/notice" class="dep01">고객센터</a>
                         <ul class="ul2">
                             <!-- ======================================== -->
                             <li class="li2">

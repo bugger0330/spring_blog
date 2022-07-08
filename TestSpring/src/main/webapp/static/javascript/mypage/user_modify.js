@@ -29,7 +29,7 @@ function load1(){
 			if(data != null){
 				alert("성공");
 				data2 = JSON.parse(data);
-				load2(data2);
+				innrInput(data2);
 			}else{
 				alert("실패");
 			}
@@ -41,7 +41,7 @@ function load1(){
 }
 
 
-function data2(ss){
+function innrInput(ss){
 	inputItem[0].value = ss.username;
 	inputItem[1].value = ss.name;
 }

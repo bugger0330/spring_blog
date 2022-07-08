@@ -36,16 +36,56 @@ public class AuthFilter implements Filter {
 		String path = servletRequest.getRequestURI();
 		System.out.println(path);
 		
-		/*
-		 * if(path.contains("static")) {
-		 * 
-		 * } else if(path.contains("mypage")) { if(user == null) {
-		 * servletResponse.sendRedirect("/app/auth/signin"); return; } } else
-		 * if(path.contains("/app/auth")) { if(user != null) {
-		 * servletResponse.sendRedirect("/app/auth/mypage");
-		 * System.out.println("로그인 되어 필터에 걸림"); return; } } else if(user == null){
-		 * servletResponse.sendRedirect("/app/auth/signin"); return; }
-		 */
+		
+		  if(path.contains("/app/product/order")) { 
+			  if(user == null) {
+			  servletResponse.sendRedirect("/app/auth/signin"); 
+			  return; 
+			  }
+		  }
+		  if(path.contains("/app/product/order2")) { 
+			  if(user == null) {
+				  servletResponse.sendRedirect("/app/auth/signin"); 
+				  return; 
+			  }
+		  }
+		  if(path.contains("/app/product/register")) { 
+			  if(user == null) {
+				  servletResponse.sendRedirect("/app/auth/signin"); 
+				  return; 
+			  }
+		  }
+		  if(path.contains("/app/mypage/order-lists")) { 
+			  if(user == null) {
+				  servletResponse.sendRedirect("/app/auth/signin"); 
+				  return; 
+			  }
+		  }
+		  if(path.contains("/app/mypage/modify")) { 
+			  if(user == null) {
+				  servletResponse.sendRedirect("/app/auth/signin"); 
+				  return; 
+			  }
+		  }
+		  if(path.contains("/app/mypage/password-modify")) { 
+			  if(user == null) {
+				  servletResponse.sendRedirect("/app/auth/signin"); 
+				  return; 
+			  }
+		  }
+		  if(path.contains("/app/mypage/user-over")) { 
+			  if(user == null) {
+				  servletResponse.sendRedirect("/app/auth/signin"); 
+				  return; 
+			  }
+		  }
+		  if(path.contains("/app/auth/mypage")) { 
+			  if(user == null) {
+				  servletResponse.sendRedirect("/app/auth/signin"); 
+				  return; 
+			  }
+		  }
+		  
 			
 		chain.doFilter(request, response);
 		
