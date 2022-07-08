@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.test.app.domain.user.Profile;
 import com.test.app.service.AuthService;
 import com.test.app.service.ProfileService;
+import com.test.app.web.dto.ProfileChangeDto;
 import com.test.app.web.dto.SigninRequestDto;
 
 @Controller
@@ -61,7 +62,14 @@ public class ProfileController {
 		
 		return Boolean.toString(result);
 	}
-	
-	
+	@ResponseBody
+	@RequestMapping(value = "/mypage/profile/update", method = RequestMethod.POST)
+	public String profileUpload(ProfileChangeDto profileChangeDto) {
+		System.out.println("mypage/profile/update컨트롤러 들어옴 : " + profileChangeDto.toString());
+		boolean result = profileService.profileUpload(profileChangeDto);
+		System.out.println("profileChangeDto서비스 갔다옴 : " + result);
+		return Boolean.toString(result);
+		
+	}
 
 }

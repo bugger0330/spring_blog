@@ -17,6 +17,12 @@ public class ProfileRepositoryImpl implements ProfileRepository {
 		
 		return session.selectOne(path + "getProfile", username);
 	}
+
+	@Override
+	public int profileUpload(Profile profile) {
+		
+		return session.insert(path + "profileUpload", profile);
+	}
 	
 	
 	

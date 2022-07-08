@@ -16,12 +16,13 @@
                 <h5>기본정보 입력</h5>
                 <div class="modify-box sub-inner">
                     <input type="hidden" name="method" value="put">
-                    <input type="hidden" name="token" value="">
-                    <input type="hidden" name="email">
+                    <!-- <input type="hidden" name="token" value="">
+                    <input type="hidden" name="email"> -->
                     <div>
                         <label>아이디</label>
                         <div class="input-box">
                             <input type="text" class="input-item" readonly>
+                            <input type="hidden" class="hidden" value="">
                         </div>
                     </div>
                     <div>
@@ -36,6 +37,12 @@
                         <label>이름</label>
                         <div class="input-box">
                             <input type="text" class="input-item" readonly>
+                        </div>
+                    </div>
+                    <div>
+                        <label>닉네임</label>
+                        <div class="input-box">
+                            <input type="text" class="input-item">
                         </div>
                     </div>
                     
@@ -58,10 +65,10 @@
                                 <div>
                                     <input type="text" name="postcode" value class="address border-on" id="address1"
                                         readonly>
-                                    <button type="button" class="btn">주소검색</button>
+                                    <button type="button" class="btn" onclick="sample6_execDaumPostcode();">주소검색</button>
                                 </div>
-                                <input type="text" name="postcode"  class="address border-on" id="address1-1">
-                                <input type="text" name="postcode-detail"  class="address border-on" id="address2">
+                                <input type="text" name="postcode"  class="address border-on" id="address2">
+                                <input type="text" name="postcode-detail"  class="address border-on" id="address3">
                             </div>
                         </div>
                     </div>
@@ -73,4 +80,5 @@
         </div>
 <jsp:include page="../top/footer.jsp"></jsp:include>
     <script src="/app/static/javascript/mypage/user_modify.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     

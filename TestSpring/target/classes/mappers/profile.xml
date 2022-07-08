@@ -10,5 +10,15 @@
 		select * from user_dtl where username = #{username};
 	</select>
 	
+	<update id="profileUpload" parameterType="com.test.app.domain.user.Profile">
+		update user_dtl set
+			nickname = #{nickname},
+			email = #{email},
+			phone = #{phone},
+			address_num = #{address_num},
+			address = #{address},
+			address2 = #{address2}
+		where username = #{username};
+	</update>
 		
 </mapper>

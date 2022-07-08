@@ -15,14 +15,13 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProfileChangeDto {
 	
-	private int id;
 	private int usercode;
 	private String username;
-	private String password;
 	private String name;
 	private String nickname;
 	private String email;
 	private String phone;
+	private String address_num;
 	private String address;
 	private String address2;
 	
@@ -35,6 +34,7 @@ public class ProfileChangeDto {
 				.nickname(nickname)
 				.email(email)
 				.phone(phone)
+				.address_num(address_num)
 				.address(address)
 				.address2(address2)
 				.build();

@@ -110,72 +110,84 @@ function orderListGet(ss){
 
 /*===========================================================*/
 
-
+const inputTag = document.querySelectorAll("input");
 
 function productListGet(ss){
 	submitBtn.onclick = () => {
-		for(let i = 0; i < ss.length; i++){
-			IMP.request_pay({ // param
-		        pg: "kakaopay", //어떤 결제 시스템을 쓸껀지 이니시스 = INIpayTest
-		        pay_method: "card",
-		        merchant_uid: ss[0][i],
-		        name: ss[9][i].textContent,
-		        amount: ss[7],
-		        buyer_email: "gildong@gmail.com",
-		        buyer_name: ss[2][0].value,
-		        buyer_tel: ss[2][2].value,
-		        buyer_addr: `${ss[4].value} ${ss[5].value}`,
-		        buyer_postcode: ss[1][i]
-		    }, function (rsp) { // callback
-		        if (rsp.success) {
-		           alert("결제완료 되었습니다.");
-		           console.log(JSON.stringify(rsp));
-		           let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
-					let flag2 = ""; // ajax안에 async: false 를 써야만 한다
-					for(let i = 0; i < ss[0].length; i++){
-						$.ajax({
-							type : "post",
-							url : "/app/product/order2/userinfo",
-							async: false,
-							data : {
-								product_code : ss[0][i],
-								delivery_code : ss[1][i],
-								username : username1,
-								name : ss[2][0].value,
-								phone : ss[2][1].value,
-								phone2 : ss[2][2].value,
-								address_num : ss[3].value,
-								address : ss[4].value,
-								address2 : ss[5].value,
-								requests : ss[6].value,
-								all_price : ss[7].textContent,
-								
-								product_img1 : ss[8][i].id,
-								product_title : ss[9][i].textContent,
-								youname : ss[9][i].id,
-								product_price : ss[10][i].textContent
-							},
-							dataType : "text",
-							success : function(data){
-								if(data != null){
-									console.log("product성공");
-									allTrue(ss[11]);
-									flag1 = "true";
-								}else{
-									console.log("product실패");
-								}
-							},
-							error : function(data){
-								console.log("비동기 처리 오류");
-							}
-						});
-					}
-				           
-		        } else {
-		            alert("결제실패 되었습니다.");
-		        }
-		    });
+		let flag10 = false;
+		for(let i = 0; i < inputTag.length; i++){
+			if(inputTag[i].value == ""){
+				flag10 = true;
+			}
 		}
+		if(flag10 == true){
+				alert("내용을 입력해주세요!");
+		}else{
+			for(let i = 0; i < ss.length; i++){
+				IMP.request_pay({ // param
+			        pg: "kakaopay", //어떤 결제 시스템을 쓸껀지 이니시스 = INIpayTest
+			        pay_method: "card",
+			        merchant_uid: ss[0][i],
+			        name: ss[9][i].textContent,
+			        amount: ss[7],
+			        buyer_email: "gildong@gmail.com",
+			        buyer_name: ss[2][0].value,
+			        buyer_tel: ss[2][2].value,
+			        buyer_addr: `${ss[4].value} ${ss[5].value}`,
+			        buyer_postcode: ss[1][i]
+			    }, function (rsp) { // callback
+			        if (rsp.success) {
+			           alert("결제완료 되었습니다.");
+			           console.log(JSON.stringify(rsp));
+			           let flag1 = ""; //비동기처리 안에서 변수에 값 넣어서 출력하고 싶을땐
+						let flag2 = ""; // ajax안에 async: false 를 써야만 한다
+						for(let i = 0; i < ss[0].length; i++){
+							$.ajax({
+								type : "post",
+								url : "/app/product/order2/userinfo",
+								async: false,
+								data : {
+									product_code : ss[0][i],
+									delivery_code : ss[1][i],
+									username : username1,
+									name : ss[2][0].value,
+									phone : ss[2][1].value,
+									phone2 : ss[2][2].value,
+									address_num : ss[3].value,
+									address : ss[4].value,
+									address2 : ss[5].value,
+									requests : ss[6].value,
+									all_price : ss[7].textContent,
+									
+									product_img1 : ss[8][i].id,
+									product_title : ss[9][i].textContent,
+									youname : ss[9][i].id,
+									product_price : ss[10][i].textContent
+								},
+								dataType : "text",
+								success : function(data){
+									if(data != null){
+										console.log("product성공");
+										allTrue(ss[11]);
+										flag1 = "true";
+									}else{
+										console.log("product실패");
+									}
+								},
+								error : function(data){
+									console.log("비동기 처리 오류");
+								}
+							});
+						}
+					           
+			        } else {
+			            alert("결제실패 되었습니다.");
+			        }
+			    });
+			}
+		}
+		
+			
 
 		
 		

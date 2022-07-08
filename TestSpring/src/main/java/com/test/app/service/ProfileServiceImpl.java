@@ -24,6 +24,12 @@ public class ProfileServiceImpl implements ProfileService {
 		
 	}
 
+	@Override
+	public boolean profileUpload(ProfileChangeDto profileChangeDto) {
+		int result = profileRepository.profileUpload(profileChangeDto.entity());
+		return result != 0;
+	}
+
 
 
 
