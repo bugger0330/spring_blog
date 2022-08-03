@@ -24,12 +24,10 @@
                             <th scope="col">
                                 <div class="tb-center">상품명</div>
                             </th>
-                            <th scope="col" style="width: 15%;">
+                            <th scope="col" style="width: 25%;">
                                 <div class="tb-center">가격</div>
                             </th>
-                            <th scope="col" style="width: 10%;">
-                                <div class="tb-center">삭제</div>
-                            </th>
+                            
                         </tr>
 					</thead>
                         <!-- ========================================================================================================= -->
@@ -37,10 +35,7 @@
                 </table>
                                 <h4 class="flag">장바구니가 비어있습니다.</h4>
             </div>
-            <div class="btns">
-            	<button class="back-btn">뒤로가기</button>
-            	<button class="delete-btn2">선택삭제</button>
-            </div>
+            
 
         </div>
 

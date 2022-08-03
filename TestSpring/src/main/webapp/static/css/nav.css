@@ -5,6 +5,13 @@
 	align-items: center;
 }
 
+.page-link_on{
+	margin: 0px 10px;
+	padding: 6px 12px;
+    color: #dee2e6;
+    background-color: #8080ff;
+    cursor: default;
+}
 
 .sub-innr{
     margin: 0px auto 50px; 
@@ -27,8 +34,8 @@
     margin: 0px; 
     padding: 0px; 
     position: absolute; 
-    top: 60px; 
-    right: 0px; 
+    right: 0px;
+    top:50px; 
     z-index: 90;
     width: 100%;
     border-bottom: 1px solid black;
@@ -93,7 +100,6 @@
     position: absolute; 
     top: 72px; 
     left: 1px; 
-    border-right: 1px solid rgb(211, 211, 211); 
     z-index: 91; 
     border-left: 1px solid rgb(211, 211, 211);
 }
@@ -106,7 +112,6 @@
     position: absolute; 
     top: 72px; 
     left: 1px; 
-    border-right: 1px solid rgb(211, 211, 211); 
     z-index: 91; 
     border-left: 1px solid rgb(211, 211, 211);
     background-color: skyblue;
@@ -135,21 +140,12 @@
     margin: 0px; 
     padding: 0px; 
     background: rgb(247, 247, 247); 
-    height: 315px; 
+    height: 305px; 
     width: 100%; 
     border-top: 1px solid rgb(57, 84, 139); 
     border-bottom: 1px solid rgb(57, 84, 139); 
     z-index: 1000;
 }
-
-
-
-
-
-
-
-
-
 
 
 

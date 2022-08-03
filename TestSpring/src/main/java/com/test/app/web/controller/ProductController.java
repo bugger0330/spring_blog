@@ -26,6 +26,7 @@ public class ProductController {
 		System.out.println("-=>>>>>>>>>>>>>" + productRequestDto);
 		System.out.println(productRequestDto.getFile().get(0).getOriginalFilename());
 		boolean result = productService.productInsert(productRequestDto);
+		System.out.println("상품등록 서비스 갔다옴 : " + result);
 		return Boolean.toString(result);
 	}
 

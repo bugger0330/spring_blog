@@ -59,7 +59,7 @@ public class BoardController {
 	@RequestMapping(value = "/board/read/{num}", method = RequestMethod.POST)
 	public Board boardRead(@PathVariable int num) {
 		Board board = boardService.getBoardRead(num);
-		
+		System.out.println("게시글 읽음 결과 : " + board.toString());
 		return board;
 	}
 	
@@ -99,10 +99,15 @@ public class BoardController {
 		return Boolean.toString(result);
 	}
 	
-	@ResponseBody
-	@RequestMapping(value = "/board/count", method = RequestMethod.GET)
-	public int getCount() {
-		int result = boardService.getCount();
-		return result;
-	}
+	/*
+	 * @ResponseBody
+	 * 
+	 * @RequestMapping(value = "/board/count", method = RequestMethod.GET) public
+	 * int getCount() { int result = boardService.getCount(); return result; }
+	 */
+	
+	
+
+	
+	
 }

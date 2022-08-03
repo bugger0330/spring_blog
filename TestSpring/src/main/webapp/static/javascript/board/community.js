@@ -156,13 +156,16 @@ function boardPageNum(data) {
 	
 	
 	
-	const pageButton = boardListPage.querySelectorAll('div');
+	let pageButton = boardListPage.querySelectorAll('div');
 	for(let i = 0; i < pageButton.length; i++){
 	pageButton[i].onclick = () => {
 		nowPage = pageButton[i].textContent;
 		load(nowPage);
+		pageButton = boardListPage.querySelectorAll('div');
+		pageButton[i].className = "page-link_on";
 		}
 	}
+	
 	
 }
 

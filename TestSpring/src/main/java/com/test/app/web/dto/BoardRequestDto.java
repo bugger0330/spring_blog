@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class BoardRequestDto {
 
-	private int boardCode;
+	private int board_code;
 	private String username;
 	private String title;
 	private String content;
@@ -23,7 +23,7 @@ public class BoardRequestDto {
 	
 	public Board toEntity() {
 		return Board.builder()
-				.board_code(boardCode)
+				.board_code(board_code)
 				.username(username)
 				.title(title)
 				.content(content)
@@ -33,7 +33,7 @@ public class BoardRequestDto {
 	
 	public Board updateEntity() {
 		return Board.builder()
-				.board_code(boardCode)
+				.board_code(board_code)
 				.username(username)
 				.title(title)
 				.content(content)

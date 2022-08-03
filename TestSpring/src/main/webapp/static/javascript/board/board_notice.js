@@ -34,15 +34,8 @@ searchBtn0.onclick = () => {
 }
 
 
-//글쓰기 버튼 클릭시(애초에 로그인 안하면 게시판에 들어갈수도 없지만)
-btnRegister.onclick = () => {
-	if(username1 == null){
-		alert("로그인 후에 이용 가능합니다.");
-		location.href = "/app/auth/signin";
-	}else{
-		location.href = "/app/board/notice/insert";
-	}
-}
+
+
 
 
 

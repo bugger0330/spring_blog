@@ -1,5 +1,6 @@
 const inputItem = document.querySelectorAll(".input-item");
 const submitBtn = document.querySelector(".submit");
+const userOverBtn = document.querySelector(".submit2");
 const inputTag = document.querySelectorAll("input");
 const hidden1 = document.querySelector(".hidden");
 const session = loginSession();
@@ -52,11 +53,15 @@ function load1(){
 	});
 }
 
-
 function innrInput(ss){
 	inputItem[0].value = ss.username;
 	inputItem[1].value = ss.name;
-	hidden1.value = ss.usercode;
+	inputItem[2].value = ss.nickname;
+	inputItem[3].value = ss.email;
+	inputItem[4].value = ss.phone;
+	
+	
+	
 }
 
 submitBtn.onclick = () => {
@@ -79,7 +84,7 @@ submitBtn.onclick = () => {
 			dataType : "text",
 			success : function(data){
 				if(data == "true"){
-					alert("비밀번호 맞음");
+					console.log("비밀번호 맞음");
 					profileUP();
 				}else{
 					alert("비밀번호가 틀립니다.");
@@ -112,18 +117,24 @@ submitBtn.onclick = () => {
 				dataType : "json",
 				success : function(data){
 					if(data == true){
-						alert("성공");
+						alert("회원정보가 수정되었습니다.");
+						location.href = "/app/auth/mypage";
 					}else{
-						alert("실패");
+						alert("회원정보 수정이 실패 하였습니다.");
 					}
 				},
 				error : function(data){
-					alert("비동기 처리 오류");
+					console.log("비동기 처리 오류");
 				}
 			});
 	}
 
-
+userOverBtn.onclick = () => {
+	if(confirm("정말 탈퇴 하시겠습니까?")){
+		alert("회원 탈퇴 페이지로 이동합니다.");
+		location.href = "/app/mypage/user-over"
+	}
+}
 
 
 //도로명 주소 검색

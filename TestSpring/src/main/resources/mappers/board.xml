@@ -36,7 +36,7 @@
 		 	title,
 		 	content,
 		 	count,
-		 	(select count(*) from board_mst) as boardCount,
+		 	(select count(*) from board_notice) as boardCount,
 		 	DATE_FORMAT(create_date, '%Y-%m-%d') as create_date,
 		 	DATE_FORMAT(update_date, '%Y-%m-%d') as update_date
 		 from board_notice
@@ -135,7 +135,7 @@
 	<delete id="getDelete2" parameterType="Integer">
 		delete from board_notice where board_code = #{num};
 	</delete>
-	
+
 </mapper>
 
 

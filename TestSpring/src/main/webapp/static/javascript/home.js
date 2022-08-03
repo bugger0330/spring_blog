@@ -6,6 +6,9 @@ const imgLists4 = document.querySelector("#img-lists4");
 const optionsBtn = document.querySelectorAll(".options-go");
 
 
+
+
+
 load1();
 
 function load1(){

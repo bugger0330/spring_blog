@@ -21,8 +21,7 @@
                     <div>
                         <label>아이디</label>
                         <div class="input-box">
-                            <input type="text" class="input-item" readonly>
-                            <input type="hidden" class="hidden" value="">
+                            <input type="text" id="username1" class="input-item" readonly>
                         </div>
                     </div>
                     <div>
@@ -36,7 +35,7 @@
                     <div>
                         <label>이름</label>
                         <div class="input-box">
-                            <input type="text" class="input-item" readonly>
+                            <input type="text" id="nickname1" class="input-item" readonly>
                         </div>
                     </div>
                     <div>
@@ -74,6 +73,7 @@
                     </div>
                     <div class="submit-box">
                         <input type="submit" value="확인" class="submit">
+                        <input type="button" value="회원탈퇴" class="submit2">
                     </div>
                 </div>
             </div>

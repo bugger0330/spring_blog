@@ -94,22 +94,27 @@ function getBoardData(ss){
 	}
 	
 	deleteBtn.onclick = () => {
-		$.ajax({
-			type : "delete",
-			url : `/app/board/delete/${num}`,
-			dataType : "text",
-			success : function(data){
-				if(data == "true"){
-					alert("삭제 되었습니다.");
-					location.href = "/app/board/community";
-				}else{
-					alert("삭제가 실패 했습니다.");
+		if(confirm("삭제하시겠습니까?")){
+			$.ajax({
+				type : "delete",
+				url : `/app/board/delete/${num}`,
+				dataType : "text",
+				success : function(data){
+					if(data == "true"){
+						alert("삭제 되었습니다.");
+						location.href = "/app/board/community";
+					}else{
+						alert("삭제가 실패 했습니다.");
+					}
+				},
+				error : function(data){
+					console.log("비동기 처리 오류");
 				}
-			},
-			error : function(data){
-				console.log("비동기 처리 오류");
-			}
-		});
+			});
+		}else{
+			alert("삭제 취소되었습니다");
+		}
+			
 	}
 	
 	

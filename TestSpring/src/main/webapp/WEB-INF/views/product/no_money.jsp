@@ -9,6 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 	<link href="/app/static/css/product/no_money.css" rel="stylesheet">
+	<style type="text/css">
+		.butt{
+			border: 0px;
+			background: red;
+			color: white;
+			width: 100px;
+			height: 30px;
+			font-size: 20px;
+			margin: 20px auto;
+			display: flex;
+			justify-content: center;
+		}
+		
+	</style>
 </head>
 
 <body>
@@ -37,7 +51,7 @@
                     <td class="tbl002" nowrap="" >
                         총주문액</td>
                     <td class="td22">
-                        <b>원</b>
+                        <b>1,654,000 원</b>
                     </td>
                 </tr>
                 <tr>
@@ -194,7 +208,7 @@
 
     </div>
     <!-- ==============================================무통장 입금======================================== -->
-
+<button class="butt">결제하기</button>
 </body>
 
 </html>

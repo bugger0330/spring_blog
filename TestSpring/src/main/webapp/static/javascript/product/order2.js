@@ -51,7 +51,7 @@ function orderListGet(ss){
                         <td><img class="img01" src="/app/static/upload_img/${ss[i].product_img1}" id="${ss[i].product_img1}" width="100px" height="80px" /></td>
                         <td class="td1" id="${ss[i].youname}">${ss[i].product_title}</td>
                         <td class="td2" id="${ss[i].product_price}">${numb2}원</td>
-                        <td><button class="delete-btn" value="${ss[i].product_code}">삭제</button></td>
+                        
                     </tr>
 				`;
 	}

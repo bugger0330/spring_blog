@@ -44,10 +44,10 @@ body {
 }
 
 .smart{
-	width: 100%;
+	width: 1200px;
 	font-size: 30px;
-	margin: 0px;
-	padding: 5px 150px;
+	margin: 0px auto;
+	padding: 5px 40px;
 	background-color: yellow;
 	display: flex;
 	justify-content: space-between;

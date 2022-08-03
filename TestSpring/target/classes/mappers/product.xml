@@ -27,6 +27,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = '스마트폰' 
+		order by product_code desc
 		LIMIT #{number},16;
 	</select>
 	
@@ -52,6 +53,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = '태블릿' 
+		order by product_code desc
 		LIMIT #{number},16;
 	</select>
 	
@@ -77,6 +79,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = 'pc' 
+		order by product_code desc
 		LIMIT #{number},16;
 	</select>
 	
@@ -102,6 +105,7 @@
 			(SELECT COUNT(product_code) FROM product) AS count1
 		from product 
 		where product_select = '기타' 
+		order by product_code desc
 		LIMIT #{number},16;
 	</select>
 	

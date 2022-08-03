@@ -6,7 +6,7 @@
 		<div class="col-md-10" style="margin: 0px auto;">
 			<header class="panel-heading">
 				<h2 class="panel-title" style="text-align:center; margin-bottom:30px; font-family:'Jua'; font-size:3.0em;">
-					<i class="fas fa-comments"></i>커뮤니티
+					<i class="fas fa-comments"></i>공지사항
 				</h2>
 			</header>
 			<div class="panel-body">

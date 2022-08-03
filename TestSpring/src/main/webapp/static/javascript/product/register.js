@@ -35,38 +35,41 @@ let option4 = "";
 	3 = 교환/환불
 */
 
-//카테고리
-for(let i = 0; i < select1.length; i++){
-	if(select1[i].selected){
-		option1 = select1[i].value;
+function selectFrom(){
+	//카테고리
+	for(let i = 0; i < select1.length; i++){
+		if(select1[i].selected){
+			option1 = select1[i].value;
+		}
 	}
-}
-
-//결제방법
-for(let i = 0; i < select2.length; i++){
-	if(select2[i].selected){
-		option2 = select2[i].value;
+	
+	//결제방법
+	for(let i = 0; i < select2.length; i++){
+		if(select2[i].selected){
+			option2 = select2[i].value;
+		}
 	}
-}
-
-//제품상태
-for(let i = 0; i < select3.length; i++){
-	if(select3[i].selected){
-		option3 = select3[i].value;
+	
+	//제품상태
+	for(let i = 0; i < select3.length; i++){
+		if(select3[i].selected){
+			option3 = select3[i].value;
+		}
 	}
-}
-
-//환불/교환
-for(let i = 0; i < select4.length; i++){
-	if(select4[i].selected){
-		option4 = select4[i].value;
+	
+	//환불/교환
+	for(let i = 0; i < select4.length; i++){
+		if(select4[i].selected){
+			option4 = select4[i].value;
+		}
 	}
-}
+	
+	console.log("선택 : " + option1);
+	console.log("선택 : " + option2);
+	console.log("선택 : " + option3);
+	console.log("선택 : " + option4);
 
-console.log("선택 : " + option1);
-console.log("선택 : " + option2);
-console.log("선택 : " + option3);
-console.log("선택 : " + option4);
+}
 
 
 
@@ -100,6 +103,7 @@ function makeImgTag(img_src) {
 
 
 submitBtn.onclick = () => {	
+	selectFrom();
 	const formData = new FormData(document.querySelector("form"));
 	formData.append("product_select", option1);
 	formData.append("product_delivery", option2);
@@ -118,6 +122,7 @@ submitBtn.onclick = () => {
 		success : function(data){
 			if(data == "true"){
 				alert("업로드 완료 되었습니다.");
+				location.href = "/app";
 			}else{
 				alert("업로드 실패 하였습니다.");
 			}

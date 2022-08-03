@@ -23,6 +23,7 @@ function load1(){
 			if(data != null){
 				data2 = JSON.parse(data);
 				getBoardData(data2);
+				plusCount(data2);
 			}else{
 				console.log("실패");
 			}
@@ -65,7 +66,6 @@ function getBoardData(ss){
 	
 	
 }
-
 
 
 

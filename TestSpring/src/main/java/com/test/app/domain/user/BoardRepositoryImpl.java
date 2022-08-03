@@ -99,4 +99,6 @@ public class BoardRepositoryImpl implements BoardRepository {
 		return session.selectList(path + "getBoardList22", board);
 	}
 
+
+
 }

@@ -20,9 +20,8 @@
 			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0" id="top-menu">
-					<li class="nav-item"><a class="nav-link active" id="aaa5" href="/app/auth/signin">로그인</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa6" href="/app/auth/signup">회원가입</a></li>
-					<li class="nav-item"><a class="nav-link active" id="aaa4" href="/app/logout">로그아웃</a></li>
+					<li class="nav-item" id="aa1"><a class="nav-link active" id="aaa1" href="/app/auth/signin">로그인</a></li>
+					<li class="nav-item"><a class="nav-link active" id="aaa2" href="/app/auth/signup">회원가입</a></li>
 				</ul>
 			</div>
 		</div>
@@ -99,7 +98,7 @@
                                 <a class="li2-a" href="/app/mypage/password-modify">비밀번호 변경</a>
                             </li>
                             <li class="li2">
-                                <a class="li2-a" href="/app/mypage/user-over">회원 탈퇴</a>
+                                <a class="li2-a" href="/app/logout">로그아웃</a>
                             </li>
                             <!-- ======================================== -->
                         </ul>

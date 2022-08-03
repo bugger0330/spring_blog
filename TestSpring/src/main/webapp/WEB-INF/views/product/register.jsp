@@ -91,7 +91,7 @@
 						<div class="sc-ccSCjj">
 							<div class="sc-feryYK">
 								<select>
-									<option value="택배거리">택배거래</option>
+									<option value="택배거래">택배거래</option>
 									<option value="직거래">직거래</option>
 								</select>
 							</div>
@@ -125,7 +125,7 @@
 					</div>
 				</li>
 			</ul>
-			<button class="submit-btn">등록하기</button>
+			<button type="button" class="submit-btn">등록하기</button>
 		</form>
 	</div>
 	<script type="text/javascript"

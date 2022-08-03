@@ -23,7 +23,6 @@ submitBtn.onclick = () => {
 		},
 		dataType : "text",
 		success : function(data) {
-			alert(data);
 			if(data == "true"){
 				alert("등록되었습니다");
 				location.href = "/app/board/notice";

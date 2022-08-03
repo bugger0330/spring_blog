@@ -14,6 +14,7 @@ import com.test.app.domain.user.User;
 import com.test.app.service.AuthService;
 import com.test.app.web.dto.SigninRequestDto;
 import com.test.app.web.dto.SignupRequestDto;
+import com.test.app.web.script.Logout;
 import com.test.app.web.script.SignupScript;
 
 
@@ -77,12 +78,18 @@ public class AuthController {
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("login");
 		session.invalidate();
-		user = null;
+		Logout script = new Logout();
+		boolean result = false;
+		if(user == null) {
+			System.out.println("세션 삭제완료");
+			result = true;
+			return script.logoutScript(result);
+		}else {
+			result = false;
+			return script.logoutScript(result);
+		}
 		
-		System.out.println("세션 삭제완료");
 		
-		
-		return "true";
 	}
 	
 	
